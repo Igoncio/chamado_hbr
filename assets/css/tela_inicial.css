@@ -1,3 +1,142 @@
+a{
+    text-decoration: none;
+}
+
+.area-main{
+    display: flex;
+    margin-left: auto;
+    margin-top: 5%;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+    /* background-color: #7e61ff; */
+}
+
+.area-cad{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: first baseline;
+    /* background-color: #2eadff; */
+}
+
+.area-chamado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: first baseline;
+    width: 100%;
+    /* background-color: #2effb2; */
+}
+
+.area-gerenciar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: first baseline;
+    width: 100%;
+    /* background-color: #9bc32c; */
+}
+
+#txt-area{
+    display: flex;
+    width: 100%;
+    font-size: 25px;
+
+}
+
+/* ====================================================   CARD 1  ============================================================================ */
+
+.card1 {
+    display: flex;
+    isolation: isolate;
+    position: relative;
+    width: 18rem;
+    height: 8rem;
+    background: #fcfcfc;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+    --color: #32a6ff
+  }
+  
+  .card1:before {
+    position: absolute;
+    content: "";
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: #ffffff;
+    z-index: 2
+  }
+  
+  .card1:after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+  }
+  
+  .card1:hover:after {
+    transform: translateX(0.15rem)
+  }
+  
+  .notititle1 {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+  }
+  
+  .card1:hover .notititle1 {
+    transform: translateX(0.15rem)
+  }
+  
+  .notibody1 {
+    color: #99999d;
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+  }
+  
+  .card1:hover .notibody1 {
+    transform: translateX(0.25rem)
+  }
+  
+  .notiglow1,
+  .notiborderglow1 {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, rgb(52, 47, 47), transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+  
+  .notiglow1 {
+    z-index: 3;
+  }
+  
+  .notiborderglow1 {
+    z-index: 1;
+  }
+  
+  .card1:hover .notiglow1 {
+    opacity: 0.1
+  }
+  
+  .card1:hover .notiborderglow1 {
+    opacity: 0.1
+  }
+
+/* ====================================================   CARD 2  ============================================================================ */
+
 .card1 {
     display: flex;
     flex-direction: column;
@@ -87,15 +226,4 @@
   
   .card1:hover .notiborderglow1 {
     opacity: 0.1
-  }
-  
-  .note {
-    color: var(--color);
-    position: fixed;
-    top: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 0.9rem;
-    width: 75%;
   }

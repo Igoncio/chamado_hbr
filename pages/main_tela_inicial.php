@@ -8,16 +8,127 @@ include_once("../includes/menu.php");
 <body>
     
     <section class="area-main">
-        <div class="card1">
-            <div class="notiglow1"></div>
-            <div class="notiborderglow1"></div>
-            <div class="notititle1">Welcome To Uiverse</div>
-            <div class="notibody1">Contribute to Open Source UI Elements</div>
-        </div>
+        
+
+        <section class="area-cad">
+
+        <h1 id="txt-area">Cadastros</h1>
+
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar chamado</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um chamado</div>
+                </div>
+            </a>
+            
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar usuário</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um usuario</div>
+                </div>
+            </a>
+    
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar perfil</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um perfil</div>
+                </div>
+            </a>
+    
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar item</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar qualquer item</div>
+                </div>
+            </a>
+
+        </section>
+
+
+        <section class="area-chamado">
+
+        <h1 id="txt-area">Chamados</h1>
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Vizualizar chamado</div>
+                    <div class="notibody1">Selecione esta opção para vizualizar os chamados criados por todos usuarios</div>
+                </div>
+            </a>
+    
+    
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Validar chamado</div>
+                    <div class="notibody1">Selecione esta opção para validar os chamados já criados</div>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Relatório de chamados</div>
+                    <div class="notibody1">Selecione esta opção para vizualizar o relatório dos chamados</div>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar chamado</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um chamado</div>
+                </div>
+            </a>
+
+        </section>
 
 
 
+        <section class="area-gerenciar">
 
+        <h1 id="txt-area">Gerenciamento</h1>
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Gerenciar usuário</div>
+                    <div class="notibody1">Selecione esta opção para gerenciar qualquer usuário</div>
+                </div>
+            </a>
+    
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Gerenciar perfil</div>
+                    <div class="notibody1">Selecione esta opção para gerenciar qualquer perfil</div>
+                </div>
+            </a>
+    
+    
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Gerenciar item</div>
+                    <div class="notibody1">Selecione esta opção para gerenciar qualquer item</div>
+                </div>
+            </a>
+
+        </section>
 
     </section>
 

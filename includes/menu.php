@@ -41,6 +41,7 @@
                   <li><a class="dropdown-item" href="#">Relátorio de chamados</a></li>
                   <li><a class="dropdown-item" href="#">Gerenciar usuarios</a></li>
                   <li><a class="dropdown-item" href="#">Gerenciar perfis</a></li>
+                  <li><a class="dropdown-item" href="#">Gerenciar itens</a></li>
                 </ul>
               </li>
 
@@ -51,7 +52,20 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Cadastrar usuarios</a></li>
                   <li><a class="dropdown-item" href="#">Cadastrar perfis</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Cadastrar itens</a></li>
+                </ul>
+              </li>
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Itens
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Arco Cirugico</a></li>
+                  <li><a class="dropdown-item" href="#">Ar Condicionado</a></li>
+                  <li><a class="dropdown-item" href="#">Computador</a></li>
+                  <li><a class="dropdown-item" href="#">Impressora</a></li>
                 </ul>
               </li>
               
