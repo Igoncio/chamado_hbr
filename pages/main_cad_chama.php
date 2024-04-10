@@ -26,35 +26,62 @@ include_once("../includes/menu.php");
                 </div>
                 
             </div>
-            
-            <div class="select-field"> 
-                <label id="label-txt" for="">Selecione o cliente</label>            
-                <select class="select">
-                    <option>Selecione o cliente</option>
-                    <option>Upa Universitario</option>
-                    <option>Moreninha</option>
-                    <option>Dourados</option>
-                </select>
-            
-                <label id="label-txt" for="">Selecione o setor do item</label>            
-                <select class="select">
-                    <option>selecione o setor</option>
-                    <option>Setor de enfermagem</option>
-                    <option>Setor de documentação</option>
-                    <option>Setor de lojistica</option>
-                </select>
+
+
+                    <label id="label-txt" for=""></label>            
+                    <select class="select">
+                        <option>Selecione o cliente</option>
+                        <option>Upa Universitario</option>
+                        <option>Moreninha</option>
+                        <option>Dourados</option>
+                    </select>
+
+                    <label id="label-txt" for=""></label>            
+                    <select class="select">
+                        <option>selecione o setor</option>
+                        <option>Setor de enfermagem</option>
+                        <option>Setor de documentação</option>
+                        <option>Setor de lojistica</option>
+                    </select>
+
+    
+                    <label id="label-txt" for=""></label>            
+                    <select class="select">
+                        <option>selecione a categoria do item</option>
+                        <option>Setor de enfermagem</option>
+                        <option>Setor de documentação</option>
+                        <option>Setor de lojistica</option>
+                    </select>
+
+                <div class="select-field">
+
+                    <div class="area-select">
+                        <label id="label-txt" for=""></label>            
+                        <select class="select">
+                            <option>selecione o responsavel</option>
+                            <option>Setor de enfermagem</option>
+                            <option>Setor de documentação</option>
+                            <option>Setor de lojistica</option>
+                        </select>
+                    </div>
+    
+                    <div class="area-select">
+                        <label id="label-txt" for=""></label>            
+                        <select class="select">
+                            <option>selecione o segundo responsavel</option>
+                            <option>Setor de enfermagem</option>
+                            <option>Setor de documentação</option>
+                            <option>Setor de lojistica</option>
+                        </select>
+                    </div>
+
+                </div>
             
             </div>
-            <label id="label-txt" for="">Selecione a categoria do item</label>            
-            <select class="select">
-                <option>selecione a categoria</option>
-                <option>ar Condicionado</option>
-                <option>servidor</option>
-                <option>monitor</option>
-            </select>
+
             <div class="input-field">
-                <input required="" class="input" type="text" />
-                <label class="label" for="input">Digite o apelido (como o item ira aparecer no chamado)</label>
+                <input required="" id="desc" class="input" type="text"/>
+                <label class="label" for="input">Descrição</label>
             </div>
             
             <div class="juntar-input">
@@ -70,7 +97,35 @@ include_once("../includes/menu.php");
                 </div>
             </div>
 
-            <div class="juntar-input"> 
+            <div class="juntar-check">
+
+                <h1 id="txt-perm">Prioridade:</h1>
+                <div class="area-prioridade">
+                    <label>
+                        BAIXA
+                        <input id="ant" name="base" type="radio" value="S" />
+                    </label>
+                </div>
+
+                <div class="area-prioridade">
+                <label>
+                    MEDIA
+                    <input id="grade" name="base" type="radio" value="S" />
+                </label>  
+                </div>
+
+                <div class="area-prioridade">
+                <label>
+                    ALTA
+                    <input id="novo" name="base" type="radio" value="S" />
+                </label>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile02">
+            </div>
+
 
 
 

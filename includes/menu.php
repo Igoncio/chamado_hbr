@@ -23,7 +23,7 @@
                       Chamados
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Cadastrar chamado</a></li>
+                      <li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar chamado</a></li>
                       <li><a class="dropdown-item" href="#">Vizualizar Chamados</a></li>
                       <li><a class="dropdown-item" href="#">Validar chamados</a></li>
                     </ul>
@@ -56,6 +56,7 @@
                   <li><a class="dropdown-item" href="../pages/main_cad_cli.php">Cadastrar cliente</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_setor.php">Cadastrar Setor</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_catego.php">Cadastrar categoria</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_cad_chama.php">Cadastrar chamado</a></li>
                 </ul>
               </li>
 

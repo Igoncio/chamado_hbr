@@ -14,7 +14,7 @@ include_once("../includes/menu.php");
 
             <h1 id="txt-area">Cadastros</h1>
 
-            <a href="#">
+            <a href="main_cad_chama.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
