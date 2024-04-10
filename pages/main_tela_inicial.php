@@ -64,7 +64,7 @@ include_once("../includes/menu.php");
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
                     <div class="notititle1">Cadastrar Setor</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar um setor de um local</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um setor de um cliente</div>
                 </div>
             </a>
             
