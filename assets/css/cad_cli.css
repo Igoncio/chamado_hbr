@@ -100,6 +100,14 @@
     flex-direction: column;
 }
 
+.select{
+    font-size: 16px;
+    border: none; /* Remove todas as bordas */
+    border-bottom: 1px solid #979797; /* Adiciona apenas a borda inferior */
+    border-radius: 0; /* Remove o arredondamento dos cantos */
+    outline: none;
+}
+
 
 .btn-field{
     display: flex;

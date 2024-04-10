@@ -55,7 +55,7 @@ include_once("../includes/menu.php");
 
             <div class="select-field"> 
                 <label id="label-txt" for="">Selecione o local onde o usurio trabalha</label>            
-                <select>
+                <select class="select">
                     <option>Selecione o local</option>
                     <option>Upa Universitario</option>
                     <option>Moreninha</option>
