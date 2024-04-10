@@ -11,7 +11,7 @@ include_once("../includes/menu.php");
         
         <form class="area-form" action="">
             
-            <h1 id="titulo_page">Cadastrar Usuários </h1>
+            <h1 id="titulo_page">Cadastrar Usuário</h1>
            
             <div class="juntar-input">
 
