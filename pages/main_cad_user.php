@@ -53,7 +53,7 @@ include_once("../includes/menu.php");
             </div>
 
 
-            <div id="select-field"> 
+            <div class="select-field"> 
                 <label id="label-txt" for="">Selecione o local onde o usurio trabalha</label>            
                 <select>
                     <option>Selecione o local</option>
@@ -63,6 +63,12 @@ include_once("../includes/menu.php");
                 </select>
             </div>
 
+            <div class="btn-field">
+
+                <button class="btn-submit" type="submit">Cadastrar</button>
+                <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
+
+            </div>
 
 
         </form>
