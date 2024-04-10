@@ -59,7 +59,7 @@ include_once("../includes/menu.php");
                 </div>
             </a>
 
-            <a href="main_cad_local.php">
+            <a href="main_cad_setor.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
