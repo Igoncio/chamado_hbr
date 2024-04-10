@@ -4,15 +4,15 @@ include_once("../includes/menu.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/tela_inicial.css">
-<title>tela_inicial</title>
+<title>tela inicial</title>
 <body>
     
+    <h1 id="titulo_page">Tela Inicial</h1>
     <section class="area-main">
-        
 
         <section class="area-cad">
 
-        <h1 id="txt-area">Cadastros</h1>
+            <h1 id="txt-area">Cadastros</h1>
 
             <a href="#">
                 <div class="card1">
@@ -23,7 +23,7 @@ include_once("../includes/menu.php");
                 </div>
             </a>
             
-            <a href="#">
+            <a href="main_cad_user.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>

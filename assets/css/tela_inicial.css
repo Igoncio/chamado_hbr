@@ -5,7 +5,7 @@ a{
 .area-main{
     display: flex;
     margin-left: auto;
-    margin-top: 5%;
+    margin-top: 10px;
     justify-content: center;
     width: 80%;
     flex-wrap: wrap;
@@ -40,7 +40,15 @@ a{
     display: flex;
     width: 100%;
     font-size: 25px;
+}
 
+#titulo_page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  margin-top: 5%;
+  /* background-color: #99999d; */
 }
 
 /* ====================================================   CARD 1  ============================================================================ */

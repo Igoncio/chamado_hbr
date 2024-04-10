@@ -50,7 +50,7 @@
                     Cadastros
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Cadastrar usuarios</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar usuarios</a></li>
                   <li><a class="dropdown-item" href="#">Cadastrar perfis</a></li>
                   <li><a class="dropdown-item" href="#">Cadastrar itens</a></li>
                 </ul>
