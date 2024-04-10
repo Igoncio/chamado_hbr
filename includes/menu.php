@@ -55,6 +55,7 @@
                   <li><a class="dropdown-item" href="../pages/main_cad_item.php">Cadastrar itens</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_cli.php">Cadastrar cliente</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_setor.php">Cadastrar Setor</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_cad_catego.php">Cadastrar categoria</a></li>
                 </ul>
               </li>
 
