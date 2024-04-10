@@ -25,6 +25,35 @@ include_once("../includes/menu.php")
             
 
             <h1 id="txt-perm">Permissões</h1>
+            <section class="perm-chama">
+
+                <h1 id="txt-cad">Chamados:</h1>
+
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Vizualizar Chamado</div>
+                    </label>
+                </div>
+
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Validar Chamado</div>
+                    </label>
+
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Relatório de Chamado</div>
+                    </label>
+                </div>
+
+            </section>
 
             <section class="perm-cad">
 
@@ -63,7 +92,8 @@ include_once("../includes/menu.php")
 
 
             </section>
-
+            
+            
             <section class="perm-adm">
 
                 <h1 id="txt-cad">Administrativo:</h1>
@@ -71,58 +101,29 @@ include_once("../includes/menu.php")
                 <div class="juntar-check">
                     <label class="container-check">
                         <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
+                        <div for="">Gerenciar Usuário</div>
                     </label>
 
                     <label class="container-check">
                         <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
+                        <div for="">Gerenciar Perfil</div>
                     </label>
                 </div>
 
                 <div class="juntar-check">
                     <label class="container-check">
                         <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
+                        <div for="">Gerenciar Item</div>
                     </label>
 
                     <label class="container-check">
                         <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
+                        <div for="">Gerenciar Local</div>
                     </label>
                 </div>
 
             </section>
 
-            <section class="perm-chama">
-
-                <h1 id="txt-cad">Chamados:</h1>
-
-                <div class="juntar-check">
-                    <label class="container-check">
-                        <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
-                    </label>
-
-                    <label class="container-check">
-                        <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
-                    </label>
-                </div>
-
-                <div class="juntar-check">
-                    <label class="container-check">
-                        <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
-                    </label>
-
-                    <label class="container-check">
-                        <input type="checkbox">
-                        <div for="">Cadastrar Chamado</div>
-                    </label>
-                </div>
-
-            </section>
 
 
             <div class="btn-field">

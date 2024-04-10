@@ -7,12 +7,13 @@ a{
   margin-left: auto;
   margin-top: 10px;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   flex-wrap: wrap;
   /* background-color: #7e61ff; */
 }
 
 .area-cad{
+  margin-left: 15%;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -21,6 +22,7 @@ a{
 }
 
 .area-chamado{
+  margin-left: 15%;
   display: flex;
   flex-wrap: wrap;
   justify-content: first baseline;
@@ -29,6 +31,7 @@ a{
 }
 
 .area-gerenciar{
+  margin-left: 15%;
   display: flex;
   flex-wrap: wrap;
   justify-content: first baseline;
