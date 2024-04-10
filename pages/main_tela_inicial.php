@@ -50,6 +50,15 @@ include_once("../includes/menu.php");
                 </div>
             </a>
 
+            <a href="#">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar local</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um local</div>
+                </div>
+            </a>
+
         </section>
 
 

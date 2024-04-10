@@ -7,39 +7,56 @@ include_once("../includes/menu.php");
 <title>cadastrar usuario</title>
 <body>
 
-    <h1 id="titulo_page">Cadastrar Usuários </h1>
-    <section>
-
+    <section class="area-main">
+        
         <form class="area-form" action="">
+            
+            <h1 id="titulo_page">Cadastrar Usuários </h1>
+           
+            <div class="juntar-input">
 
-            <div id="area-input">
-                <label for="">Nome</label>
-                <input type="text" placeholder="Digite o nome">
+                <div class="input-field">
+                    <input required="" class="input" type="text" />
+                    <label class="label" for="input">Digite o nome</label>
+                </div>
+
+                <div class="input-field">
+                    <input required="" class="input" type="text" />
+                    <label class="label" for="input">Digite o sobrenome</label>
+                </div>
+
             </div>
 
-            <div id="area-input">
-                <label for="">Sobrenome</label>
-                <input type="text" placeholder="Digite o sobrenome">
+            <div class="input-field">
+                <input required="" class="input" type="text" />
+                <label class="label" for="input">Digite o telefone</label>
+            </div>
+            
+            <div class="input-field">
+                <input required="" class="input" type="text" />
+                <label class="label" for="input">Digite o email</label>
             </div>
 
-            <div id="area-input">
-                <label for="">Telefone</label>
-                <input type="text" placeholder="Digite o telefone">
+
+            <div class="juntar-input"> 
+
+                <div class="input-field">
+                    <input required="" class="input" type="text" />
+                    <label class="label" for="input">Digite o cpf</label>
+                </div>
+
+                <div class="input-field">
+                    <input required="" class="input" type="password" />
+                    <label class="label" for="input">Digite a senha</label>
+                </div>
+
             </div>
 
-            <div id="area-input">
-                <label for="">Email</label>
-                <input type="text" placeholder="Digite o email">
-            </div>
 
-            <div id="area-input">
-                <label for="">CPF</label>
-                <input type="text" placeholder="Digite o cpf">
-            </div>
-
-            <div id="area-input">            
+            <div id="select-field"> 
+                <label id="label-txt" for="">Selecione o local onde o usurio trabalha</label>            
                 <select>
-                    <option selected>Selecione o local</option>
+                    <option>Selecione o local</option>
                     <option>Upa Universitario</option>
                     <option>Moreninha</option>
                     <option>Dourados</option>

@@ -53,6 +53,7 @@
                   <li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar usuarios</a></li>
                   <li><a class="dropdown-item" href="#">Cadastrar perfis</a></li>
                   <li><a class="dropdown-item" href="#">Cadastrar itens</a></li>
+                  <li><a class="dropdown-item" href="#">Cadastrar local</a></li>
                 </ul>
               </li>
 
