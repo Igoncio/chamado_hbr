@@ -4,9 +4,8 @@ include_once("../includes/menu.php")
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_perf.css">
-<title>Document</title>
+<title>Cadatrar Perfil</title>
 <body>
-<title>cadastrar usuario</title>
 <body>
 
     <section class="area-main">
@@ -24,29 +23,107 @@ include_once("../includes/menu.php")
 
             </div>
             
+
+            <h1 id="txt-perm">Permissões</h1>
+
             <section class="perm-cad">
 
-                <label class="container-check">
-                    <input type="checkbox">
-                    <div for="">Cadastrar Chamado</div>
-                </label>
+                <h1 id="txt-cad">Cadastros:</h1>
 
-                <label class="container-check">
-                    <input type="checkbox">
-                    <div for="">Cadastrar Chamado</div>
-                </label>
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
 
-                <label class="container-check">
-                    <input type="checkbox">
-                    <div for="">Cadastrar Chamado</div>
-                </label>
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Usuário</div>
+                    </label>
+                </div>
 
-                <label class="container-check">
-                    <input type="checkbox">
-                    <div for="">Cadastrar Chamado</div>
-                </label>
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Perfil</div>
+                    </label>
+
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Item</div>
+                    </label>
+                </div>
+                
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Local</div>
+                    </label>
+                </div>
+
 
             </section>
+
+            <section class="perm-adm">
+
+                <h1 id="txt-cad">Administrativo:</h1>
+
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+                </div>
+
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+                </div>
+
+            </section>
+
+            <section class="perm-chama">
+
+                <h1 id="txt-cad">Chamados:</h1>
+
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+                </div>
+
+                <div class="juntar-check">
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+
+                    <label class="container-check">
+                        <input type="checkbox">
+                        <div for="">Cadastrar Chamado</div>
+                    </label>
+                </div>
+
+            </section>
+
 
             <div class="btn-field">
 

@@ -29,14 +29,13 @@
 .area-main{
     display: flex;
     margin-left: auto;
-    margin-top: 10px;
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
 }
 
 .area-form{
-    margin-top: 5%;
+    margin-top: 4%;
     background-color: #ffffff;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     width: 600px;
@@ -143,10 +142,45 @@
 
 .container-check{
     display: flex;
-    cursor: pointer;
+    cursor: pointer;        
+}
+
+.juntar-check{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: first baseline;
+    width: 100%;
+}
+
+.juntar-check .container-check{
+    display: flex;
+    margin-left: 13%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+}
+
+.juntar-check .label{
+    display: flex;
+    /* padding: 5px; */
+}
+
+#txt-perm{
+    font-size: 25px;
+}
+
+#txt-cad{
+    font-size: 20px;
 }
 
 .perm-cad{
-    
-    background-color: #2d79f3;
+    margin-top: 10px;
+}
+
+.perm-adm{
+    margin-top: 10px;
+}
+
+.perm-chama{
+    margin-top: 10px;
 }

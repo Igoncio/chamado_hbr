@@ -32,8 +32,8 @@ include_once("../includes/menu.php");
                 </div>
             </a>
     
-            <a href="#">
-                <div class="main_cad_perf.php">
+            <a href="main_cad_perf.php">
+                <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
                     <div class="notititle1">Cadastrar perfil</div>
