@@ -18,7 +18,7 @@ include_once("../includes/menu.php");
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar chamado</div>
+                    <div class="notititle1">Cadastrar Chamado</div>
                     <div class="notibody1">Selecione esta opção para cadastrar um chamado</div>
                 </div>
             </a>
@@ -27,7 +27,7 @@ include_once("../includes/menu.php");
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar usuário</div>
+                    <div class="notititle1">Cadastrar Usuário</div>
                     <div class="notibody1">Selecione esta opção para cadastrar um usuario</div>
                 </div>
             </a>
@@ -36,26 +36,35 @@ include_once("../includes/menu.php");
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar perfil</div>
+                    <div class="notititle1">Cadastrar Perfil</div>
                     <div class="notibody1">Selecione esta opção para cadastrar um perfil</div>
                 </div>
             </a>
     
-            <a href="#">
+            <a href="main_cad_item.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar item</div>
+                    <div class="notititle1">Cadastrar Item</div>
                     <div class="notibody1">Selecione esta opção para cadastrar qualquer item</div>
                 </div>
             </a>
 
-            <a href="#">
+            <a href="main_cad_cli.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar local</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar um local</div>
+                    <div class="notititle1">Cadastrar Cliente</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um cliente</div>
+                </div>
+            </a>
+
+            <a href="main_cad_local.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar Setor</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um setor de um local</div>
                 </div>
             </a>
             

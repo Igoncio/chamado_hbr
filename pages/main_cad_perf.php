@@ -118,7 +118,7 @@ include_once("../includes/menu.php")
 
                     <label class="container-check">
                         <input type="checkbox">
-                        <div for="">Gerenciar Local</div>
+                        <div for="">Gerenciar Cliente</div>
                     </label>
                 </div>
 

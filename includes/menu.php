@@ -11,7 +11,7 @@
   
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img id="logo_menu" src="../imgs/logo/logo.png" alt=""></a>
+          <a class="navbar-brand" href="../pages/main_tela_inicial.php"><img id="logo_menu" src="../imgs/logo/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -52,8 +52,9 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar usuarios</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_perf.php">Cadastrar perfis</a></li>
-                  <li><a class="dropdown-item" href="#">Cadastrar itens</a></li>
-                  <li><a class="dropdown-item" href="#">Cadastrar local</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_cad_item.php">Cadastrar itens</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_cad_cli.php">Cadastrar cliente</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_cad_local.php">Cadastrar Setor</a></li>
                 </ul>
               </li>
 
