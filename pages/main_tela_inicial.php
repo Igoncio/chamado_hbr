@@ -46,7 +46,7 @@ include_once("../includes/menu.php");
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
                     <div class="notititle1">Cadastrar Item</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar qualquer item</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar qualquer item(ex: lenovo ideapad, monitor dell 24 pol, etc...)</div>
                 </div>
             </a>
 
@@ -65,6 +65,15 @@ include_once("../includes/menu.php");
                     <div class="notiborderglow1"></div>
                     <div class="notititle1">Cadastrar Setor</div>
                     <div class="notibody1">Selecione esta opção para cadastrar um setor de um cliente</div>
+                </div>
+            </a>
+
+            <a href="main_cad_setor.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar Categoria</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar uma categoria de algum item (ex: computador, ar condicionado, etc...)</div>
                 </div>
             </a>
             

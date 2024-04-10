@@ -27,9 +27,9 @@ include_once("../includes/menu.php");
 
             </div>
             
-            <label id="label-txt" for="">Selecione o tipo do item</label>            
+            <label id="label-txt" for="">Selecione a categoria do item</label>            
             <select class="select">
-                <option>selecione o tipo</option>
+                <option>selecione a categoria</option>
                 <option>ar Condicionado</option>
                 <option>servidor</option>
                 <option>monitor</option>
@@ -63,9 +63,9 @@ include_once("../includes/menu.php");
 
 
             <div class="select-field"> 
-                <label id="label-txt" for="">Selecione o local onde esta o item</label>            
+                <label id="label-txt" for="">Selecione o cliente</label>            
                 <select class="select">
-                    <option>Selecione o local</option>
+                    <option>Selecione o cliente</option>
                     <option>Upa Universitario</option>
                     <option>Moreninha</option>
                     <option>Dourados</option>
