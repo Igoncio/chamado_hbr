@@ -1,8 +1,20 @@
 <?php
 
-require __DIR__.'../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 include_once("../includes/menu.php");
+
+use App\Entity\Categoria;
+
+if (isset($_POST["nome"])) {
+
+    $objusuario = new Categoria();
+
+    $objusuario -> nome = $_POST["nome"];
+    
+    $objusuario -> cadastrar();
+
+}
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_catego.css">
@@ -11,13 +23,13 @@ include_once("../includes/menu.php");
     
     <section class="area-main">
         
-        <form class="area-form" action="">
+        <form class="area-form" method="POST" action="">
             
             <h1 id="titulo_page">Cadastrar Categoria</h1>
             
             
             <div class="input-field">
-                <input required="" class="input" type="text" />
+                <input required="" class="input" type="text" name="nome"/>
                 <label class="label" for="input">Digite o nome da categoria</label>
             </div>
             
