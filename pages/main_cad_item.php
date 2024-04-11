@@ -1,6 +1,27 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
 include_once("../includes/menu.php");
+
+use App\Entity\Cliente;
+
+// Obter a lista de clientes
+$clientes = Cliente::getCliente();
+
+$options = '';
+
+// Verificar se a consulta retornou resultados
+if ($clientes) {
+    // Iterar sobre os resultados
+    foreach ($clientes as $row_check) {
+        // Acessar as propriedades do objeto Cliente diretamente
+        $options .= '<option class="ops" value="' . $row_check->id_cli . '"> ' . $row_check->nome . ' </option>';
+    }
+} else {
+    // Caso não haja clientes encontrados
+    $options = '<option value="">Nenhum cliente encontrado</option>';
+}
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_item.css">
@@ -63,12 +84,10 @@ include_once("../includes/menu.php");
 
 
             <div class="select-field"> 
-                <label id="label-txt" for="">Selecione o cliente</label>            
-                <select class="select">
-                    <option>Selecione o cliente</option>
-                    <option>Upa Universitario</option>
-                    <option>Moreninha</option>
-                    <option>Dourados</option>
+                <label id="label-txt" for="">Selecione o Cliente do setor</label>            
+                <select class="select" name="cliente">
+                    <option value="0">Selecione o Clinte</option>
+                    <?=$options?>
                 </select>
 
                 <label id="label-txt" for="">Selecione o setor do item</label>            

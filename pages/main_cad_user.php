@@ -6,6 +6,28 @@ include_once("../includes/menu.php");
 
 use App\Entity\Usuario;
 
+use App\Entity\Cliente;
+
+
+
+// Obter a lista de clientes
+$clientes = Cliente::getCliente();
+
+$options = '';
+
+// Verificar se a consulta retornou resultados
+if ($clientes) {
+    // Iterar sobre os resultados
+    foreach ($clientes as $row_check) {
+        // Acessar as propriedades do objeto Cliente diretamente
+        $options .= '<option class="ops" value="' . $row_check->id_cli . '"> ' . $row_check->nome . ' </option>';
+    }
+} else {
+    // Caso não haja clientes encontrados
+    $options = '<option value="">Nenhum cliente encontrado</option>';
+}
+
+
 if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["cpf"], $_POST["senha"], $_POST["cliente"])) {
 
     $objusuario = new Usuario();
@@ -73,12 +95,10 @@ if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email
 
             
             <div class="select-field"> 
-                <label id="label-txt" for="">Selecione o local onde o usurio trabalha</label>            
+            <label id="label-txt" for="">Selecione o Cliente do setor</label>            
                 <select class="select" name="cliente">
-                    <option>Selecione o local</option>
-                    <option>Upa Universitario</option>
-                    <option>Moreninha</option>
-                    <option>Dourados</option>
+                    <option value="0">Selecione o Clinte</option>
+                    <?=$options?>
                 </select>
             </div>
 

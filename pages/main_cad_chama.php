@@ -1,6 +1,29 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
 include_once("../includes/menu.php");
+
+use App\Entity\Cliente;
+
+
+
+// Obter a lista de clientes
+$clientes = Cliente::getCliente();
+
+$options = '';
+
+// Verificar se a consulta retornou resultados
+if ($clientes) {
+    // Iterar sobre os resultados
+    foreach ($clientes as $row_check) {
+        // Acessar as propriedades do objeto Cliente diretamente
+        $options .= '<option class="ops" value="' . $row_check->id_cli . '"> ' . $row_check->nome . ' </option>';
+    }
+} else {
+    // Caso não haja clientes encontrados
+    $options = '<option value="">Nenhum cliente encontrado</option>';
+}
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_chama.css">
@@ -28,42 +51,40 @@ include_once("../includes/menu.php");
             </div>
 
 
-                    <label id="label-txt" for=""></label>            
-                    <select class="select">
-                        <option>Selecione o cliente</option>
-                        <option>Upa Universitario</option>
-                        <option>Moreninha</option>
-                        <option>Dourados</option>
-                    </select>
+            <label id="label-txt" for="">Selecione o Cliente do setor</label>            
+            <select class="select" name="cliente">
+                <option value="0">Selecione o Clinte</option>
+                <?=$options?>
+            </select>
 
+            <label id="label-txt" for=""></label>            
+            <select class="select">
+                <option>selecione o setor</option>
+                <option>Setor de enfermagem</option>
+                <option>Setor de documentação</option>
+                <option>Setor de lojistica</option>
+            </select>
+
+
+            <label id="label-txt" for=""></label>            
+            <select class="select">
+                <option>selecione a categoria do item</option>
+                <option>Setor de enfermagem</option>
+                <option>Setor de documentação</option>
+                <option>Setor de lojistica</option>
+            </select>
+
+            <div class="select-field">
+
+                <div class="area-select">
                     <label id="label-txt" for=""></label>            
                     <select class="select">
-                        <option>selecione o setor</option>
+                        <option>selecione o responsavel</option>
                         <option>Setor de enfermagem</option>
                         <option>Setor de documentação</option>
                         <option>Setor de lojistica</option>
                     </select>
-
-    
-                    <label id="label-txt" for=""></label>            
-                    <select class="select">
-                        <option>selecione a categoria do item</option>
-                        <option>Setor de enfermagem</option>
-                        <option>Setor de documentação</option>
-                        <option>Setor de lojistica</option>
-                    </select>
-
-                <div class="select-field">
-
-                    <div class="area-select">
-                        <label id="label-txt" for=""></label>            
-                        <select class="select">
-                            <option>selecione o responsavel</option>
-                            <option>Setor de enfermagem</option>
-                            <option>Setor de documentação</option>
-                            <option>Setor de lojistica</option>
-                        </select>
-                    </div>
+                </div>
     
                     <div class="area-select">
                         <label id="label-txt" for=""></label>            
