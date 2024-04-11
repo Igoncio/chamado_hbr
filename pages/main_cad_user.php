@@ -20,7 +20,6 @@ if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email
 
     $objusuario -> cadastrar();
 
-
 }
 ?>
 <link rel="stylesheet" href="../assets/css/cad_user.css">

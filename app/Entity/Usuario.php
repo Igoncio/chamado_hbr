@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Entity;
-use App\Db\Database; // Ajuste o namespace aqui
+
+use \App\Db\Database;
+use \PDO;
 
 
 class Usuario{
@@ -64,8 +66,20 @@ class Usuario{
     public function cadastrar(){
 
         $objDatabase = new Database('usuario');
-        echo "<pre>"; print_r ($objDatabase); echo "<pre>"; exit;
+        $this -> id =  $objDatabase->insert([
+                                'nome' => $this->nome,
+                                'sobrenome'=> $this->sobrenome,
+                                'telefone'=> $this->telefone,
+                                'email'=> $this->email,
+                                'cpf'=> $this->cpf,
+                                'senha'=> $this->senha,
+                                'cliente'=> $this->cliente 
+                            ]);
+       
+        return true;
 
     }
+
+
 
 }
