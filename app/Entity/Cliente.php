@@ -92,8 +92,6 @@ class Cliente{
      *Método responsavel por cadastrar uma nova categoria no banco 
      *@return boolean
     */
-
-
     public function cadastrar(){
 
             $objDatabase = new Database('cliente');
@@ -115,6 +113,20 @@ class Cliente{
             return true;
 
     }
+
+
+
+    /** 
+     *Método responsavel por obter informações dos clientes pelo banco banco 
+     *@param string $where
+     *@param string $order
+     *@param string $limit
+     *@return array
+    */
+    public static function getCliente($where = null, $order = null, $limit = null){
+        return (new Database('cliente'))->select($where,$order,$limit)
+                                      ->fetchAll(PDO::FETCH_CLASS,self::class);
+      }
 
 
 
