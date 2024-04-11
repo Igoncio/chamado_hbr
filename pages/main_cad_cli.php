@@ -1,40 +1,47 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+
 include_once("../includes/menu.php");
+
+use App\WebService\ViaCep;
+
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_cli.css">
+<script src="../assets/js/cad_cli.js" defer></script>
 <title>cadastrar cliente</title>
 <body>
     
     <section class="area-main">
-        
-        <form class="area-form" action="">
+        <span id="message"></span>
+        <form class="area-form" id="form-cli" action="">
             
             <h1 id="titulo_page">Cadastrar Cliente</h1>
-
+            
             <div class="input-field">
-                    <input required="" class="input" type="text" />
+                <input required="" class="input" type="text" />
                     <label class="label" for="input">Codigo</label>
             </div>
-
-                <div class="input-field">
-                    <input required="" class="input" type="text" />
-                    <label class="label" for="input">Digite o nome</label>
-                </div>
-
+            
+            <div class="input-field">
+                <input required="" class="input" type="text" />
+                <label class="label" for="input">Digite o nome</label>
+            </div>
+            
             <div class="juntar-input">
                 <div class="input-field">
                     <input required="" class="input" type="text" />
                     <label class="label" for="input">Digite o cnpj</label>
                 </div>
-
+                
                 <div class="input-field">
                     <input required="" class="input" type="text" />
                     <label class="label" for="input">Digite o telefone</label>
                 </div>
             </div>
-
+            
             
             
             <div class="select-field">
@@ -45,40 +52,45 @@ include_once("../includes/menu.php");
                     <option>Chile</option>
                     <option>Paraguay</option>
                 </select>
-
+                
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
-                    <label class="label" for="input">cidade</label>
+                    <input required="" class="input" type="text" id="cep" name="cep" placeholder=""/>
+                    <label  class="label" for="input">CEP</label>
                 </div>
-
-            </div>
-            
-
-            <div class="juntar-input">
-
-                <div class="input-field">
-                    <input required="" class="input" type="text" />
-                    <label id="cep" class="label" for="input">CEP</label>
-                </div>
-
-                <div class="input-field">
-                    <input required="" class="input" type="text" />
-                    <label id="cep" class="label" for="input">Numero</label>
-                </div>
-
-
+                
             </div>
 
+            <div class="juntar-input">
+                
+                <div class="input-field">
+                    <input required="" class="input" type="text" id="cidade" name="cidade" placeholder=""/>
+                    <label class="label" id="cidade" for="input">cidade</label>
+                </div>
+                
+                <div class="input-field">
+                    <input required="" class="input"  type="text" id="estado" name="estado" placeholder=""/>
+                    <label class="label"  for="input">Estado</label>
+                </div>
+
+
+                <div class="input-field">
+                    <input required="" class="input" type="text"/>
+                    <label class="label" for="input">Numero</label>
+                </div>
+                
+                
+            </div>
+            
             
             <div class="juntar-input">
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
-                    <label class="label" for="input">Endereço</label>
+                    <input required="" class="input" type="text" id="rua" name="rua" placeholder=""/>
+                    <label class="label"  for="input">Rua</label>
                 </div>
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
-                    <label class="label" for="input">Bairro</label>
+                    <input required="" class="input" type="text" id="bairro" name="bairro" placeholder=""/>
+                    <label class="label"  for="input">Bairro</label>
                 </div>
 
             </div>
