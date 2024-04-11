@@ -121,7 +121,9 @@ include_once("../includes/menu.php");
                 </label>
                 </div>
             </div>
+            
 
+            <h1 id="txt-perm">Tire uma foto (opicional):</h1>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" id="inputGroupFile02">
             </div>
