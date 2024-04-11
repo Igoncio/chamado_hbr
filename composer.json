@@ -2,7 +2,7 @@
 "name":"igor/chamado_hbr",
 "autoload": {
 "psr-4":{
-    "App\\": "/app"
+    "App\\": "app/"
         }
     }
 } 
