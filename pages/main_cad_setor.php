@@ -8,8 +8,6 @@ use App\Entity\Setor;
 use App\Entity\Cliente;
 
 
-
-// Obter a lista de clientes
 $clientes = Cliente::getCliente();
 
 $options = '';
@@ -27,6 +25,21 @@ if ($clientes) {
 }
 
 
+if(isset($_POST["cliente"], $_POST["nome"],  $_POST["descricao"])) {
+
+    $objsetor = new Setor();
+
+    $objsetor -> cliente = $_POST["cliente"];
+    $objsetor -> nome = $_POST["nome"];
+    $objsetor -> descricao = $_POST["descricao"];
+    
+
+    $objsetor -> cadastrar();
+
+}
+
+
+
 ?>
 <link rel="stylesheet" href="../assets/css/cad_setor.css">
 <title>cadastrar setor</title>
@@ -34,23 +47,23 @@ if ($clientes) {
     
     <section class="area-main">
         
-        <form class="area-form" action="">
+        <form class="area-form" method="POST" action="">
             
             <h1 id="titulo_page">Cadastrar Setor</h1>
             
             <label id="label-txt" for="">Selecione o Cliente do setor</label>            
-            <select class="select">
+            <select class="select" name="cliente">
                 <option value="0">Selecione o Clinte</option>
                 <?=$options?>
             </select>
 
             <div class="input-field">
-                <input required="" class="input" type="text" />
+                <input required="" class="input" type="text" name="nome"/>
                 <label class="label" for="input">Digite o nome</label>
             </div>
             
             <div class="input-field">
-                <input required="" class="input" type="text" />
+                <input required="" class="input" type="text" name="descricao"/>
                 <label class="label" for="input">Digite a descrição</label>
             </div>
             

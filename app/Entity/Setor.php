@@ -15,6 +15,12 @@ class Setor{
     public $id_set;   
     
     /** 
+     *Cliente do setor
+     *@var string
+    */
+    public $cliente;
+
+    /** 
      *Nome do setor
      *@var string
     */
@@ -24,7 +30,7 @@ class Setor{
      *Descrição do setor 
      *@var string
     */
-    public $desc; 
+    public $descricao; 
 
     /** 
      *Método responsavel por cadastrar uma nova categoria no banco 
@@ -34,15 +40,30 @@ class Setor{
 
     public function cadastrar(){
 
-        $objDatabase = new Database('categoria');
+        $objDatabase = new Database('setor');
         $this -> id =  $objDatabase->insert([
+                                'cliente' => $this->cliente,
                                 'nome' => $this->nome,
-                                'descricao' => $this->desc,
+                                'descricao' => $this->descricao,
                             ]);
        
         return true;
 
     }
+
+
+    /** 
+     *Método responsavel por obter informações dos setores pelo banco banco 
+     *@param string $where
+     *@param string $order
+     *@param string $limit
+     *@return array
+    */
+    public static function getSetor($where = null, $order = null, $limit = null){
+        return (new Database('setor'))->select($where,$order,$limit)
+                                      ->fetchAll(PDO::FETCH_CLASS,self::class);
+      }
+
 
 
 
