@@ -16,7 +16,7 @@ class Setor{
     
     /** 
      *Cliente do setor
-     *@var string
+     *@var integer
     */
     public $cliente;
 

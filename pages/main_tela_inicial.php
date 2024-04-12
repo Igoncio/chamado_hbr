@@ -14,41 +14,6 @@ include_once("../includes/menu.php");
 
             <h1 id="txt-area">Cadastros</h1>
 
-            <a href="main_cad_chama.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar Chamado</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar um chamado</div>
-                </div>
-            </a>
-            
-            <a href="main_cad_user.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar Usuário</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar um usuario</div>
-                </div>
-            </a>
-    
-            <a href="main_cad_perf.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar Perfil</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar um perfil</div>
-                </div>
-            </a>
-    
-            <a href="main_cad_item.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar Item</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar qualquer item(ex: lenovo ideapad, monitor dell 24 pol, etc...)</div>
-                </div>
-            </a>
 
             <a href="main_cad_cli.php">
                 <div class="card1">
@@ -68,6 +33,24 @@ include_once("../includes/menu.php");
                 </div>
             </a>
 
+            <a href="main_cad_perf.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar Perfil</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um perfil</div>
+                </div>
+            </a>
+
+            <a href="main_cad_user.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar Usuário</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um usuario</div>
+                </div>
+            </a>
+
             <a href="main_cad_catego.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
@@ -76,8 +59,25 @@ include_once("../includes/menu.php");
                     <div class="notibody1">Selecione esta opção para cadastrar uma categoria de algum item (ex: computador, ar condicionado, etc...)</div>
                 </div>
             </a>
-            
 
+            <a href="main_cad_item.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar Item</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar qualquer item(ex: lenovo ideapad, monitor dell 24 pol, etc...)</div>
+                </div>
+            </a>
+
+            <a href="main_cad_chama.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Cadastrar Chamado</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar um chamado</div>
+                </div>
+            </a>
+            
         </section>
 
 
