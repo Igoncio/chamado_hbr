@@ -1,5 +1,4 @@
 <?php
-
 use App\Entity\Cliente;
 use App\Entity\Setor;
 use App\Entity\Categoria;
@@ -13,27 +12,43 @@ $categorias = Categoria::getCategoria();
 $users = Usuario::getUsuario(); 
 $itens = Item::getItem();
 
-if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"],  $_POST["id_cat"] , $_POST["id_set"], $_POST["id_item"], $_POST["descricao"], $_POST["num_serie"], $_POST["prioridade"])) {
 
-    $objchama = new Chamado();
-
-    
-    $objchama->abertura = $_POST["abertura"];
-    $objchama->fechamento = $_POST["fechamento"];
-    $objchama->id_user = $_POST["id_user"];
-    $objchama->id_cat = $_POST["id_cat"];
-    $objchama->id_cli = $_POST["id_cli"];
-    $objchama->id_set = $_POST["id_set"];
-    $objchama->id_item = $_POST["id_item"];
-    $objchama->descricao = $_POST["descricao"];
-    $objchama->num_patrimonio = $_POST["num_patrimonio"];
-    $objchama->num_serie = $_POST["num_serie"];
-    $objchama->prioridade = $_POST["prioridade"];
-    
-    $objchama->cadastrar();
-
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Verifica se todos os campos necessários foram preenchidos
+    if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_cat"], $_POST["id_set"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"])) {
+        
+        // Cria um novo objeto chamado
+        $objchama = new Chamado();
+        
+        // Define as propriedades do chamado com base nos dados do formulário
+        $objchama->abertura = $_POST["abertura"];
+        $objchama->fechamento = $_POST["fechamento"];
+        $objchama->id_user = $_POST["id_user"];
+        $objchama->id_cat = $_POST["id_cat"];
+        $objchama->id_cli = $_POST["id_cli"];
+        $objchama->id_set = $_POST["id_set"];
+        $objchama->id_item = $_POST["id_item"];
+        $objchama->descricao = $_POST["descricao"];
+        $objchama->num_patrimonio = $_POST["num_patrimonio"];
+        $objchama->num_serie = $_POST["num_serie"];
+        $objchama->prioridade = $_POST["prioridade"];
+        
+        // Verifica se houve upload de imagem
+        if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] === UPLOAD_ERR_OK) {
+            // Realiza o upload da imagem e salva a referência no objeto
+            if ($objchama->uploadImagem($_FILES["imagem"])) {
+                // Cadastro do chamado
+                $cadastro_sucesso = $objchama->cadastrar();
+            } else {
+                echo "Erro ao realizar upload da imagem.";
+            }
+        } else {
+            // Cadastro do chamado sem imagem
+            $cadastro_sucesso = $objchama->cadastrar();
+        }
+    }
 }
-
 
 
 $options = '';

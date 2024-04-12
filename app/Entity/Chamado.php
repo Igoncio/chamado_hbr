@@ -5,135 +5,136 @@ namespace App\Entity;
 use \App\Db\Database;
 use \PDO;
 
-
-class Chamado{
-
+class Chamado
+{
     /** 
-     *Indentificador Unico do cliente 
-     *@var integer
-    */
+     * Identificador Único do chamado 
+     * @var integer
+     */
     public $id_chamado;  
     
     /** 
-     *Nome do cliente 
-     
-    */
+     * Data de abertura do chamado 
+     * @var string
+     */
     public $abertura;  
 
     /** 
-    *Codigo do cliente 
-    
-    */
+     * Data de fechamento do chamado 
+     * @var string
+     */
     public $fechamento; 
 
     /** 
-    *Cnpj do cliente 
-    *@var integer
-    */
+     * ID do cliente associado ao chamado 
+     * @var integer
+     */
     public $id_cli;
     
     /** 
-    *Telefone do cliente 
-    *@var integer
-    */
+     * ID do setor associado ao chamado 
+     * @var integer
+     */
     public $id_set;
     
     /** 
-    *País do cliente 
-    *@var integer
-    */
+     * ID da categoria associada ao chamado 
+     * @var integer
+     */
     public $id_cat; 
         
     /** 
-    *Cep do cliente 
-    *@var integer
-    */
+     * ID do usuário responsável pelo chamado 
+     * @var integer
+     */
     public $id_user;
 
-        /** 
-    *Cep do cliente 
-    *@var integer
-    */
+    /** 
+     * ID do item associado ao chamado 
+     * @var integer
+     */
     public $id_item;
         
     /** 
-    *Estado do cliente 
-    *@var string
-    */
+     * Descrição do chamado 
+     * @var string
+     */
     public $descricao;
         
     /** 
-    *Numero do cliente 
-    *@var string
-    */
+     * Número de patrimônio associado ao chamado 
+     * @var string
+     */
     public $num_patrimonio;
 
-        /** 
-    *Numero do cliente 
-    *@var string
-    */
-    public $num_serie;
-        
     /** 
-    *Rua do cliente 
-    *@var string
-    */
-
+     * Número de série associado ao chamado 
+     * @var string
+     */
+    public $num_serie;
     
     /**
-     * @var string Prioridade do chamado. Valores possíveis: 'baixa', 'media', 'alta'
+     * Prioridade do chamado. Valores possíveis: 'baixa', 'media', 'alta'
+     * @var string
      */
     public $prioridade;
 
-        
-    /** 
-    *Bairro do cliente 
-    */
-    // public $foto;
-    
-        
-
+    /**
+     * Nome do arquivo de imagem associado ao chamado
+     * @var string
+     */
+    public $imagem;
 
     /** 
-     *Método responsavel por cadastrar uma nova categoria no banco 
-     *@return boolean
-    */
-    public function cadastrar(){
-
-            $objDatabase = new Database('chamado');
-            $this->id = $objDatabase->insert([
-                'abertura' => $this->abertura,
-                'fechamento' => $this->fechamento,
-                'id_cli' => $this->id_cli,
-                'id_set' => $this->id_set,
-                'id_cat' => $this->id_cat,
-                'id_user' => $this->id_user,
-                'id_item' => $this->id_item,
-                'descricao' => $this->descricao,
-                'num_patrimonio' => $this->num_patrimonio,
-                'num_serie' => $this->num_serie,
-                'prioridade' => $this->prioridade,
-                // 'foto' => $this->foto,
-            ]);
-           
-            return true;
-
+     * Método responsável por cadastrar um novo chamado no banco de dados 
+     * @return boolean
+     */
+    public function cadastrar()
+    {
+        $objDatabase = new Database('chamado');
+        $this->id_chamado = $objDatabase->insert([
+            'abertura' => $this->abertura,
+            'fechamento' => $this->fechamento,
+            'id_cli' => $this->id_cli,
+            'id_set' => $this->id_set,
+            'id_cat' => $this->id_cat,
+            'id_user' => $this->id_user,
+            'id_item' => $this->id_item,
+            'descricao' => $this->descricao,
+            'num_patrimonio' => $this->num_patrimonio,
+            'num_serie' => $this->num_serie,
+            'prioridade' => $this->prioridade,
+            'imagem' =>$this->imagem
+        ]);
+        
+        return true;
     }
 
+    /**
+     * Método responsável por realizar o upload da imagem e salvar a referência no objeto
+     * @param array $imagemDados Dados da imagem enviada via upload
+     * @return boolean
+     */
+    public function uploadImagem($imagemDados)
+    {
+        // Verifica se houve algum erro no upload
+        if ($imagemDados["error"] === UPLOAD_ERR_OK) {
+            // Define o diretório de destino
+            $diretorio_destino = "../imgs/chamado/";
 
+            // Obtém o nome do arquivo
+            $nome_arquivo = basename($imagemDados["name"]);
 
-    /** 
-     *Método responsavel por obter informações dos clientes pelo banco banco 
-     *@param string $where
-     *@param string $order
-     *@param string $limit
-     *@return array
-    */
-    public static function getCliente($where = null, $order = null, $limit = null){
-        return (new Database('cliente'))->select($where,$order,$limit)
-                                      ->fetchAll(PDO::FETCH_CLASS,self::class);
-      }
-
-
-
+            // Move o arquivo para o diretório de destino
+            if (move_uploaded_file($imagemDados["tmp_name"], $diretorio_destino . $nome_arquivo)) {
+                // Atualiza a propriedade $imagem com o nome do arquivo
+                $this->imagem = $nome_arquivo;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }

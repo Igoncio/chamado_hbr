@@ -15,7 +15,7 @@ include_once("../includes/php/cad_chama.php");
     
     <section class="area-main">
         
-        <form class="area-form" method="POST" action="">
+        <form class="area-form" method="POST" action="" enctype="multipart/form-data">
             
             <h1 id="titulo_page">Cadastrar Chamado</h1>
             
@@ -131,7 +131,7 @@ include_once("../includes/php/cad_chama.php");
 
             <h1 id="txt-perm">Tire uma foto (opicional):</h1>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="inputGroupFile02">
+                <input type="file" class="form-control" id="inputGroupFile02" name="imagem" accept="image/*">
             </div>
 
 
