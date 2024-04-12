@@ -49,6 +49,12 @@ class Chamado{
     *@var integer
     */
     public $id_user;
+
+        /** 
+    *Cep do cliente 
+    *@var integer
+    */
+    public $id_item;
         
     /** 
     *Estado do cliente 
@@ -102,6 +108,7 @@ class Chamado{
                 'id_set' => $this->id_set,
                 'id_cat' => $this->id_cat,
                 'id_user' => $this->id_user,
+                'id_item' => $this->id_item,
                 'descricao' => $this->descricao,
                 'num_patrimonio' => $this->num_patrimonio,
                 'num_serie' => $this->num_serie,

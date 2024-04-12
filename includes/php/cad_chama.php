@@ -13,17 +13,18 @@ $categorias = Categoria::getCategoria();
 $users = Usuario::getUsuario(); 
 $itens = Item::getItem();
 
-if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_cli"], $_POST["id_set"], $_POST["id_cat"], $_POST["id_user"], $_POST["descricao"], $_POST["num_serie"], $_POST["prioridade"])) {
+if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"],  $_POST["id_cat"] , $_POST["id_set"], $_POST["id_item"], $_POST["descricao"], $_POST["num_serie"], $_POST["prioridade"])) {
 
     $objchama = new Chamado();
 
     
     $objchama->abertura = $_POST["abertura"];
     $objchama->fechamento = $_POST["fechamento"];
+    $objchama->id_user = $_POST["id_user"];
+    $objchama->id_cat = $_POST["id_cat"];
     $objchama->id_cli = $_POST["id_cli"];
     $objchama->id_set = $_POST["id_set"];
-    $objchama->id_cat = $_POST["id_cat"];
-    $objchama->id_user = $_POST["id_user"];
+    $objchama->id_item = $_POST["id_item"];
     $objchama->descricao = $_POST["descricao"];
     $objchama->num_patrimonio = $_POST["num_patrimonio"];
     $objchama->num_serie = $_POST["num_serie"];

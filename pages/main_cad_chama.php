@@ -33,19 +33,6 @@ include_once("../includes/php/cad_chama.php");
                 
             </div>
 
-            <!-- <div class="juntar-input">  
-                
-                <div class="data-field">
-                    <input required="" class="input" type="time" name="abertura"/>
-                    <label>Selecione o horario de abertura</label>
-                </div>
-                
-                <div class="data-field">
-                    <input required="" class="input" type="time" name="fechamento"/>
-                    <label>Selecione o horario de parada</label>
-                </div>
-                
-            </div> -->
 
             <div class="select-field">
 
