@@ -9,6 +9,7 @@ include_once("../includes/php/cad_chama.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_chama.css">
+<script src="../assets/js/cad_chama.js" defer></script>
 <title>cadastrar chamado</title>
 <body>
     
@@ -21,28 +22,42 @@ include_once("../includes/php/cad_chama.php");
             <div class="juntar-input">  
                 
                 <div class="data-field">
-                    <input required="" class="input" type="date" name="abertura"/>
-                    <label>Selecione a data de abertura</label>
+                    <input required="" class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)"/>
+                    <label>Selecione a data e hora de abertura</label>
                 </div>
                 
                 <div class="data-field">
-                    <input required="" class="input" type="date" name="fechamento"/>
-                    <label>Selecione a data de parada</label>
+                    <input required="" class="input" type="datetime-local" name="fechamento" onfocus="automatizarDataHora(this)"/>
+                    <label>Selecione a data e hora de parada</label>
                 </div>
                 
             </div>
 
+            <!-- <div class="juntar-input">  
+                
+                <div class="data-field">
+                    <input required="" class="input" type="time" name="abertura"/>
+                    <label>Selecione o horario de abertura</label>
+                </div>
+                
+                <div class="data-field">
+                    <input required="" class="input" type="time" name="fechamento"/>
+                    <label>Selecione o horario de parada</label>
+                </div>
+                
+            </div> -->
+
             <div class="select-field">
 
             <div>
-                <select class="select" name="id_user">
+                <select id="tamanho-select-duo" class="select" name="id_user">
                     <option value="0">Selecione o usuario</option>
                     <?=$options_user?>>
                 </select>
             </div>
 
 
-            <select class="select" name="id_cli">
+            <select id="tamanho-select-duo"  class="select" name="id_cli">
                 <option value="0">Selecione o Clinte</option>
                 <?=$options?>
             </select>
@@ -53,8 +68,8 @@ include_once("../includes/php/cad_chama.php");
             <div class="select-field">
 
                 <div>
-                    <label id="label-txt" for=""></label>            
-                    <select class="select" name="id_cat">
+
+                    <select id="tamanho-select-duo"  class="select" name="id_cat">
                         <option value="0">Selecione a categoria</option>
                         <?=$options_categoria?>>
                     </select>
@@ -62,9 +77,9 @@ include_once("../includes/php/cad_chama.php");
 
 
                 <div>
-                <div>
-                    <label id="label-txt" for=""></label>            
-                    <select class="select" name="id_item">
+
+                <div>           
+                    <select id="tamanho-select-duo" class="select" name="id_item">
                         <option value="0">Selecione o item</option>
                         <?=$options_item?>>
                     </select>
@@ -75,14 +90,13 @@ include_once("../includes/php/cad_chama.php");
             </div>
 
             
-            <select class="select" name="id_set">
-                <option value="0">Selecione o Setor</option>
-                <?=$options_setor?>>
-            </select>
-
-
-
-
+         
+                <select id="select-setor" class="select" name="id_set">
+                    <option value="0">Selecione o Setor</option>
+                    <?=$options_setor?>>
+                </select>
+    
+                
 
             <div class="input-field">
                 <input required="" id="desc" class="input" type="text" name="descricao"/>
@@ -97,7 +111,7 @@ include_once("../includes/php/cad_chama.php");
                 </div>
                 
                 <div class="input-field">
-                    <input class="input" type="text" name="num_serie"/>
+                    <input required="" class="input" type="text" name="num_serie"/>
                     <label class="label" for="input">n° de série</label>
                 </div>
             </div>

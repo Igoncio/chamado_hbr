@@ -20,6 +20,14 @@
     height: 150px;
 }
 
+#tamanho-select-duo {
+    width: 250px;
+}
+
+#select-setor{
+    margin-top: 25px;
+}
+
 .area-prioridade{
     display: flex;
     margin-top: 15px;
@@ -28,6 +36,7 @@
 
 .juntar-input{
     display: flex;
+    justify-content: space-between;
 }
  
 .juntar-input .input-field{
@@ -75,7 +84,6 @@
 .data-field{
     display: flex;
     flex-direction: column-reverse;
-    padding-left: 50px;
 }
 
 .select-field{
@@ -83,17 +91,17 @@
     margin-top: 25px;
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
 }
 
 .select{
-    width: 250px;
     font-size: 16px;
     border: none; /* Remove todas as bordas */
     border-bottom: 1px solid #979797; /* Adiciona apenas a borda inferior */
     border-radius: 0; /* Remove o arredondamento dos cantos */
     outline: none;
 }
+
 
 .input {
     margin-top: 15px;
@@ -179,4 +187,21 @@
 .btn-cancelar:hover {
     background-color: #e20c0c;
     color: #ffffff;
+}
+
+
+@media screen and (max-width: 567px){
+    .select-field{
+        /* background-color: #2d79f3; */
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #tamanho-select-duo {
+        margin-top: 25px;
+        width: 350px;
+    }
+
 }
