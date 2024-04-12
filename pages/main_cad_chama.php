@@ -50,6 +50,29 @@ include_once("../includes/php/cad_chama.php");
             </div>
            
 
+            <div class="select-field">
+
+                <div>
+                    <label id="label-txt" for=""></label>            
+                    <select class="select" name="id_cat">
+                        <option value="0">Selecione a categoria</option>
+                        <?=$options_categoria?>>
+                    </select>
+                </div>
+
+
+                <div>
+                <div>
+                    <label id="label-txt" for=""></label>            
+                    <select class="select" name="id_item">
+                        <option value="0">Selecione o item</option>
+                        <?=$options_item?>>
+                    </select>
+                </div>
+
+                </div>
+
+            </div>
 
             
             <select class="select" name="id_set">
@@ -58,11 +81,6 @@ include_once("../includes/php/cad_chama.php");
             </select>
 
 
-            <label id="label-txt" for=""></label>            
-            <select class="select" name="id_cat">
-                <option value="0">Selecione a categoria</option>
-                <?=$options_categoria?>>
-            </select>
 
 
 

@@ -5,11 +5,13 @@ use App\Entity\Setor;
 use App\Entity\Categoria;
 use App\Entity\Chamado;
 use App\Entity\Usuario;
+use App\Entity\Item;
 
 $clientes = Cliente::getCliente();
 $setores = Setor::getSetor();
 $categorias = Categoria::getCategoria();   
 $users = Usuario::getUsuario(); 
+$itens = Item::getItem();
 
 if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_cli"], $_POST["id_set"], $_POST["id_cat"], $_POST["id_user"], $_POST["descricao"], $_POST["num_serie"], $_POST["prioridade"])) {
 
@@ -91,4 +93,18 @@ if ($users) {
 } else {
     // Caso não haja setores encontrados
     $options_user = '<option value="">Nenhum cliente encontrado</option>';
+}
+
+$options_item = '';
+
+// Verificar se a consulta retornou resultados
+if ($itens) {
+    // Iterar sobre os resultados
+    foreach ($itens as $row_check) {
+        // Acessar as propriedades do objeto Cliente diretamente
+        $options_item .= '<option class="ops" value="' . $row_check->id_item . '"> ' . $row_check->nome . ' </option>';
+    }
+} else {
+    // Caso não haja setores encontrados
+    $options_item = '<option value="">Nenhum cliente encontrado</option>';
 }
