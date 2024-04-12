@@ -14,40 +14,39 @@ include_once("../includes/php/cad_chama.php");
     
     <section class="area-main">
         
-        <form class="area-form" action="">
+        <form class="area-form" method="POST" action="">
             
             <h1 id="titulo_page">Cadastrar Chamado</h1>
             
             <div class="juntar-input">  
                 
                 <div class="data-field">
-                    <input required="" class="input" type="date" />
+                    <input required="" class="input" type="date" name="abertura"/>
                     <label>Selecione a data de abertura</label>
                 </div>
                 
                 <div class="data-field">
-                    <input required="" class="input" type="date" />
+                    <input required="" class="input" type="date" name="fechamento"/>
                     <label>Selecione a data de parada</label>
                 </div>
                 
             </div>
 
-
-            <label id="label-txt" for="">Selecione o Cliente do setor</label>            
-            <select class="select" name="cliente">
+           
+            <select class="select" name="id_cli">
                 <option value="0">Selecione o Clinte</option>
                 <?=$options?>
             </select>
 
-            <label id="label-txt" for=""></label>            
-            <select class="select">
+            
+            <select class="select" name="id_set">
                 <option value="0">Selecione o Setor</option>
                 <?=$options_setor?>>
             </select>
 
 
             <label id="label-txt" for=""></label>            
-            <select class="select">
+            <select class="select" name="id_cat">
                 <option value="0">Selecione a categoria</option>
                 <?=$options_categoria?>>
             </select>
@@ -55,8 +54,8 @@ include_once("../includes/php/cad_chama.php");
             <div class="select-field">
 
                 <div class="area-select">
-                    <label id="label-txt" for=""></label>            
-                    <select class="select">
+          
+                    <select class="select" name="id_user">
                         <option>selecione o responsavel</option>
                         <option>Setor de enfermagem</option>
                         <option>Setor de documentação</option>
@@ -64,9 +63,8 @@ include_once("../includes/php/cad_chama.php");
                     </select>
                 </div>
     
-                    <div class="area-select">
-                        <label id="label-txt" for=""></label>            
-                        <select class="select">
+                    <div class="area-select">          
+                        <select class="select" name="id_user2">
                             <option>selecione o segundo responsavel</option>
                             <option>Setor de enfermagem</option>
                             <option>Setor de documentação</option>
@@ -79,19 +77,19 @@ include_once("../includes/php/cad_chama.php");
             </div>
 
             <div class="input-field">
-                <input required="" id="desc" class="input" type="text"/>
+                <input required="" id="desc" class="input" type="text" name="descricao"/>
                 <label class="label" for="input">Descrição</label>
             </div>
             
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input required="" class="input" type="text" name="num_patrimonio"/>
                     <label class="label" for="input">n° de patrimonio</label>
                 </div>
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input class="input" type="text" name="num_serie"/>
                     <label class="label" for="input">n° de série</label>
                 </div>
             </div>
@@ -102,24 +100,24 @@ include_once("../includes/php/cad_chama.php");
                 <div class="area-prioridade">
                     <label>
                         BAIXA
-                        <input id="ant" name="base" type="radio" value="S" />
+                        <input id="ant" name="prioridade" type="radio" value="baixa" required/>
                     </label>
                 </div>
 
                 <div class="area-prioridade">
-                <label>
-                    MEDIA
-                    <input id="grade" name="base" type="radio" value="S" />
-                </label>  
+                    <label>
+                        MEDIA
+                        <input id="grade" name="prioridade" type="radio" value="media" required/>
+                    </label>  
                 </div>
 
                 <div class="area-prioridade">
-                <label>
-                    ALTA
-                    <input id="novo" name="base" type="radio" value="S" />
-                </label>
+                    <label>
+                        ALTA
+                        <input id="novo" name="prioridade" type="radio" value="alta" required/>
+                    </label>
                 </div>
-            </div>
+
             
 
             <h1 id="txt-perm">Tire uma foto (opicional):</h1>
