@@ -80,6 +80,18 @@ class Usuario{
 
     }
 
+        /** 
+     *Método responsavel por obter informações dos clientes pelo banco banco 
+     *@param string $where
+     *@param string $order
+     *@param string $limit
+     *@return array
+    */
+    public static function getUsuario($where = null, $order = null, $limit = null){
+        return (new Database('usuario'))->select($where,$order,$limit)
+                                      ->fetchAll(PDO::FETCH_CLASS,self::class);
+      }
+
 
 
 }

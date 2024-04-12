@@ -32,11 +32,24 @@ include_once("../includes/php/cad_chama.php");
                 
             </div>
 
-           
+            <div class="select-field">
+
+            <div>
+                <select class="select" name="id_user">
+                    <option value="0">Selecione o usuario</option>
+                    <?=$options_user?>>
+                </select>
+            </div>
+
+
             <select class="select" name="id_cli">
                 <option value="0">Selecione o Clinte</option>
                 <?=$options?>
             </select>
+
+            </div>
+           
+
 
             
             <select class="select" name="id_set">
@@ -51,30 +64,7 @@ include_once("../includes/php/cad_chama.php");
                 <?=$options_categoria?>>
             </select>
 
-            <div class="select-field">
 
-                <div class="area-select">
-          
-                    <select class="select" name="id_user">
-                        <option>selecione o responsavel</option>
-                        <option>Setor de enfermagem</option>
-                        <option>Setor de documentação</option>
-                        <option>Setor de lojistica</option>
-                    </select>
-                </div>
-    
-                    <div class="area-select">          
-                        <select class="select" name="id_user2">
-                            <option>selecione o segundo responsavel</option>
-                            <option>Setor de enfermagem</option>
-                            <option>Setor de documentação</option>
-                            <option>Setor de lojistica</option>
-                        </select>
-                    </div>
-
-                </div>
-            
-            </div>
 
             <div class="input-field">
                 <input required="" id="desc" class="input" type="text" name="descricao"/>
