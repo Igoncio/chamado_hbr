@@ -21,11 +21,11 @@ if ($clientes) {
 }
 
 
-if(isset($_POST["cliente"], $_POST["nome"],  $_POST["descricao"])) {
+if(isset($_POST["id_cli"], $_POST["nome"],  $_POST["descricao"])) {
 
     $objsetor = new Setor();
 
-    $objsetor -> cliente = $_POST["cliente"];
+    $objsetor -> id_cli = $_POST["id_cli"];
     $objsetor -> nome = $_POST["nome"];
     $objsetor -> descricao = $_POST["descricao"];
     

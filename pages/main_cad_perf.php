@@ -1,6 +1,9 @@
 <?php
 
-include_once("../includes/menu.php")
+require_once __DIR__ . '/../vendor/autoload.php';
+
+include_once("../includes/menu.php");
+include_once("../includes/php/cad_perf.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_perf.css">
@@ -10,14 +13,14 @@ include_once("../includes/menu.php")
 
     <section class="area-main">
         
-        <form class="area-form" action="">
+        <form class="area-form" method="POST" action="">
             
             <h1 id="titulo_page">Cadastrar Perfil</h1>
            
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input required="" class="input" type="text" name="nome"/>
                     <label class="label" for="input">Digite o nome do perfil</label>
                 </div>
 

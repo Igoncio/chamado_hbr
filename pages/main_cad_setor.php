@@ -17,7 +17,7 @@ include_once("../includes/php/cad_setor.php");
             <h1 id="titulo_page">Cadastrar Setor</h1>
             
             <label id="label-txt" for="">Selecione o Cliente do setor</label>            
-            <select class="select" name="cliente">
+            <select class="select" name="id_cli">
                 <option value="0">Selecione o Clinte</option>
                 <?=$options?>
             </select>
