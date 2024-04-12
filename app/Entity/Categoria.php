@@ -48,5 +48,4 @@ class Categoria{
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
       }
 
-
 }

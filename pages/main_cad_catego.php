@@ -3,18 +3,8 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 include_once("../includes/menu.php");
+include_once("../includes/php/cad_catego.php");
 
-use App\Entity\Categoria;
-
-if (isset($_POST["nome"])) {
-
-    $objusuario = new Categoria();
-
-    $objusuario -> nome = $_POST["nome"];
-    
-    $objusuario -> cadastrar();
-
-}
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_catego.css">

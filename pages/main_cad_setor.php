@@ -3,42 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 include_once("../includes/menu.php");
-
-use App\Entity\Setor;
-use App\Entity\Cliente;
-
-
-$clientes = Cliente::getCliente();
-
-$options = '';
-
-// Verificar se a consulta retornou resultados
-if ($clientes) {
-    // Iterar sobre os resultados
-    foreach ($clientes as $row_check) {
-        // Acessar as propriedades do objeto Cliente diretamente
-        $options .= '<option class="ops" value="' . $row_check->id_cli . '"> ' . $row_check->nome . ' </option>';
-    }
-} else {
-    // Caso não haja clientes encontrados
-    $options = '<option value="">Nenhum cliente encontrado</option>';
-}
-
-
-if(isset($_POST["cliente"], $_POST["nome"],  $_POST["descricao"])) {
-
-    $objsetor = new Setor();
-
-    $objsetor -> cliente = $_POST["cliente"];
-    $objsetor -> nome = $_POST["nome"];
-    $objsetor -> descricao = $_POST["descricao"];
-    
-
-    $objsetor -> cadastrar();
-
-}
-
-
+include_once("../includes/php/cad_setor.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_setor.css">
