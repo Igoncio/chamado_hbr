@@ -12,44 +12,44 @@ include_once("../includes/php/cad_item.php");
     
     <section class="area-main">
         
-        <form class="area-form" action="">
+        <form class="area-form" method="POST" action="">
             
             <h1 id="titulo_page">Cadastrar Item</h1>
             
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input required="" class="input" type="text" name="nome"/>
                     <label class="label" for="input">Digite o nome</label>
                 </div>
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input required="" class="input" type="text" name="modelo"/>
                     <label class="label" for="input">Digite o modelo</label>
                 </div>
 
             </div>
                      
-            <select class="select" name="categoria">
+            <select class="select" name="id_categoria">
                 <option value="0">selecione a categoria do item</option>
                 <?=$options_categoria?>
             </select>
 
             
             <div class="input-field">
-                <input required="" class="input" type="text" />
+                <input required="" class="input" type="text" name="apelido"/>
                 <label class="label" for="input">Digite o apelido (como o item ira aparecer no chamado)</label>
             </div>
             
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input required="" class="input" type="text" name="num_patrimonio"/>
                     <label class="label" for="input">n° de patrimonio</label>
                 </div>
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input required="" class="input" type="text" name="num_serie"/>
                     <label class="label" for="input">n° de série</label>
                 </div>
             </div>
@@ -58,20 +58,20 @@ include_once("../includes/php/cad_item.php");
             <div class="juntar-input"> 
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" />
+                    <input required="" class="input" type="text" name="fabricante"/>
                     <label class="label" for="input">Fabricante</label>
                 </div>
             </div>
 
 
             <div class="select-field">            
-                <select class="select" name="cliente">
+                <select class="select" name="id_cli">
                     <option value="0">Selecione o Clinte</option>
                     <?=$options?>
                 </select>
            
                 
-                <select class="select" name="setor">
+                <select class="select" name="id_set">
                     <option value="0">Selecione o Setor</option>
                     <?=$options_setor?>
                 </select>

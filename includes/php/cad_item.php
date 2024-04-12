@@ -1,5 +1,6 @@
 <?php 
 
+use App\Entity\Item;
 use App\Entity\Cliente;
 use App\Entity\Setor;
 use App\Entity\Categoria;
@@ -7,6 +8,26 @@ use App\Entity\Categoria;
 $setores = Setor::getSetor();
 $categorias = Categoria::getCategoria();   
 $clientes = Cliente::getCliente();
+
+if (isset($_POST["nome"], $_POST["modelo"], $_POST["id_categoria"], $_POST["apelido"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["fabricante"], $_POST["id_cli"], $_POST["id_set"])) {
+
+    $objitem = new Item();
+
+    
+    $objitem->nome = $_POST["nome"];
+    $objitem->modelo = $_POST["modelo"];
+    $objitem->id_categoria = $_POST["id_categoria"];
+    $objitem->apelido = $_POST["apelido"];
+    $objitem->num_patrimonio = $_POST["num_patrimonio"];
+    $objitem->num_serie = $_POST["num_serie"];
+    $objitem->fabricante = $_POST["fabricante"];
+    $objitem->id_cli = $_POST["id_cli"];
+    $objitem->id_set = $_POST["id_set"];
+    
+    $objitem->cadastrar();
+
+}
+
 
 $options = '';
 
