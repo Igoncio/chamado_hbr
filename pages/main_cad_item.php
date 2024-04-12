@@ -3,25 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 include_once("../includes/menu.php");
-
-use App\Entity\Cliente;
-
-// Obter a lista de clientes
-$clientes = Cliente::getCliente();
-
-$options = '';
-
-// Verificar se a consulta retornou resultados
-if ($clientes) {
-    // Iterar sobre os resultados
-    foreach ($clientes as $row_check) {
-        // Acessar as propriedades do objeto Cliente diretamente
-        $options .= '<option class="ops" value="' . $row_check->id_cli . '"> ' . $row_check->nome . ' </option>';
-    }
-} else {
-    // Caso não haja clientes encontrados
-    $options = '<option value="">Nenhum cliente encontrado</option>';
-}
+include_once("../includes/php/cad_item.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_item.css">
@@ -47,14 +29,13 @@ if ($clientes) {
                 </div>
 
             </div>
-            
-            <label id="label-txt" for="">Selecione a categoria do item</label>            
-            <select class="select">
-                <option>selecione a categoria</option>
-                <option>ar Condicionado</option>
-                <option>servidor</option>
-                <option>monitor</option>
+                     
+            <select class="select" name="categoria">
+                <option value="0">selecione a categoria do item</option>
+                <?=$options_categoria?>
             </select>
+
+            
             <div class="input-field">
                 <input required="" class="input" type="text" />
                 <label class="label" for="input">Digite o apelido (como o item ira aparecer no chamado)</label>
@@ -83,19 +64,16 @@ if ($clientes) {
             </div>
 
 
-            <div class="select-field"> 
-                <label id="label-txt" for="">Selecione o Cliente do setor</label>            
+            <div class="select-field">            
                 <select class="select" name="cliente">
                     <option value="0">Selecione o Clinte</option>
                     <?=$options?>
                 </select>
-
-                <label id="label-txt" for="">Selecione o setor do item</label>            
-                <select class="select">
-                    <option>selecione o setor</option>
-                    <option>Setor de enfermagem</option>
-                    <option>Setor de documentação</option>
-                    <option>Setor de lojistica</option>
+           
+                
+                <select class="select" name="setor">
+                    <option value="0">Selecione o Setor</option>
+                    <?=$options_setor?>
                 </select>
 
             </div>
