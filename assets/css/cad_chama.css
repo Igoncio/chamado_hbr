@@ -157,7 +157,7 @@
 
 .select-field{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
 .select{
