@@ -19,7 +19,7 @@ include_once("../includes/php/cad_cli.php");
             <h1 id="titulo_page">Cadastrar Cliente</h1>
             
             <div class="input-field">
-                <input required="" class="input" name="codigo" type="text"/>
+                <input class="input" name="codigo" type="text"/>
                     <label class="label" for="input">Codigo</label>
             </div>
             

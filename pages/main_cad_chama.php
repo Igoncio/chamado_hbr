@@ -23,12 +23,12 @@ include_once("../includes/php/cad_chama.php");
             <div class="juntar-input">  
                 
                 <div class="data-field">
-                    <input required="" class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)"/>
+                    <input class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)"/>
                     <label>Selecione a data e hora de abertura</label>
                 </div>
                 
                 <div class="data-field">
-                    <input required="" class="input" type="datetime-local" name="fechamento" onfocus="automatizarDataHora(this)"/>
+                    <input class="input" type="datetime-local" name="fechamento" onfocus="automatizarDataHora(this)"/>
                     <label>Selecione a data e hora de parada</label>
                 </div>
                 

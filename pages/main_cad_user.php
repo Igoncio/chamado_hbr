@@ -19,30 +19,30 @@ include_once("../includes/php/cad_user.php");
             <div class="juntar-input">
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="nome"/>
+                    <input  class="input" type="text" name="nome"/>
                     <label class="label" for="input">Digite o nome</label>
                 </div>
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="sobrenome"/>
+                    <input  class="input" type="text" name="sobrenome"/>
                     <label class="label" for="input">Digite o sobrenome</label>
                 </div>
                 
             </div>
             
             <div class="input-field">
-                <input required="" class="input" type="text" name="telefone"/>
+                <input  class="input" type="text" name="telefone"/>
                 <label class="label" for="input">Digite o telefone</label>
             </div>
             
             <div class="input-field">
-                <input required="" class="input" type="text" name="email"/>
+                <input  class="input" type="text" name="email"/>
                 <label class="label" for="input">Digite o email</label>
             </div>
             
                  
             <div class="input-field">
-                <input required="" class="input" type="password" name="senha"/>
+                <input  class="input" type="password" name="senha"/>
                 <label class="label" for="input">Digite a senha</label>
             </div>
 

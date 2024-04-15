@@ -24,7 +24,7 @@ include_once("../includes/php/cad_item.php");
                 </div>
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="modelo"/>
+                    <input  class="input" type="text" name="modelo"/>
                     <label class="label" for="input">Digite o modelo</label>
                 </div>
 
@@ -37,19 +37,19 @@ include_once("../includes/php/cad_item.php");
 
             
             <div class="input-field">
-                <input required="" class="input" type="text" name="apelido"/>
+                <input  class="input" type="text" name="apelido"/>
                 <label class="label" for="input">Digite o apelido (como o equipamento ira aparecer no chamado)</label>
             </div>
             
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="num_patrimonio"/>
+                    <input  class="input" type="text" name="num_patrimonio"/>
                     <label class="label" for="input">n° de patrimonio</label>
                 </div>
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="num_serie"/>
+                    <input  class="input" type="text" name="num_serie"/>
                     <label class="label" for="input">n° de série</label>
                 </div>
             </div>
@@ -58,7 +58,7 @@ include_once("../includes/php/cad_item.php");
             <div class="juntar-input"> 
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="fabricante"/>
+                    <input  class="input" type="text" name="fabricante"/>
                     <label class="label" for="input">Fabricante</label>
                 </div>
             </div>
