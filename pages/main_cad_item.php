@@ -14,7 +14,7 @@ include_once("../includes/php/cad_item.php");
         
         <form class="area-form" method="POST" action="">
             
-            <h1 id="titulo_page">Cadastrar Item</h1>
+            <h1 id="titulo_page">Cadastrar Equipamento</h1>
             
             <div class="juntar-input">
 
@@ -31,14 +31,14 @@ include_once("../includes/php/cad_item.php");
             </div>
                      
             <select class="select" name="id_categoria">
-                <option value="0">selecione a categoria do item</option>
+                <option value="0">selecione a categoria do equipamento</option>
                 <?=$options_categoria?>
             </select>
 
             
             <div class="input-field">
                 <input required="" class="input" type="text" name="apelido"/>
-                <label class="label" for="input">Digite o apelido (como o item ira aparecer no chamado)</label>
+                <label class="label" for="input">Digite o apelido (como o equipamento ira aparecer no chamado)</label>
             </div>
             
             <div class="juntar-input">

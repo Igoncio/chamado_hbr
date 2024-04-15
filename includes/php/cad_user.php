@@ -2,7 +2,10 @@
 
 use App\Entity\Usuario;
 use App\Entity\Cliente;
+use App\Entity\Perfil;
+
 $clientes = Cliente::getCliente();
+$perfis = Perfil::getPerfil();
 
 
 $options = '';
@@ -20,7 +23,22 @@ if ($clientes) {
 }
 
 
-if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["cpf"], $_POST["senha"], $_POST["cliente"])) {
+$options_perf = '';
+
+// Verificar se a consulta retornou resultados
+if ($perfis) {
+    // Iterar sobre os resultados
+    foreach ($perfis as $row_check) {
+        // Acessar as propriedades do objeto Cliente diretamente
+        $options_perf .= '<option class="ops" value="' . $row_check->id_perf . '"> ' . $row_check->nome . ' </option>';
+    }
+} else {
+    // Caso não haja clientes encontrados
+    $options_perf = '<option value="">Nenhum cliente encontrado</option>';
+}
+
+
+if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["senha"], $_POST["cliente"])) {
 
     $objusuario = new Usuario();
 
@@ -28,7 +46,6 @@ if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email
     $objusuario -> sobrenome = $_POST["sobrenome"];
     $objusuario -> telefone = $_POST["telefone"];
     $objusuario -> email = $_POST["email"];
-    $objusuario -> cpf = $_POST["cpf"];
     $objusuario -> senha = $_POST["senha"];
     $objusuario -> cliente = $_POST["cliente"];
 

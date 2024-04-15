@@ -38,13 +38,6 @@ class Usuario{
     */
     public $email;
 
-    
-    /** 
-     *Cpf do usuário 
-     *@var string
-    */
-    public $cpf;
-
     /** 
      *Senha do usuário 
      *@var string
@@ -71,7 +64,6 @@ class Usuario{
                                 'sobrenome'=> $this->sobrenome,
                                 'telefone'=> $this->telefone,
                                 'email'=> $this->email,
-                                'cpf'=> $this->cpf,
                                 'senha'=> $this->senha,
                                 'cliente'=> $this->cliente 
                             ]);

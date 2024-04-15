@@ -40,28 +40,25 @@ include_once("../includes/php/cad_user.php");
                 <label class="label" for="input">Digite o email</label>
             </div>
             
-            
-            <div class="juntar-input"> 
-                
-                <div class="input-field">
-                    <input required="" class="input" type="text" name="cpf"/>
-                    <label class="label" for="input">Digite o cpf</label>
-                </div>
-                
-                <div class="input-field">
-                    <input required="" class="input" type="password" name="senha"/>
-                    <label class="label" for="input">Digite a senha</label>
-                </div>
-                
+                 
+            <div class="input-field">
+                <input required="" class="input" type="password" name="senha"/>
+                <label class="label" for="input">Digite a senha</label>
             </div>
 
-            
-            <div class="select-field"> 
-            <label id="label-txt" for="">Selecione o Cliente do setor</label>            
-                <select class="select" name="cliente">
-                    <option value="0">Selecione o Clinte</option>
+
+            <div class="select-field">          
+                <select class="select" name="perfil">
+                    <option value="0">Selecione o Perfil</option>
+                    <?=$options_perf?>
+                </select>
+
+                <div class="select-field">          
+                <select class="select" name="perfil">
+                    <option value="0">Selecione o Local</option>
                     <?=$options?>
                 </select>
+            </div>
             </div>
 
             <div class="btn-field">
