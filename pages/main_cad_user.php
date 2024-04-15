@@ -47,19 +47,18 @@ include_once("../includes/php/cad_user.php");
             </div>
 
 
-            <div class="select-field">          
-                <select class="select" name="perfil">
-                    <option value="0">Selecione o Perfil</option>
-                    <?=$options_perf?>
-                </select>
+  
 
-                <div class="select-field">          
-                <select class="select" name="perfil">
-                    <option value="0">Selecione o Local</option>
-                    <?=$options?>
-                </select>
-            </div>
-            </div>
+            <select class="select" name="perfil">
+                <option value="0">Selecione o Perfil</option>
+                <?=$options_perf?>
+            </select>
+    
+            <select class="select" name="perfil">
+                <option value="0">Selecione o Local</option>
+                <?=$options?>
+            </select>
+
 
             <div class="btn-field">
                 

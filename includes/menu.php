@@ -51,7 +51,6 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="../pages/main_cad_cli.php">Cadastrar cliente</a></li>
-                  <li><a class="dropdown-item" href="../pages/main_cad_setor.php">Cadastrar Setor</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_perf.php">Cadastrar perfis</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar usuarios</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_item.php">Cadastrar itens</a></li>
