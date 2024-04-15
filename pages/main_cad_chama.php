@@ -9,6 +9,7 @@ include_once("../includes/php/cad_chama.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_chama.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="../assets/js/cad_chama.js" defer></script>
 <title>cadastrar chamado</title>
 <body>
@@ -36,71 +37,47 @@ include_once("../includes/php/cad_chama.php");
 
             <div class="select-field">
 
-            <div>
-                <select id="tamanho-select-duo" class="select" name="id_user">
-                    <option value="0">Selecione o usuario</option>
-                    <?=$options_user?>>
+                <div>
+                    <select id="tamanho-select-duo" class="select" name="id_user">
+                        <option value="0">Selecione o responsável</option>
+                        <?=$options_user?>>
+                    </select>
+                </div>
+
+
+                <select id="tamanho-select-duo"  class="select" name="id_cli">
+                    <option value="0">Selecione o Clinte</option>
+                    <?=$options?>
                 </select>
-            </div>
-
-
-            <select id="tamanho-select-duo"  class="select" name="id_cli">
-                <option value="0">Selecione o Clinte</option>
-                <?=$options?>
-            </select>
 
             </div>
            
-
-            <div class="select-field">
-
-                <div>
-
-                    <select id="tamanho-select-duo"  class="select" name="id_cat">
-                        <option value="0">Selecione a categoria</option>
-                        <?=$options_categoria?>>
-                    </select>
-                </div>
-
-
-                <div>
-
-                <div>           
-                    <select id="tamanho-select-duo" class="select" name="id_item">
-                        <option value="0">Selecione o item</option>
-                        <?=$options_item?>>
-                    </select>
-                </div>
-
-                </div>
-
-            </div>
-
-            
-         
-                <select id="select-setor" class="select" name="id_set">
-                    <option value="0">Selecione o Setor</option>
-                    <?=$options_setor?>>
+           <div class="area-item">
+                <select  id="item" class="select" name="id_item">
+                    <option value="0">Selecione o item</option>
+                    <?=$options_item?>>
                 </select>
-    
-                
-
-            <div class="input-field">
-                <input required="" id="desc" class="input" type="text" name="descricao"/>
-                <label class="label" for="input">Descrição</label>
+                <i id="mais-item" class="bi bi-plus-circle"></i>
+                <i id="menos-item" class="bi bi-dash-circle"></i>
             </div>
             
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="num_patrimonio"/>
+                    <input  class="input" type="text" name="num_patrimonio"/>
                     <label class="label" for="input">n° de patrimonio</label>
                 </div>
                 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="num_serie"/>
+                    <input  class="input" type="text" name="num_serie"/>
                     <label class="label" for="input">n° de série</label>
                 </div>
+            </div>
+                
+
+            <div class="input-field">
+                <input  id="desc" class="input" type="text-area" name="descricao"/>
+                <label class="label" for="input">Descrição</label>
             </div>
 
             <div class="juntar-check">
@@ -129,7 +106,7 @@ include_once("../includes/php/cad_chama.php");
 
             
 
-            <h1 id="txt-perm">Tire uma foto (opicional):</h1>
+            <h1 id="txt-perm">Selecione um anexo (opicional):</h1>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" id="inputGroupFile02" name="imagem" accept="image/*">
             </div>

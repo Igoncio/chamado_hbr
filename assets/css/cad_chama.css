@@ -28,6 +28,13 @@
     margin-top: 25px;
 }
 
+#mais-item{
+    font-size: 20px;
+}
+#menos-item{
+    font-size: 20px;
+}
+
 .area-prioridade{
     display: flex;
     margin-top: 15px;
@@ -96,10 +103,19 @@
 
 .select{
     font-size: 16px;
-    border: none; /* Remove todas as bordas */
-    border-bottom: 1px solid #979797; /* Adiciona apenas a borda inferior */
-    border-radius: 0; /* Remove o arredondamento dos cantos */
+    width: 100%;
+    border: none; 
+    border-bottom: 1px solid #979797; 
+    border-radius: 0; 
     outline: none;
+    margin-top: 25px;
+}
+
+.area-item{
+    /* background-color: #2d79f3; */
+    position: relative;
+    display: block;
+    justify-content: center;
 }
 
 
