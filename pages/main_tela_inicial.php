@@ -47,8 +47,8 @@ include_once("../includes/menu.php");
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar Item</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar qualquer item(ex: lenovo ideapad, monitor dell 24 pol, etc...)</div>
+                    <div class="notititle1">Cadastrar equipamento</div>
+                    <div class="notibody1">Selecione esta opção para cadastrar qualquer equipamento(ex: lenovo ideapad, monitor dell 24 pol, etc...)</div>
                 </div>
             </a>
 
@@ -134,8 +134,8 @@ include_once("../includes/menu.php");
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Gerenciar item</div>
-                    <div class="notibody1">Selecione esta opção para gerenciar qualquer item</div>
+                    <div class="notititle1">Gerenciar equipamento</div>
+                    <div class="notibody1">Selecione esta opção para gerenciar qualquer equipamento</div>
                 </div>
             </a>
 

@@ -41,7 +41,7 @@
                   <li><a class="dropdown-item" href="#">Relátorio de chamados</a></li>
                   <li><a class="dropdown-item" href="#">Gerenciar usuarios</a></li>
                   <li><a class="dropdown-item" href="#">Gerenciar perfis</a></li>
-                  <li><a class="dropdown-item" href="#">Gerenciar itens</a></li>
+                  <li><a class="dropdown-item" href="#">Gerenciar equipamento</a></li>
                 </ul>
               </li>
 
@@ -53,7 +53,7 @@
                   <li><a class="dropdown-item" href="../pages/main_cad_cli.php">Cadastrar cliente</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_perf.php">Cadastrar perfis</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar usuarios</a></li>
-                  <li><a class="dropdown-item" href="../pages/main_cad_item.php">Cadastrar itens</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_cad_item.php">Cadastrar equipamento</a></li>
                   <li><a class="dropdown-item" href="../pages/main_cad_chama.php">Cadastrar chamado</a></li>
                 </ul>
               </li>
@@ -61,7 +61,7 @@
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Itens
+                    equipamento
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Arco Cirugico</a></li>

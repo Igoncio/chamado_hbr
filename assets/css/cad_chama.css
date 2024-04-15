@@ -30,9 +30,18 @@
 
 #mais-item{
     font-size: 20px;
+    cursor: pointer;
 }
 #menos-item{
     font-size: 20px;
+    cursor: pointer;
+}
+
+#mais-item:hover{
+    color: #2d79f3;
+}
+#menos-item:hover{
+    color: #e20c0c;
 }
 
 .area-prioridade{
