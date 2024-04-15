@@ -14,12 +14,12 @@
  
 .juntar-input .input-field{
     display: flex;
-    width: 250px;
+    width: 45%;
 }
 
 .juntar-input .label{
     display: flex;
-    width: 250px;
+    /* width: 100px; */
 
 }
 
@@ -73,6 +73,7 @@
     border-bottom: 1px solid #979797; /* Adiciona apenas a borda inferior */
     border-radius: 0; /* Remove o arredondamento dos cantos */
     outline: none;
+    margin-top: 25px;
 }
 
 

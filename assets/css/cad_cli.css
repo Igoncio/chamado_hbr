@@ -14,21 +14,22 @@
 
 .juntar-input{
     display: flex;
+    justify-content: space-between;
 }
  
 .juntar-input .input-field{
     display: flex;
-    padding: 5px;
+    width: 45%;
 }
 
 .juntar-input .label{
     display: flex;
-    padding: 5px;
+    
 }
 
 .juntar-input .input:focus ~ .label, .input:valid ~ .label{
     display: flex;
-    padding: 5px;
+    
 }
 
 .area-main{

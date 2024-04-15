@@ -64,6 +64,7 @@
     border-bottom: 1px solid #979797; /* Adiciona apenas a borda inferior */
     border-radius: 0; /* Remove o arredondamento dos cantos */
     outline: none;
+    margin-top: 25px;
 }
 
 .input {

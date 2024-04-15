@@ -24,14 +24,6 @@ include_once("../includes/menu.php");
                 </div>
             </a>
 
-            <a href="main_cad_setor.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar Setor</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar um setor de um cliente</div>
-                </div>
-            </a>
 
             <a href="main_cad_perf.php">
                 <div class="card1">
@@ -48,15 +40,6 @@ include_once("../includes/menu.php");
                     <div class="notiborderglow1"></div>
                     <div class="notititle1">Cadastrar Usuário</div>
                     <div class="notibody1">Selecione esta opção para cadastrar um usuario</div>
-                </div>
-            </a>
-
-            <a href="main_cad_catego.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Cadastrar Categoria</div>
-                    <div class="notibody1">Selecione esta opção para cadastrar uma categoria de algum item (ex: computador, ar condicionado, etc...)</div>
                 </div>
             </a>
 
