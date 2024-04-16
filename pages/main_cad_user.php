@@ -54,7 +54,7 @@ include_once("../includes/php/cad_user.php");
                 <?=$options_perf?>
             </select>
     
-            <select class="select" name="perfil">
+            <select class="select" name="cliente">
                 <option value="0">Selecione o Local</option>
                 <?=$options?>
             </select>

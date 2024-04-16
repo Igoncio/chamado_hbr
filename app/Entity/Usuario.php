@@ -44,6 +44,13 @@ class Usuario{
     */
     public $senha;
 
+
+    /** 
+     *Nome do usuário 
+     *@var string
+    */
+    public $´perfil;
+
     /** 
      *Cliente para qual o usuario trabalha 
      *@var string
@@ -65,6 +72,7 @@ class Usuario{
                                 'telefone'=> $this->telefone,
                                 'email'=> $this->email,
                                 'senha'=> $this->senha,
+                                'perfil'=> $this->perfil,
                                 'cliente'=> $this->cliente 
                             ]);
        
@@ -84,5 +92,11 @@ class Usuario{
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
       }
 
+
+    public static function getTudo(){
+        $banco = new Database("vw_ger_user");
+        $dados = $banco -> select() -> fetchAll();
+        return $dados;
+    }
 
 }
