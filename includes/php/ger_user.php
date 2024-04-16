@@ -15,6 +15,7 @@ foreach($dados as $user){
 
     
     $user_lista .='
+    <div class="tbl-content">
     <tbody class="area-linha">
         
     <td>'.$user['nome'].'</td>
@@ -27,7 +28,8 @@ foreach($dados as $user){
         <i class="bi bi-trash"id="lixo"></i>
     </td>
     
-    </tbody>    
+    </tbody>
+    </div>    
     ';
     
 }
