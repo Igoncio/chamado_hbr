@@ -49,7 +49,7 @@ class Usuario{
      *Nome do usuário 
      *@var string
     */
-    public $´perfil;
+    public $perfil;
 
     /** 
      *Cliente para qual o usuario trabalha 
@@ -93,7 +93,7 @@ class Usuario{
       }
 
 
-    public static function getTudo(){
+    public static function getGer(){
         $banco = new Database("vw_ger_user");
         $dados = $banco -> select() -> fetchAll();
         return $dados;
