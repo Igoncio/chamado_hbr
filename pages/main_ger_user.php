@@ -16,21 +16,19 @@ include_once("../includes/php/ger_user.php");
         <table class="tabela">
             <thead class="coluna">
                 <tr class="linhas">
-                <th id="iten-col">Nome</th>
-                <th id="iten-col">Telefone</th>
-                <th id="iten-col">email</th>
-                <th id="iten-col">Local</th>
-                <th id="iten-col">Perfil</th>
-                <th id="iten-col">#</th>
+                    <th id="iten-col">Nome</th>
+                    <th id="iten-col">Telefone</th>
+                    <th id="iten-col">email</th>
+                    <th id="iten-col">Local</th>
+                    <th id="iten-col">Perfil</th>
+                    <th id="iten-col">#</th>
                 </tr>
             </thead>
             <?=$user_lista;?>
         </table>
-
+        
         
     </section>
-    
-
     
 </body>
 </html>

@@ -8,6 +8,7 @@ use App\Entity\Usuario;
 $dados = Usuario::getGer();
 
 
+
 // echo '<pre>';
 // print_r($user['id_user']);
 // echo '</pre>';
@@ -32,7 +33,7 @@ foreach($dados as $user){
     </a>
 
     <a href="../includes/php/excluir_user.php?id_user='.$user['id_user'].'">
-        <i class="bi bi-trash"id="lixo" name="excluir"></i>
+        <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
     </a>
 
 
@@ -45,4 +46,6 @@ foreach($dados as $user){
 
 
 }
+
+
 
