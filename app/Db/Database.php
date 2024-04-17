@@ -140,4 +140,16 @@ class Database{
     //RETORNA SUCESSO
     return true;
   }
+
+
+  public function delete($where){
+    //MONTA A QUERY
+    $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+    //EXECUTA A QUERY
+    $this->execute($query);
+
+    //RETORNA SUCESSO
+    return true;
+  }
 }

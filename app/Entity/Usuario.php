@@ -104,7 +104,7 @@ class Usuario{
                                       ->fetchObject(self::class);
       }
     
-      public function atualizar(){
+    public function atualizar(){
         return (new Database('usuario'))->update('id_user = '.$this->id_user,[
                                                 'nome' => $this->nome,
                                                 'sobrenome'=> $this->sobrenome,
@@ -116,4 +116,7 @@ class Usuario{
                                                                   ]);
       }
 
+    //   public function excluir(){
+    //     return (new Database('usuario'))->delete('id_user = '.$this->id_user);
+    //   }
 }
