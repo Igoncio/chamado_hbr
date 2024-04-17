@@ -116,7 +116,7 @@ class Usuario{
                                                                   ]);
       }
 
-    //   public function excluir(){
-    //     return (new Database('usuario'))->delete('id_user = '.$this->id_user);
-    //   }
+      public function excluir(){
+        return (new Database('usuario'))->delete('id_user = '.$this->id_user);
+      }
 }
