@@ -1,6 +1,6 @@
 <?php
 
-// include_once("../includes/php/excluir_user.php");
+
 
 use App\Entity\Usuario;
 
@@ -32,7 +32,7 @@ foreach($dados as $user){
         <i class="bi bi-pencil-square" id="edit"></i>
     </a>
 
-    <a href="../includes/php/excluir_user.php?id_user='.$user['id_user'].'">
+    <a href="../pages/main_excluir_user.php?id_user='.$user['id_user'].'">
         <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
     </a>
 
