@@ -1,15 +1,30 @@
 
 .area-main {
     display: flex;
+    background-color: #ffffff;
     margin-top: 10px;
-    justify-content: center;
-    max-width: 900px;
+    width: 100%;
+    margin: 0 auto; 
+    max-width: 1250px;
     flex-wrap: wrap;
 }
 
+
 #lixo{
     color: #e20c0c;
+}
 
+#lixo:hover{
+    color: rgb(0, 0, 0);
+}
+
+
+#edit{
+    color: #0464d0;
+}
+
+#edit:hover{
+    color: #000000;
 }
 
 .tabela {

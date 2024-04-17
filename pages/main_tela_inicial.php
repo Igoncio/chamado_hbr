@@ -111,7 +111,7 @@ include_once("../includes/menu.php");
         <section class="area-gerenciar">
 
         <h1 id="txt-area">Gerenciamento</h1>
-            <a href="#">
+            <a href="main_ger_user.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>

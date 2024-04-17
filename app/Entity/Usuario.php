@@ -99,4 +99,21 @@ class Usuario{
         return $dados;
     }
 
+    public static function getUser($id_user){
+        return (new Database('usuario'))->select('id_user = '.$id_user)
+                                      ->fetchObject(self::class);
+      }
+    
+      public function atualizar(){
+        return (new Database('usuario'))->update('id_user = '.$this->id_user,[
+                                                'nome' => $this->nome,
+                                                'sobrenome'=> $this->sobrenome,
+                                                'telefone'=> $this->telefone,
+                                                'email'=> $this->email,
+                                                'senha'=> $this->senha,
+                                                'perfil'=> $this->perfil,
+                                                'cliente'=> $this->cliente 
+                                                                  ]);
+      }
+
 }
