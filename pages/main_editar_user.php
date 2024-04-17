@@ -52,11 +52,17 @@ include_once("../includes/php/editar_user.php");
   
 
             <select class="select" name="perfil">
+                <option value="<?php echo $perfis[$objuser->perfil - 1]->id_perf;?>"><?php echo $perfis[$objuser->perfil - 1]->nome; ?></option>
                 <?=$options_perf?>
             </select>
-    
+            
+            
             <select class="select" name="cliente">
-                <option value="<?php ' . $id_cli . '>' . $row_check->nome . ' ?>">Selecione o Local</option>
+                
+                <option value="<?php echo $clientes[$objuser->cliente - 1]->id_cli; ?>">
+                <?php echo $clientes[$objuser->cliente - 1]->nome; ?>
+                </option>
+
                 <?=$options?>
             </select>
 
