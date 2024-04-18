@@ -11,8 +11,10 @@ include_once("../includes/php/ger_user.php");
 <title>gerenciar usuario</title>
 <body>
     
+
+
     <section class="area-main">
-        
+        <h1 id="titulo-page">Gerenciar Usuario</h1>
         <table class="tabela">
             <thead class="coluna">
                 <tr class="linhas">

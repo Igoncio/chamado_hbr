@@ -27,6 +27,13 @@
     color: #000000;
 }
 
+#titulo-page{
+    display: flex;
+    font-size: 35px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
 .tabela {
     width: 100%;
     border-collapse: collapse;
