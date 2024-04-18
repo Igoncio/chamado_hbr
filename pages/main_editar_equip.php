@@ -69,10 +69,9 @@ include_once("../includes/php/editar_equip.php");
                 <option value="<?php echo $clientes[$objitens->id_cli-1]->id_cli;?>"><?php echo $clientes[$objitens->id_cli-1]->nome; ?></option>
                     <?=$options?>
                 </select>
-           
-                
+
                 <select class="select" name="id_set">
-                    <option value="0">Selecione o Setor</option>
+                    <option value="<?php echo $setores[$objitens->id_set-4]->id_set;?>"><?php echo $setores[$objitens->id_set-4]->nome;?></option>
                     <?=$options_setor?>
                 </select>
 
