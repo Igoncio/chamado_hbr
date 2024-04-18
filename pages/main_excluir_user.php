@@ -4,6 +4,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 include_once("../includes/menu.php");
 include_once("../includes/php/editar_user.php");
+include_once("../includes/php/excluir_user.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/excluir_user.css">
@@ -58,7 +59,7 @@ include_once("../includes/php/editar_user.php");
 
             <div class="btn-field">
                 
-                <button type="submit"  name="excluir" class="btn btn-danger">Excluir</button>
+                <button type="submit" name="excluir" class="btn btn-danger">Excluir</button>
                 <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
                 
             </div>

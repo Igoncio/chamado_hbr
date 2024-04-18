@@ -28,6 +28,6 @@ if(!isset($_GET['id_user']) or !is_numeric($_GET['id_user'])){
     exit;
   }
 
-  include __DIR__.'../pages/main_ger_user.php';
+
 
 
