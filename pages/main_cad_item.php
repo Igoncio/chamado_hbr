@@ -7,7 +7,7 @@ include_once("../includes/php/cad_item.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_item.css">
-<title>cadastrar item</title>
+<title>cadastrar Equipamento</title>
 <body>
     
     <section class="area-main">

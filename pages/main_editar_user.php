@@ -7,7 +7,7 @@ include_once("../includes/php/editar_user.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_user.css">
-<title>cadastrar usuario</title>
+<title>editar usuario</title>
 <body>
     
     

@@ -8,13 +8,13 @@ include_once("../includes/php/ger_equip.php");
 ?>
 <link rel="stylesheet" href="../assets/css/ger_user.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<title>gerenciar usuario</title>
+<title>gerenciar equipamento</title>
 <body>
     
 
 
     <section class="area-main">
-        <h1 id="titulo-page">Gerenciar Usuario</h1>
+        <h1 id="titulo-page">Gerenciar Equipamento</h1>
         <table class="tabela">
             <thead class="coluna">
                 <tr class="linhas">

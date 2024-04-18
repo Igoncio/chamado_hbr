@@ -8,7 +8,7 @@ include_once("../includes/php/excluir_user.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/excluir_user.css">
-<title>cadastrar usuario</title>
+<title>excluir usuario</title>
 <body>
     
     
