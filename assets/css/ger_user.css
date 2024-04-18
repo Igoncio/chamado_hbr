@@ -9,8 +9,15 @@
     flex-wrap: wrap;
 }
 
+a{
+    text-decoration: none;
+}
+
+
 
 #lixo{
+    border: 0;
+    background-color: #ffffff;
     color: #e20c0c;
 }
 
@@ -40,18 +47,23 @@
     margin-top: 20px;
 }
 
+/* .area-linha{
+    text-align: justify;
+} */
+
 .coluna th {
-    background-color: #4d555e;
-    color: #fff;
-    padding: 12px;
+    background-color: #fbfdffe3;
+    color: #000000;
+    /* padding: 12px; */
     text-align: left;
     font-weight: bold;
-    border-bottom: 2px solid #5a5c5e;
+    border-bottom: 1px solid #838383;
 }
 
 .linhas td {
     padding: 10px;
 }
+
 
 
 .linhas:nth-child(even) {

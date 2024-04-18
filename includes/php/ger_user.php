@@ -28,13 +28,13 @@ foreach($dados as $user){
     <td>'.$user['nome_cliente'].'</td>
     <td>'.$user['nome_perfil'].'</td>
     <td>
-    <a href="../pages/main_editar_user.php?id_user='.$user['id_user'].'">
-        <i class="bi bi-pencil-square" id="edit"></i>
-    </a>
+        <a href="../pages/main_editar_user.php?id_user='.$user['id_user'].'">
+            <i class="bi bi-pencil-square" id="edit"></i>
+        </a>
 
-    <a href="../pages/main_excluir_user.php?id_user='.$user['id_user'].'">
-        <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
-    </a>
+        <a href="../pages/main_excluir_user.php?id_user='.$user['id_user'].'">
+            <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
+        </a>
 
 
     </td>
