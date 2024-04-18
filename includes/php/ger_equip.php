@@ -32,7 +32,7 @@ foreach($dados as $user){
         <i class="bi bi-pencil-square" id="edit"></i>
     </a>
 
-    <a href="../pages/main_excluir_user.php?id_item='.$user['id_item'].'">
+    <a href="../pages/main_excluir_equip.php?id_item='.$user['id_item'].'">
         <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
     </a>
 

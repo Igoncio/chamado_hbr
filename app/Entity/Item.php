@@ -132,8 +132,8 @@ class Item{
                                                                   ]);
       }
 
-    // public function excluir(){
-    //     return (new Database('item'))->delete('id_item = '.$this->id_item);
-    //   }
+    public function excluir(){
+        return (new Database('item'))->delete('id_item = '.$this->id_item);
+      }
 
 }
