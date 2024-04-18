@@ -58,7 +58,7 @@ include_once("../includes/php/editar_user.php");
 
             <div class="btn-field">
                 
-                <button type="submit" style="hiddden" name="excluir" class="btn btn-danger">Excluir</button>
+                <button type="submit"  name="excluir" class="btn btn-danger">Excluir</button>
                 <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
                 
             </div>

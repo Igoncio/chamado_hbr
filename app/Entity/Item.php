@@ -107,6 +107,33 @@ class Item{
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
       }
 
+      public static function getEquip(){
+        $banco = new Database("vw_ger_item");
+        $dados = $banco -> select() -> fetchAll();
+        return $dados;
+    }
 
+    public static function getEquip2($id_item){
+        return (new Database('item'))->select('id_item = '.$id_item)
+                                      ->fetchObject(self::class);
+      }
+    
+    public function atualizar(){
+        return (new Database('item'))->update('id_item = '.$this->id_item,[
+                                                'nome' => $this->nome,
+                                                'modelo'=> $this->modelo,
+                                                'id_categoria'=> $this->id_categoria,
+                                                'apelido'=> $this->apelido,
+                                                'num_patrimonio'=> $this->num_patrimonio,
+                                                'num_serie'=> $this->num_serie,
+                                                'fabricante'=> $this->fabricante, 
+                                                'id_cli'=> $this->id_cli,
+                                                'id_set'=> $this->id_set
+                                                                  ]);
+      }
+
+    // public function excluir(){
+    //     return (new Database('item'))->delete('id_item = '.$this->id_item);
+    //   }
 
 }

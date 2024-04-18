@@ -130,7 +130,7 @@ include_once("../includes/menu.php");
             </a>
     
     
-            <a href="#">
+            <a href="main_ger_equip.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
