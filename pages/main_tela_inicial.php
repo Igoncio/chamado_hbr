@@ -139,12 +139,12 @@ include_once("../includes/menu.php");
                 </div>
             </a>
 
-            <a href="#">
+            <a href="main_ger_cli.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Gerenciar local</div>
-                    <div class="notibody1">Selecione esta opção para gerenciar qualquer local</div>
+                    <div class="notititle1">Gerenciar Cliente</div>
+                    <div class="notibody1">Selecione esta opção para gerenciar qualquer Cliente</div>
                 </div>
             </a>
             
