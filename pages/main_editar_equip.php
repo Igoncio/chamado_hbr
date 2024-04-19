@@ -7,14 +7,14 @@ include_once("../includes/php/editar_equip.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_item.css">
-<title>cadastrar item</title>
+<title>editar equipamento</title>
 <body>
     
     <section class="area-main">
         
         <form class="area-form" method="POST" action="">
             
-            <h1 id="titulo_page">Cadastrar Equipamento</h1>
+            <h1 id="titulo_page">Editar Equipamento</h1>
             
             <div class="juntar-input">
 
@@ -79,7 +79,7 @@ include_once("../includes/php/editar_equip.php");
 
             <div class="btn-field">
 
-                <button class="btn-submit" type="submit">Cadastrar</button>
+                <button class="btn-submit" type="submit">Salvar</button>
                 <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
 
             </div>
