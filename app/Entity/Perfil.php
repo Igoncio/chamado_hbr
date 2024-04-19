@@ -48,4 +48,9 @@ class Perfil{
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
       }
 
+    //   public static function getPerf2($id_item){
+    //     return (new Database('item'))->select('id_item = '.$id_item)
+    //                                   ->fetchObject(self::class);
+    //   }
+
 }
