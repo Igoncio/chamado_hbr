@@ -59,5 +59,8 @@ class Perfil{
                                       ->fetchObject(self::class);
       }
 
+      public function excluir(){
+        return (new Database('perfil'))->delete('id_perf = '.$this->id_perf);
+      }
 
 }

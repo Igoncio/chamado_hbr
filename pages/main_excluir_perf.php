@@ -3,11 +3,11 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 include_once("../includes/menu.php");
-include_once("../includes/php/editar_perf.php");
+include_once("../includes/php/excluir_perf.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_perf.css">
-<title>editar usuario</title>
+<title>excluir perfil</title>
 <body>
     
     
@@ -16,12 +16,12 @@ include_once("../includes/php/editar_perf.php");
         
         <form class="area-form" method="POST" action="">
             
-            <h1 id="titulo_page">Editar Perfil</h1>
+            <h1 id="titulo_page">Excluir Perfil</h1>
            
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input class="input" type="text" name="nome"/>
+                    <input class="input" type="text" name="nome" value="<?php echo $objperf->nome ?>"/>
                     <label class="label" for="input">Digite o nome do perfil</label>
                 </div>
 
@@ -132,11 +132,10 @@ include_once("../includes/php/editar_perf.php");
 
             <div class="btn-field">
                 
-                <button class="btn-submit" type="submit">Salvar</button>
+                <button type="submit" name="excluir" class="btn btn-danger">Excluir</button>
                 <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
                 
             </div>
-
         </form>
         
     </section>
