@@ -59,6 +59,19 @@ include_once("../includes/php/cad_user.php");
                 <?=$options?>
             </select>
 
+            <div class="area-status">
+                <label>
+                    Ativo
+                    <input checked name="status" type="radio" value="ativo" required/>
+                </label>
+
+
+                <label>
+                    Desligado
+                    <input name="status" type="radio" value="desligado" required/>
+                </label>
+     
+
 
             <div class="btn-field">
                 
@@ -68,6 +81,7 @@ include_once("../includes/php/cad_user.php");
             </div>
             
             
+
         </form>
         
         

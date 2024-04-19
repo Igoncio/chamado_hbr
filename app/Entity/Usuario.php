@@ -57,6 +57,12 @@ class Usuario{
     */
     public $cliente;
 
+        /** 
+     *Cliente para qual o usuario trabalha 
+     *@var string
+    */
+    public $status;
+
     /** 
      *Método responsavel por cadastrar um novo usuario no banco 
      *@return boolean
@@ -112,7 +118,8 @@ class Usuario{
                                                 'email'=> $this->email,
                                                 'senha'=> $this->senha,
                                                 'perfil'=> $this->perfil,
-                                                'cliente'=> $this->cliente 
+                                                'cliente'=> $this->cliente,
+                                                'status'=> $this->status   
                                                                   ]);
       }
 

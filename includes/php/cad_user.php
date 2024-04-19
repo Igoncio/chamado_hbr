@@ -38,7 +38,7 @@ if ($perfis) {
 }
 
 
-if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["senha"], $_POST["perfil"], $_POST["cliente"])) {
+if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["senha"], $_POST["perfil"], $_POST["cliente"], $_POST["status"])) {
 
     $objusuario = new Usuario();
 
@@ -49,6 +49,7 @@ if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email
     $objusuario -> senha = $_POST["senha"];
     $objusuario -> perfil = $_POST["perfil"];
     $objusuario -> cliente = $_POST["cliente"];
+    $objusuario -> status = $_POST["status"];
 
     $objusuario -> cadastrar();
 
