@@ -12,7 +12,7 @@ class Perfil{
      *Indentificador Unico de categoria 
      *@var integer
     */
-    public $id_categoria;   
+    public $id_perf;   
     
     /** 
      *Nome da categoria 
@@ -46,11 +46,18 @@ class Perfil{
     public static function getPerfil($where = null, $order = null, $limit = null){
         return (new Database('perfil'))->select($where,$order,$limit)
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
+    }
+
+      public function atualizar(){
+        return (new Database('perfil'))->update('id_perf = '.$this->id_perf,[
+                                                    'nome' => $this->nome 
+                                                                  ]);
       }
 
-    //   public static function getPerf2($id_item){
-    //     return (new Database('item'))->select('id_item = '.$id_item)
-    //                                   ->fetchObject(self::class);
-    //   }
+    public static function getPerfil2($id_perf){
+        return (new Database('perfil'))->select('id_perf = '.$id_perf)
+                                      ->fetchObject(self::class);
+      }
+
 
 }
