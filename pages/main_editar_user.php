@@ -66,6 +66,17 @@ include_once("../includes/php/editar_user.php");
                 <?=$options?>
             </select>
 
+            <label>
+                Ativo
+                <input checked name="status" type="radio" value="ativo" required/>
+            </label>
+
+
+            <label>
+                Desligado
+                <input name="status" type="radio" value="desligado" required/>
+            </label>
+
 
             <div class="btn-field">
                 

@@ -59,7 +59,7 @@ if (!isset($_GET['id_user']) || !is_numeric($_GET['id_user']) || $_GET['id_user'
     exit;
 }
 
-if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["senha"], $_POST["perfil"], $_POST["cliente"])) {
+if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["senha"], $_POST["perfil"], $_POST["cliente"],  $_POST["status"])) {
     
     $objusuario = Usuario::getUser($_GET['id_user']);
 
@@ -77,6 +77,7 @@ if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email
     $objusuario->senha = $_POST["senha"];
     $objusuario->perfil = $_POST["perfil"];
     $objusuario->cliente = $_POST["cliente"];
+    $objusuario->status = $_POST["status"];
 
     $result = $objusuario->atualizar();
 

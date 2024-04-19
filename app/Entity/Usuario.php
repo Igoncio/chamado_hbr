@@ -79,7 +79,8 @@ class Usuario{
                                 'email'=> $this->email,
                                 'senha'=> $this->senha,
                                 'perfil'=> $this->perfil,
-                                'cliente'=> $this->cliente 
+                                'cliente'=> $this->cliente,
+                                'status'=> $this->status   
                             ]);
        
         return true;
