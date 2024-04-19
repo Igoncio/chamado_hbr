@@ -96,18 +96,18 @@ class Cliente{
 
             $objDatabase = new Database('cliente');
             $this->id = $objDatabase->insert([
-                'codigo' => $this->codigo,
-                'nome' => $this->nome,
-                'telefone' => $this->telefone,
-                'cnpj' => $this->cnpj,
-                'pais' => $this->pais,
-                'cep' => $this->cep,
-                'cidade' => $this->cidade,
-                'estado' => $this->estado,
-                'numero' => $this->numero,
-                'rua' => $this->rua,
-                'bairro' => $this->bairro,
-                'observacao' => $this->observacao,
+                            'codigo' => $this->codigo,
+                            'nome' => $this->nome,
+                            'telefone' => $this->telefone,
+                            'cnpj' => $this->cnpj,
+                            'pais' => $this->pais,
+                            'cep' => $this->cep,
+                            'cidade' => $this->cidade,
+                            'estado' => $this->estado,
+                            'numero' => $this->numero,
+                            'rua' => $this->rua,
+                            'bairro' => $this->bairro,
+                            'observacao' => $this->observacao,
             ]);
            
             return true;
@@ -128,6 +128,30 @@ class Cliente{
                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
       }
 
+    public static function getCliente2($id_cli){
+        return (new Database('cliente'))->select('id_cli = '.$id_cli)
+                                      ->fetchObject(self::class);
+      }
 
+    public function atualizar(){
+        return (new Database('cliente'))->update('id_cli = '.$this->id_cli,[
+                                            'codigo' => $this->codigo,
+                                            'nome' => $this->nome,
+                                            'telefone' => $this->telefone,
+                                            'cnpj' => $this->cnpj,
+                                            'pais' => $this->pais,
+                                            'cep' => $this->cep,
+                                            'cidade' => $this->cidade,
+                                            'estado' => $this->estado,
+                                            'numero' => $this->numero,
+                                            'rua' => $this->rua,
+                                            'bairro' => $this->bairro,
+                                            'observacao' => $this->observacao,
+                                                                  ]);
+      }
+
+    // public function excluir(){
+    //     return (new Database('item'))->delete('id_item = '.$this->id_item);
+    //   }
 
 }

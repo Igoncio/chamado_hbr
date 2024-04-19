@@ -29,11 +29,11 @@ foreach($dados as $user){
                     <td>'.$user->rua.'</td>
                     <td>'.$user->numero.'</td>
                     <td>
-                        <a href="../pages/main_editar_user.php?id_cli='.$user->id_cli.'">
+                        <a href="../pages/main_editar_cli.php?id_cli='.$user->id_cli.'">
                             <i class="bi bi-pencil-square" id="edit"></i>
                         </a>
 
-                        <a href="../pages/main_excluir_user.php?id_cli='.$user->id_cli.'">
+                        <a href="../pages/main_excluir_cli.php?id_cli='.$user->id_cli.'">
                             <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
                         </a>
 
