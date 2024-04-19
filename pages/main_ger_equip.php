@@ -12,23 +12,29 @@ include_once("../includes/php/ger_equip.php");
 <body>
     
 
-
     <section class="area-main">
         <h1 id="titulo-page">Gerenciar Equipamento</h1>
-        <table class="tabela">
-            <thead class="coluna">
-                <tr class="linhas">
-                    <th id="iten-col">Apelido</th>
-                    <th id="iten-col">Nome</th>
-                    <th id="iten-col">N° Série</th>
-                    <th id="iten-col">Cliente</th>
-                    <th id="iten-col">Perfil</th>
-                    <th id="iten-col">#</th>
-                </tr>
-            </thead>
-            <?=$user_lista;?>
-        </table>
         
+        <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <thead>
+                    <tr>
+                        <th>Apelido</th>
+                        <th>Nome</th>
+                        <th>N° Série</th>
+                        <th>Cliente</th>
+                        <th>Perfil</th>
+                        <th>#</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+            
+                    <?=$user_lista;?>
+                </table>
+              </div>
         
     </section>
     

@@ -11,23 +11,29 @@ include_once("../includes/php/ger_user.php");
 <title>gerenciar usuario</title>
 <body>
     
-
-
+    
     <section class="area-main">
         <h1 id="titulo-page">Gerenciar Usuario</h1>
-        <table class="tabela">
-            <thead class="coluna">
-                <tr class="linhas">
-                    <th id="iten-col">Nome</th>
-                    <th id="iten-col">Telefone</th>
-                    <th id="iten-col">email</th>
-                    <th id="iten-col">Local</th>
-                    <th id="iten-col">Perfil</th>
-                    <th id="iten-col">#</th>
+        
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>email</th>
+                    <th>Local</th>
+                    <th>Perfil</th>
+                    <th>#</th>
                 </tr>
-            </thead>
-            <?=$user_lista;?>
-        </table>
+                </thead>
+            </table>
+            </div>
+            <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <?=$user_lista;?>
+            </table>
+        </div>
         
         
     </section>

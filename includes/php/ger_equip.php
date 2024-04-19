@@ -19,8 +19,7 @@ $user_lista = '';
 foreach($dados as $user){
     
     $user_lista .='
-    <div class="tbl-content">
-    <tbody class="area-linha">
+    <tbody>
         
     <td>'.$user['apelido'].'</td>
     <td>'.$user['nome'].'</td>
@@ -35,12 +34,9 @@ foreach($dados as $user){
     <a href="../pages/main_excluir_equip.php?id_item='.$user['id_item'].'">
         <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
     </a>
-
-
     </td>
     
-    </tbody>
-    </div>    
+    </tbody>  
     ';
 
 
