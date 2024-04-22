@@ -29,7 +29,7 @@ include_once("../includes/php/vizualizar_chamado.php");
                     </tr>
                   </thead>
                 </table>
-              </div>
+        </div>
               <div class="tbl-content">
                 <table cellpadding="0" cellspacing="0" border="0">
                   <?= $user_lista ?>
