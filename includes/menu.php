@@ -26,8 +26,8 @@
                       Chamados
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar chamado</a></li>
-                      <li><a class="dropdown-item" href="#">Vizualizar Chamados</a></li>
+                      <li><a class="dropdown-item" href="../pages/main_cad_chama.php">Cadastrar chamado</a></li>
+                      <li><a class="dropdown-item" href="../pages/main_vizualizar_chamado.php">Vizualizar Chamados</a></li>
                       <li><a class="dropdown-item" href="#">Validar chamados</a></li>
                     </ul>
                 </li>
@@ -42,9 +42,9 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Relátorio de chamados</a></li>
-                  <li><a class="dropdown-item" href="#">Gerenciar usuarios</a></li>
-                  <li><a class="dropdown-item" href="#">Gerenciar perfis</a></li>
-                  <li><a class="dropdown-item" href="#">Gerenciar equipamento</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_ger_user.php">Gerenciar usuarios</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_ger_perf.php">Gerenciar perfis</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_ger_equip.php">Gerenciar equipamento</a></li>
                 </ul>
               </li>
 

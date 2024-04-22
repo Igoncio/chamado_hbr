@@ -67,7 +67,7 @@ include_once("../includes/menu.php");
         <section class="area-chamado">
 
         <h1 id="txt-area">Chamados</h1>
-            <a href="#">
+            <a href="main_vizualizar_chamado.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
