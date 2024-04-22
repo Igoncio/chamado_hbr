@@ -39,27 +39,26 @@ a{
 }
 
 table{
-  width:100%;
+  width:90%;
   table-layout: fixed;
 }
 
 .tbl-header{
   background-color: rgba(255,255,255,0.3);
-  /* margin-left: 15% */
+  margin-left: 15%
 }
 
 .tbl-content{
-  width: 100%;
+  width: 90%;
   height:450px;
   overflow-x: auto;
   margin-top: 0px;
-  /* margin-left: 15%; */
+  margin-left: 15%;
   border: 1px solid rgba(255,255,255,0.3);
 }
 
 th{
   padding-top: 20px;
-  padding-left: 25px;
   text-align: left;
   font-weight: 500;
   font-size: 17px;
@@ -68,11 +67,9 @@ th{
 }
 
 td{ 
-  width: 210px;
-  /* padding-left: 25px; */
   padding-top: 15px;
   text-align: left;
-  vertical-align: midle;
+  vertical-align:middle;
   font-weight: 300;
   font-size: 15px;
   color: #000000;
