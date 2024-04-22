@@ -15,7 +15,7 @@ include_once("../includes/php/cad_chama.php");
     
     <section class="area-main">
         
-        <form class="area-form" method="POST" action="">
+        <form class="area-form" method="POST" action="" enctype="multipart/form-data">
             
             <h1 id="titulo_page">Cadastrar Chamado</h1>
             

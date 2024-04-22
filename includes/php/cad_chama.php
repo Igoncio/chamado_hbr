@@ -13,19 +13,11 @@ $users = Usuario::getUsuario();
 $itens = Item::getItem();
 
 
-if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"], $_POST["imagem"])) {
+if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"])) {
     
-    
-    // echo"aaaaaa";
-    // exit; // Termina o script após enviar a resposta
-
     // Cria um novo objeto chamado
     $objchama = new Chamado();
-    
-    // Debug: Exibir conteúdo do objeto e dados do formulário
-    // var_dump($objchama);
-    // var_dump($_POST);
-    
+
     // Define as propriedades do chamado com base nos dados do formulário
     $objchama->abertura = $_POST["abertura"];
     $objchama->fechamento = $_POST["fechamento"];
@@ -36,14 +28,24 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
     $objchama->num_patrimonio = $_POST["num_patrimonio"];
     $objchama->num_serie = $_POST["num_serie"];
     $objchama->prioridade = $_POST["prioridade"];
-    $objchama->imagem = $_POST["imagem"];
+    
+
+    if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] === UPLOAD_ERR_OK) {
+        // Realiza o upload da imagem e salva a referência no objeto
+        if ($objchama->uploadImagem($_FILES["imagem"])) {
+            // Cadastro do chamado
+            $cadastro_sucesso = $objchama->cadastrar();
+        } else {
+            echo "Erro ao realizar upload da imagem.";
+        }
+    } else {
+        // Cadastro do chamado sem imagem
+        $cadastro_sucesso = $objchama->cadastrar();
     
     // Continuar com o cadastro do chamado
-    $objchama->cadastrar();
+    $cadastro_sucesso = $objchama->cadastrar();
+    }
 }
-
-
-
 
 $options = '';
 
