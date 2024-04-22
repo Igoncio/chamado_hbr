@@ -135,4 +135,11 @@ class Chamado
             return false;
         }
     }
+
+
+    public static function getChama(){
+        $banco = new Database("vw_vizualizar_chamado");
+        $dados = $banco -> select() -> fetchAll();
+        return $dados;
+    }
 }
