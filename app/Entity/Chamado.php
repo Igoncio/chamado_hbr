@@ -92,12 +92,10 @@ class Chamado
     public function cadastrar()
     {
         $objDatabase = new Database('chamado');
-        $this->id_chamado = $objDatabase->insert([
+        $this->id = $objDatabase->insert([
             'abertura' => $this->abertura,
             'fechamento' => $this->fechamento,
             'id_cli' => $this->id_cli,
-            'id_set' => $this->id_set,
-            'id_cat' => $this->id_cat,
             'id_user' => $this->id_user,
             'id_item' => $this->id_item,
             'descricao' => $this->descricao,

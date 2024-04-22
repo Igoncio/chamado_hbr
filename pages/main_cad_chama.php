@@ -6,7 +6,6 @@ include_once("../includes/menu.php");
 include_once("../includes/php/cad_chama.php");
 
 
-
 ?>
 <link rel="stylesheet" href="../assets/css/cad_chama.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -16,7 +15,7 @@ include_once("../includes/php/cad_chama.php");
     
     <section class="area-main">
         
-        <form class="area-form" method="POST" action="" enctype="multipart/form-data">
+        <form class="area-form" method="POST" action="">
             
             <h1 id="titulo_page">Cadastrar Chamado</h1>
             
@@ -27,8 +26,8 @@ include_once("../includes/php/cad_chama.php");
                     <label>Selecione a data e hora de abertura</label>
                 </div>
                 
-                <div class="data-field">
-                    <input class="input" type="datetime-local" name="fechamento" onfocus="automatizarDataHora(this)"/>
+                <div class="data-field">    
+                    <input class="input" type="datetime-local" name="fechamento"/>
                     <label>Selecione a data e hora de parada</label>
                 </div>
                 
