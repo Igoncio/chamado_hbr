@@ -124,7 +124,22 @@ class Usuario{
                                                                   ]);
       }
 
-      public function excluir(){
+    public function excluir(){
         return (new Database('usuario'))->delete('id_user = '.$this->id_user);
       }
+
+
+    public function logar() {
+        $obBanco = new Database("usuario");
+        $rowUser = $obBanco->select('email = "' . $this->email . '" AND senha = "' . $this->senha . '"')->fetchAll(PDO::FETCH_ASSOC);
+        // print_r($rowUser);
+        // exit;
+        if ($rowUser) {
+            $_SESSION['id_user'] = $rowUser[0]['id_user'];
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

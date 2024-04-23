@@ -2,6 +2,30 @@
 
 include_once("../includes/menu.php");
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use App\Entity\Usuario;
+
+// Verificar se o usuário está logado
+if (isset($_SESSION['id_user'])) {
+    // Aqui você pode buscar as informações do usuário no banco de dados usando o ID da sessão
+    $objUsuario = Usuario::getUser($_SESSION['id_user']);
+
+    // Verificar se o objeto de usuário foi obtido com sucesso
+    if ($objUsuario) {
+        // Exibir o nome do usuário na tela
+        echo "Bem-vindo, " . $objUsuario->nome;
+    } else {
+        // Não foi possível obter informações do usuário, faça o tratamento adequado
+        echo "Erro ao obter informações do usuário.";
+    }
+} else {
+    // Caso não esteja logado, redirecione para a página de login
+    header("Location: ../../index.php");
+    exit;
+}
+
+
 ?>
 <link rel="stylesheet" href="../assets/css/tela_inicial.css">
 <title>tela inicial</title>
