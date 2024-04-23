@@ -12,6 +12,11 @@ $categorias = Categoria::getCategoria();
 $users = Usuario::getUsuario(); 
 $itens = Item::getItem();
 
+if (isset($_SESSION['id_user'])) {
+    $idUsuarioLogado = $_SESSION['id_user'];
+    // print($idUsuarioLogado);
+    // exit;
+}
 
 if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"])) {
     
@@ -28,6 +33,7 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
     $objchama->num_patrimonio = $_POST["num_patrimonio"];
     $objchama->num_serie = $_POST["num_serie"];
     $objchama->prioridade = $_POST["prioridade"];
+    $objchama->solicitante = $idUsuarioLogado;
     
 
     if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] === UPLOAD_ERR_OK) {

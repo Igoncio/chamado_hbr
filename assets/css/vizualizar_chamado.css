@@ -53,7 +53,7 @@ table{
   height:450px;
   overflow-x: auto;
   margin-top: 0px;
-  margin-left: 15%;
+  margin-left: 14%;
   border: 1px solid rgba(255,255,255,0.3);
 }
 
@@ -69,6 +69,7 @@ th{
 td{ 
   padding-top: 15px;
   text-align: left;
+  padding: 15px;
   vertical-align:middle;
   font-weight: 300;
   font-size: 15px;

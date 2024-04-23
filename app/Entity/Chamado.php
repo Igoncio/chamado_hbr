@@ -54,6 +54,12 @@ class Chamado
      * @var integer
      */
     public $id_item;
+
+        /** 
+     * ID do item associado ao chamado 
+     * @var integer
+     */
+    public $solicitante;
         
     /** 
      * Descrição do chamado 
@@ -102,7 +108,8 @@ class Chamado
             'num_patrimonio' => $this->num_patrimonio,
             'num_serie' => $this->num_serie,
             'prioridade' => $this->prioridade,
-            'imagem' =>$this->imagem
+            'imagem' =>$this->imagem,
+            'solicitante' =>$this->solicitante
         ]);
         
         return true;

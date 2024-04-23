@@ -17,6 +17,7 @@ foreach($dados as $user){
         <td>'.$user['nome_equip'].'</td>
         <td>'.$user['nome_cliente'].'</td>
         <td>'.$user['nome_resp'].'</td>
+        <td>'.$user['nome_solicitante'].'</td>
         <td>'.$user['prioridade'].'</td>
         <td>'.$user['abertura'].'</td>
         <td>'.$user['fechamento'].'</td>
