@@ -14,8 +14,6 @@ $itens = Item::getItem();
 
 if (isset($_SESSION['id_user'])) {
     $idUsuarioLogado = $_SESSION['id_user'];
-    // print($idUsuarioLogado);
-    // exit;
 }
 
 if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"])) {
@@ -41,15 +39,28 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
         if ($objchama->uploadImagem($_FILES["imagem"])) {
             // Cadastro do chamado
             $cadastro_sucesso = $objchama->cadastrar();
+            // Verifica se o cadastro foi bem-sucedido antes de continuar
+            if ($cadastro_sucesso) {
+                // Redireciona para uma página de sucesso ou faz outras operações necessárias
+                echo '<script>window.location.href = "main_cad_chama.php";</script>';
+                exit;
+            } else {
+                echo "Erro ao cadastrar o chamado.";
+            }
         } else {
             echo "Erro ao realizar upload da imagem.";
         }
     } else {
         // Cadastro do chamado sem imagem
         $cadastro_sucesso = $objchama->cadastrar();
-    
-    // Continuar com o cadastro do chamado
-    $cadastro_sucesso = $objchama->cadastrar();
+        // Verifica se o cadastro foi bem-sucedido antes de continuar
+        if ($cadastro_sucesso) {
+            // Redireciona para uma página de sucesso ou faz outras operações necessárias
+            echo '<script>window.location.href = "main_cad_chama.php";</script>';
+            exit;
+        } else {
+            echo "Erro ao cadastrar o chamado.";
+        }
     }
 }
 

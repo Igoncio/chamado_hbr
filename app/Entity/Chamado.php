@@ -96,24 +96,36 @@ class Chamado
      * @return boolean
      */
     public function cadastrar()
-    {
-        $objDatabase = new Database('chamado');
-        $this->id = $objDatabase->insert([
-            'abertura' => $this->abertura,
-            'fechamento' => $this->fechamento,
-            'id_cli' => $this->id_cli,
-            'id_user' => $this->id_user,
-            'id_item' => $this->id_item,
-            'descricao' => $this->descricao,
-            'num_patrimonio' => $this->num_patrimonio,
-            'num_serie' => $this->num_serie,
-            'prioridade' => $this->prioridade,
-            'imagem' =>$this->imagem,
-            'solicitante' =>$this->solicitante
-        ]);
-        
-        return true;
-    }
+{
+    // Obtém o número de chamados no mês atual
+    $mesAtual = date('Y-m');
+    $numChamados = (int) (new Database('chamado'))->select('DATE_FORMAT(abertura, "%Y-%m") = "'.$mesAtual.'"')->rowCount() + 1;
+
+    // Formata o número de chamados para incluir zeros à esquerda, se necessário
+    $numeroFormatado = str_pad($numChamados, 4, '0', STR_PAD_LEFT);
+
+    // Gera o ID personalizado no formato Y-M.numero
+    $idPersonalizado = $mesAtual . '.' . $numeroFormatado;
+
+    // Insere o chamado no banco de dados usando o ID personalizado
+    $objDatabase = new Database('chamado');
+    $this->id = $objDatabase->insert([
+        'id_chamado' => $idPersonalizado,
+        'abertura' => $this->abertura,
+        'fechamento' => $this->fechamento,
+        'id_cli' => $this->id_cli,
+        'id_user' => $this->id_user,
+        'id_item' => $this->id_item,
+        'descricao' => $this->descricao,
+        'num_patrimonio' => $this->num_patrimonio,
+        'num_serie' => $this->num_serie,
+        'prioridade' => $this->prioridade,
+        'imagem' => $this->imagem,
+        'solicitante' => $this->solicitante
+    ]);
+
+    return true;
+}
 
     /**
      * Método responsável por realizar o upload da imagem e salvar a referência no objeto

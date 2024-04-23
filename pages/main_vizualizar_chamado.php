@@ -2,13 +2,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-date_default_timezone_set('America/Cuiaba'); // Define o fuso horário para São Paulo
-$timestamp = time(); // Obtém o timestamp UNIX atual
-$timestamp_formatado = date('Y-m-d H:i:s', $timestamp);
-echo $timestamp_formatado; // Exibe o timestamp formatado
 
-
-print_r( $id_personalizado );
 
 include_once("../includes/menu.php");
 include_once("../includes/php/vizualizar_chamado.php");
