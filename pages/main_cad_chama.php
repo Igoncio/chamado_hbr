@@ -86,8 +86,9 @@ include_once("../includes/php/cad_chama.php");
                 
 
             <div class="input-field">
-                <input  id="desc" class="input" type="text-area" name="descricao"/>
-                <label class="label" for="input">Descrição</label>
+                <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                <label class="label" for="desc">Descrição (limite: 250 caracteres)</label>
+                <div id="contador-caracteres">0/250 caracteres</div>
             </div>
 
             <div class="juntar-check">

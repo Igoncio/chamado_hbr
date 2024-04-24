@@ -16,38 +16,54 @@ inputAbertura.value = dataHoraFormatada;
 
 var maxSelects = 5;
 
-        document.getElementById('mais-item').addEventListener('click', function() {
-            // Obtém todos os elementos <select> dentro da div 'area-item'
-            var selects = document.querySelectorAll('.area-item select');
-            // Verifica se o limite foi atingido
-            if (selects.length >= maxSelects) {
-                alert('Limite máximo de ' + maxSelects + ' campos atingido.');
-                return;
-            }
+document.getElementById('mais-item').addEventListener('click', function() {
+    // Obtém todos os elementos <select> dentro da div 'area-item'
+    var selects = document.querySelectorAll('.area-item select');
+    // Verifica se o limite foi atingido
+    if (selects.length >= maxSelects) {
+        alert('Limite máximo de ' + maxSelects + ' campos atingido.');
+        return;
+    }
 
-            // Cria um novo elemento <select>
-            var novoSelect = document.createElement('select');
-            novoSelect.className = 'select';
-            novoSelect.name = 'id_item';
+    // Cria um novo elemento <select>
+    var novoSelect = document.createElement('select');
+    novoSelect.className = 'select';
+    novoSelect.name = 'id_item';
 
-            // Adiciona a opção padrão
-            var opcaoPadrao = document.createElement('option');
-            opcaoPadrao.value = '0';
-            opcaoPadrao.textContent = 'Selecione o item';
-            novoSelect.appendChild(opcaoPadrao);
+    // Adiciona a opção padrão
+    var opcaoPadrao = document.createElement('option');
+    opcaoPadrao.value = '0';
+    opcaoPadrao.textContent = 'Selecione o item';
+    novoSelect.appendChild(opcaoPadrao);
 
-            // Adiciona o novo <select> à div 'area-item'
-            var areaItem = document.querySelector('.area-item');
-            areaItem.insertBefore(novoSelect, document.getElementById('mais-item'));
-        });
+    // Adiciona o novo <select> à div 'area-item'
+    var areaItem = document.querySelector('.area-item');
+    areaItem.insertBefore(novoSelect, document.getElementById('mais-item'));
+});
 
-        document.getElementById('menos-item').addEventListener('click', function() {
-            // Obtém todos os elementos <select> dentro da div 'area-item'
-            var selects = document.querySelectorAll('.area-item select');
-            // Verifica se há mais de um elemento para não remover o último
-            if (selects.length > 1) {
-                // Remove o último elemento <select>
-                selects[selects.length - 1].remove();
-            }
-        });
+document.getElementById('menos-item').addEventListener('click', function() {
+    // Obtém todos os elementos <select> dentro da div 'area-item'
+    var selects = document.querySelectorAll('.area-item select');
+    // Verifica se há mais de um elemento para não remover o último
+    if (selects.length > 1) {
+        // Remove o último elemento <select>
+        selects[selects.length - 1].remove();
+    }
+});
 
+const descricaoTextarea = document.getElementById('desc');
+const contadorCaracteres = document.getElementById('contador-caracteres');
+
+descricaoTextarea.addEventListener('input', function () {
+    const limiteCaracteres = 250;
+    const caracteresDigitados = this.value.length;
+    const caracteresRestantes = limiteCaracteres - caracteresDigitados;
+
+    contadorCaracteres.textContent = `${caracteresDigitados}/${limiteCaracteres} caracteres`;
+
+    if (caracteresDigitados > limiteCaracteres) {
+        contadorCaracteres.style.color = 'red'; // Muda a cor para vermelho se exceder o limite
+    } else {
+        contadorCaracteres.style.color = ''; // Volta para a cor padrão
+    }
+});
