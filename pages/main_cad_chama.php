@@ -59,6 +59,18 @@ include_once("../includes/php/cad_chama.php");
                 <i id="mais-item" class="bi bi-plus-circle"></i>
                 <i id="menos-item" class="bi bi-dash-circle"></i>
             </div>
+
+            <select  id="item" class="select" name="tipo">
+                    <option value="0">Selecione o tipo</option>
+                    <option value="preventivo">Preventivo</option>
+                    <option value="corretivo">corretivo</option>
+                    <option value="configuracao">configuração</option>
+                    <option value="instalacao">instalação</option>
+                    <option value="retirada">retirada</option>
+                    <option value="recebimento">recebimento</option>
+                    <option value="treinamento">treinamento</option>
+                    <option value="seguraca_eletrica">seguraça elétrica</option>
+            </select>   
             
             <div class="juntar-input">
 

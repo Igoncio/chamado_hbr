@@ -27,6 +27,8 @@ include_once("../includes/php/vizualizar_chamado.php");
                         <th>Responsavel</th>
                         <th>Solicitante</th>
                         <th>Prioridade</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
                         <th>Abertura</th>
                         <th>Fechamento</th>
                     </tr>

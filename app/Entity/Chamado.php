@@ -91,6 +91,18 @@ class Chamado
      */
     public $imagem;
 
+    /**
+     * Nome do arquivo de imagem associado ao chamado
+     * @var string
+     */
+    public $status;
+
+    /**
+     * Nome do arquivo de imagem associado ao chamado
+     * @var string
+     */
+    public $tipo;
+
     /** 
      * Método responsável por cadastrar um novo chamado no banco de dados 
      * @return boolean
@@ -107,6 +119,8 @@ class Chamado
     // Gera o ID personalizado no formato Y-M.numero
     $idPersonalizado = $mesAtual . '.' . $numeroFormatado;
 
+    $statusinicial = 'nao_visto';
+
     // Insere o chamado no banco de dados usando o ID personalizado
     $objDatabase = new Database('chamado');
     $this->id = $objDatabase->insert([
@@ -121,7 +135,9 @@ class Chamado
         'num_serie' => $this->num_serie,
         'prioridade' => $this->prioridade,
         'imagem' => $this->imagem,
-        'solicitante' => $this->solicitante
+        'solicitante' => $this->solicitante,
+        'status' => $statusinicial,
+        'tipo'=> $this->tipo
     ]);
 
     return true;

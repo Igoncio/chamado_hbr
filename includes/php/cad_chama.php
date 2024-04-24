@@ -16,7 +16,7 @@ if (isset($_SESSION['id_user'])) {
     $idUsuarioLogado = $_SESSION['id_user'];
 }
 
-if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"])) {
+if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"], $_POST["tipo"])) {
     
     // Cria um novo objeto chamado
     $objchama = new Chamado();
@@ -32,6 +32,7 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
     $objchama->num_serie = $_POST["num_serie"];
     $objchama->prioridade = $_POST["prioridade"];
     $objchama->solicitante = $idUsuarioLogado;
+    $objchama->tipo = $_POST['tipo'];
     
 
     if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] === UPLOAD_ERR_OK) {
