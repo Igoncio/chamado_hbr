@@ -1,16 +1,13 @@
 <?php
 use App\Entity\Cliente;
-use App\Entity\Setor;
-use App\Entity\Categoria;
 use App\Entity\Chamado;
 use App\Entity\Usuario;
 use App\Entity\Item;
 
 $clientes = Cliente::getCliente();
-$setores = Setor::getSetor();
-$categorias = Categoria::getCategoria();   
 $users = Usuario::getUsuario(); 
 $itens = Item::getItem();
+
 
 if (isset($_SESSION['id_user'])) {
     $idUsuarioLogado = $_SESSION['id_user'];
@@ -64,6 +61,19 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
         }
     }
 }
+$options_user = '';
+
+// Verificar se a consulta retornou resultados
+if ($users) {
+    // Iterar sobre os resultados
+    foreach ($users as $row_check) {
+        // Acessar as propriedades do objeto Cliente diretamente
+        $options_user .= '<option class="ops" value="' . $row_check->id_user . '"> ' . $row_check->nome . ' </option>';
+    }
+} else {
+    // Caso não haja setores encontrados
+    $options_user = '<option value="">Nenhum cliente encontrado</option>';
+}
 
 $options = '';
 
@@ -79,51 +89,6 @@ if ($clientes) {
     $options = '<option value="">Nenhum cliente encontrado</option>';
 }
 
-
-
-$options_setor = '';
-
-// Verificar se a consulta retornou resultados
-if ($setores) {
-    // Iterar sobre os resultados
-    foreach ($setores as $row_check) {
-        // Acessar as propriedades do objeto Cliente diretamente
-        $options_setor .= '<option class="ops" value="' . $row_check->id_set . '"> ' . $row_check->nome . ' </option>';
-    }
-} else {
-    // Caso não haja setores encontrados
-    $options_setor = '<option value="">Nenhum cliente encontrado</option>';
-}
-
-
-
-$options_categoria = '';
-
-// Verificar se a consulta retornou resultados
-if ($categorias) {
-    // Iterar sobre os resultados
-    foreach ($categorias as $row_check) {
-        // Acessar as propriedades do objeto Cliente diretamente
-        $options_categoria .= '<option class="ops" value="' . $row_check->id_categoria . '"> ' . $row_check->nome . ' </option>';
-    }
-} else {
-    // Caso não haja setores encontrados
-    $options_categoria = '<option value="">Nenhum cliente encontrado</option>';
-}
-
-$options_user = '';
-
-// Verificar se a consulta retornou resultados
-if ($users) {
-    // Iterar sobre os resultados
-    foreach ($users as $row_check) {
-        // Acessar as propriedades do objeto Cliente diretamente
-        $options_user .= '<option class="ops" value="' . $row_check->id_user . '"> ' . $row_check->nome . ' </option>';
-    }
-} else {
-    // Caso não haja setores encontrados
-    $options_user = '<option value="">Nenhum cliente encontrado</option>';
-}
 
 $options_item = '';
 

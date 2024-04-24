@@ -5,8 +5,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 include_once("../includes/menu.php");
 include_once("../includes/php/cad_chama.php");
 
-
+// print_r($clienteSelecionado);
 ?>
+
 <link rel="stylesheet" href="../assets/css/cad_chama.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="../assets/js/cad_chama.js" defer></script>
@@ -39,22 +40,20 @@ include_once("../includes/php/cad_chama.php");
                 <div>
                     <select id="tamanho-select-duo" class="select" name="id_user">
                         <option value="0">Selecione o responsável</option>
-                        <?=$options_user?>>
+                        <?=$options_user?>
                     </select>
                 </div>
-
 
                 <select id="tamanho-select-duo"  class="select" name="id_cli">
                     <option value="0">Selecione o Clinte</option>
                     <?=$options?>
                 </select>
-
             </div>
            
            <div class="area-item">
                 <select  id="item" class="select" name="id_item">
                     <option value="0">Selecione o item</option>
-                    <?=$options_item?>>
+                    <?=$options_item?>
                 </select>
                 <i id="mais-item" class="bi bi-plus-circle"></i>
                 <i id="menos-item" class="bi bi-dash-circle"></i>

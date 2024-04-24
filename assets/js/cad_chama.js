@@ -50,3 +50,4 @@ var maxSelects = 5;
                 selects[selects.length - 1].remove();
             }
         });
+
