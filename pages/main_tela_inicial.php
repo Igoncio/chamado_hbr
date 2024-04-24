@@ -101,7 +101,7 @@ if (isset($_SESSION['id_user'])) {
             </a>
     
     
-            <a href="#">
+            <a href="main_validar_chamado.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
