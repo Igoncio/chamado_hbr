@@ -5,7 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 
 include_once("../includes/menu.php");
-include_once("../includes/php/vizualizar_chamado.php");
+include_once("../includes/php/valida_chama2.php");
 // include_once("../includes/php/excluir_user.php");
 ?>
 

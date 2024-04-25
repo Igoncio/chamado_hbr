@@ -177,4 +177,9 @@ class Chamado
         $dados = $banco -> select() -> fetchAll();
         return $dados;
     }
+
+    public static function getChama2($id_chamado){
+        return (new Database('chamado'))->select('id_chamado = '.$id_chamado)
+                                      ->fetchObject(self::class);
+      }
 }
