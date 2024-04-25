@@ -1,11 +1,8 @@
 <?php
-
 require_once __DIR__ . '/../vendor/autoload.php';
 
-
-
-include_once("../includes/menu.php");
 include_once("../includes/php/valida_chama2.php");
+include_once("../includes/menu.php");
 // include_once("../includes/php/excluir_user.php");
 ?>
 
@@ -18,8 +15,8 @@ include_once("../includes/php/valida_chama2.php");
         
         <form class="area-form" method="POST" action="" enctype="multipart/form-data">
             
-            <h1 id="titulo_page">Responder Chamado</h1>
-            
+            <h1 id="titulo_page">Chamado Requisitado</h1>
+        
             <div class="juntar-input">  
                 
                 <div class="data-field">
@@ -114,32 +111,18 @@ include_once("../includes/php/valida_chama2.php");
                         <input id="novo" name="prioridade" type="radio" value="alta" required/>
                     </label>
                 </div>
-
-            
+            </div>
 
             <h1 id="txt-perm">Selecione um anexo (opicional):</h1>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" id="inputGroupFile02" name="imagem" accept="image/*">
             </div>
 
-
-
-
-
             <div class="btn-field">
-
                 <button class="btn-submit" type="submit">Cadastrar</button>
                 <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
-
             </div>
-
-
         </form>
-
-
     </section>
-
-
-    
 </body>
 </html>
