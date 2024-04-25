@@ -38,7 +38,7 @@ include_once("../includes/php/vizualizar_chamado.php");
                     Responsável: Jorge Cardoso <br>
 
                 <div class="aa">
-                    <button type="button" class="btn btn-primary">Validar</button>
+                    <button type="button" class="btn btn-primary" id="btnValidar">Validar</button>
                     <button type="button" class="btn btn-dark">Editar</button>
                     <button type="button" class="btn btn-danger">Desativar</button>
                 </div>
@@ -66,7 +66,7 @@ include_once("../includes/php/vizualizar_chamado.php");
                     Responsável: Jorge Cardoso <br>
 
                 <div class="aa">
-                    <button type="button" class="btn btn-primary">Validar</button>
+                    <button type="button" class="btn btn-primary" id="btnValidar">Validar</button>
                     <button type="button" class="btn btn-dark">Editar</button>
                     <button type="button" class="btn btn-danger">Desativar</button>
                 </div>
@@ -95,7 +95,97 @@ include_once("../includes/php/vizualizar_chamado.php");
                     Responsável: Jorge Cardoso <br>
 
                 <div class="aa">
-                    <button type="button" class="btn btn-primary">Validar</button>
+                    <button type="button" class="btn btn-primary" id="btnValidar">Validar</button>
+                    <button type="button" class="btn btn-dark">Editar</button>
+                    <button type="button" class="btn btn-danger">Desativar</button>
+                </div>
+
+                </div>
+            </div>
+        </a>
+
+
+
+        <a href="#">
+            <div class="card1">
+                <div class="notiglow1"></div>
+                <div class="notiborderglow1"></div>
+                <div class="notititle1">Chamado 2024.04.0003</div>
+                <div class="notibody1">
+                    Aberto por: Roberto Carlos da Silva
+                    Abertura:25/04/2024 10:56<br><br>
+                    Equipamento(s):Impressora<br>
+                
+                    Tipo: Preventivo<br>
+
+                    Prioridade: Media<br><br>
+
+                    descrição: fui colocar papel na impressora e ela não para de imprimir coisas aleatoria jesus gloria me ajuda <br><br>
+
+                    Responsável: Jorge Cardoso <br>
+
+                <div class="aa">
+                    <button type="button" class="btn btn-primary" id="btnValidar">Validar</button>
+                    <button type="button" class="btn btn-dark">Editar</button>
+                    <button type="button" class="btn btn-danger">Desativar</button>
+                </div>
+
+                </div>
+            </div>
+        </a>
+
+
+
+        <a href="#">
+            <div class="card1">
+                <div class="notiglow1"></div>
+                <div class="notiborderglow1"></div>
+                <div class="notititle1">Chamado 2024.04.0003</div>
+                <div class="notibody1">
+                    Aberto por: Roberto Carlos da Silva
+                    Abertura:25/04/2024 10:56<br><br>
+                    Equipamento(s):Impressora<br>
+                
+                    Tipo: Preventivo<br>
+
+                    Prioridade: Media<br><br>
+
+                    descrição: fui colocar papel na impressora e ela não para de imprimir coisas aleatoria jesus gloria me ajuda <br><br>
+
+                    Responsável: Jorge Cardoso <br>
+
+                <div class="aa">
+                    <button type="button" class="btn btn-primary" id="btnValidar">Validar</button>
+                    <button type="button" class="btn btn-dark">Editar</button>
+                    <button type="button" class="btn btn-danger">Desativar</button>
+                </div>
+
+                </div>
+            </div>
+        </a>
+
+
+
+        <a href="#">
+            <div class="card1">
+                <div class="notiglow1"></div>
+                <div class="notiborderglow1"></div>
+                <div class="notititle1">Chamado 2024.04.0003</div>
+                <div class="notibody1">
+                    Aberto por: Roberto Carlos da Silva
+                    Abertura:25/04/2024 10:56<br><br>
+                    Equipamento(s):Impressora<br>
+                
+                    Tipo: Preventivo<br>
+
+                    Prioridade: Media<br><br>
+
+                    descrição: fui colocar papel na impressora e ela não para de imprimir coisas aleatoria jesus gloria me ajuda <br><br>
+
+                    Responsável: Jorge Cardoso <br>
+
+                <div class="aa">
+                    <button type="button" class="btn btn-primary" id="btnValidar">Validar</button>   
                     <button type="button" class="btn btn-dark">Editar</button>
                     <button type="button" class="btn btn-danger">Desativar</button>
                 </div>
@@ -195,7 +285,6 @@ include_once("../includes/php/vizualizar_chamado.php");
         </a>
 
 
-
         <a href="#">
             <div class="card1">
                 <div class="notiglow1"></div>
@@ -225,96 +314,15 @@ include_once("../includes/php/vizualizar_chamado.php");
         </a>
 
 
-
-        <a href="#">
-            <div class="card1">
-                <div class="notiglow1"></div>
-                <div class="notiborderglow1"></div>
-                <div class="notititle1">Chamado 2024.04.0003</div>
-                <div class="notibody1">
-                    Aberto por: Roberto Carlos da Silva
-                    Abertura:25/04/2024 10:56<br><br>
-                    Equipamento(s):Impressora<br>
-                
-                    Tipo: Preventivo<br>
-
-                    Prioridade: Media<br><br>
-
-                    descrição: fui colocar papel na impressora e ela não para de imprimir coisas aleatoria jesus gloria me ajuda <br><br>
-
-                    Responsável: Jorge Cardoso <br>
-
-                <div class="aa">
-                    <button type="button" class="btn btn-primary">Validar</button>
-                    <button type="button" class="btn btn-dark">Editar</button>
-                    <button type="button" class="btn btn-danger">Desativar</button>
-                </div>
-
-                </div>
-            </div>
-        </a>
-
-
-
-        <a href="#">
-            <div class="card1">
-                <div class="notiglow1"></div>
-                <div class="notiborderglow1"></div>
-                <div class="notititle1">Chamado 2024.04.0003</div>
-                <div class="notibody1">
-                    Aberto por: Roberto Carlos da Silva
-                    Abertura:25/04/2024 10:56<br><br>
-                    Equipamento(s):Impressora<br>
-                
-                    Tipo: Preventivo<br>
-
-                    Prioridade: Media<br><br>
-
-                    descrição: fui colocar papel na impressora e ela não para de imprimir coisas aleatoria jesus gloria me ajuda <br><br>
-
-                    Responsável: Jorge Cardoso <br>
-
-                <div class="aa">
-                    <button type="button" class="btn btn-primary">Validar</button>
-                    <button type="button" class="btn btn-dark">Editar</button>
-                    <button type="button" class="btn btn-danger">Desativar</button>
-                </div>
-
-                </div>
-            </div>
-        </a>
-
-
-        <a href="#">
-            <div class="card1">
-                <div class="notiglow1"></div>
-                <div class="notiborderglow1"></div>
-                <div class="notititle1">Chamado 2024.04.0003</div>
-                <div class="notibody1">
-                    Aberto por: Roberto Carlos da Silva
-                    Abertura:25/04/2024 10:56<br><br>
-                    Equipamento(s):Impressora<br>
-                
-                    Tipo: Preventivo<br>
-
-                    Prioridade: Media<br><br>
-
-                    descrição: fui colocar papel na impressora e ela não para de imprimir coisas aleatoria jesus gloria me ajuda <br><br>
-
-                    Responsável: Jorge Cardoso <br>
-
-                <div class="aa">
-                    <button type="button" class="btn btn-primary">Validar</button>
-                    <button type="button" class="btn btn-dark">Editar</button>
-                    <button type="button" class="btn btn-danger">Desativar</button>
-                </div>
-
-                </div>
-            </div>
-        </a>
-
-
+    <script>
+        // Adiciona um evento de clique ao botão
+        document.getElementById('btnValidar').addEventListener('click', function() {
+            // Redireciona para a página desejada ao clicar no botão
+            window.location.href = 'main_validar_chama2.php';
+        });
+    </script>
     </section>
 
 </body>
+    
 </html>
