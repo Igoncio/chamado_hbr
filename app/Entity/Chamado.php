@@ -205,8 +205,6 @@ class Chamado
                                                 'num_patrimonio' => $this->num_patrimonio,
                                                 'num_serie' => $this->num_serie,
                                                 'prioridade' => $this->prioridade,
-                                                'imagem' => $this->imagem,
-                                                'solicitante' => $this->solicitante,
                                                 'status' => $this->status,
                                                 'tipo'=> $this->tipo
                                                                   ]);

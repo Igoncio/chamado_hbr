@@ -15,17 +15,17 @@ include_once("../includes/menu.php");
         
         <form class="area-form" method="POST" action="" enctype="multipart/form-data">
             
-            <h1 id="titulo_page">Chamado <?php print_r($objchamado->id_chamado)?></h1>
+            <h1 id="titulo_page">Chamado <?php print_r($objchamado->id_chamado);?></h1>
         
             <div class="juntar-input">  
                 
                 <div class="data-field">
-                    <input value="<?php echo $objchamado->abertura?>" class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)"/>
+                    <input value="<?php echo $objchamado->abertura;?>" class="input" type="datetime-local" name="abertura"/>
                     <label>Selecione a data e hora de abertura</label>
                 </div>
                 
                 <div class="data-field">    
-                    <input value="<?php echo $objchamado->fechamento?>" class="input" type="datetime-local" name="fechamento"/>
+                    <input value="<?php echo $objchamado->fechamento;?>" class="input" type="datetime-local" name="fechamento"/>
                     <label>Selecione a data e hora de parada</label>
                 </div>
                 
@@ -59,7 +59,7 @@ include_once("../includes/menu.php");
             </div>
 
             <select  id="item" class="select" name="tipo">
-                    <option value="0">Selecione o tipo</option>
+                    <option value="<?php $objchamado->tipo?>"><?php print_r($objchamado->tipo);?></option>
                     <option value="preventivo">Preventivo</option>
                     <option value="corretivo">corretivo</option>
                     <option value="configuracao">configuração</option>
@@ -73,19 +73,19 @@ include_once("../includes/menu.php");
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input  class="input" type="text" name="num_patrimonio"/>
+                    <input value="<?php print_r($objchamado->num_patrimonio);?>" class="input" type="text" name="num_patrimonio"/>
                     <label class="label" for="input">n° de patrimonio</label>
                 </div>
                 
                 <div class="input-field">
-                    <input  class="input" type="text" name="num_serie"/>
+                    <input value="<?php print_r($objchamado->num_serie);?>" <?php print_r($objchamado->num_serie);?> class="input" type="text" name="num_serie"/>
                     <label class="label" for="input">n° de série</label>
                 </div>
             </div>
                 
 
             <div class="input-field">
-                <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                <textarea placeholder="<?php print_r($objchamado->descricao);?>" id="desc" class="input" name="descricao" maxlength="250"></textarea>
                 <label class="label" for="desc">Descrição (limite: 250 caracteres)</label>
                 <div id="contador-caracteres">0/250 caracteres</div>
             </div>
@@ -96,21 +96,21 @@ include_once("../includes/menu.php");
                 <div class="area-prioridade">
                     <label>
                         BAIXA
-                        <input id="ant" name="prioridade" type="radio" value="baixa" required/>
+                        <input id="ant" name="prioridade" type="radio" value="baixa" <?php echo($objchamado->prioridade == 'baixa') ? 'checked' : ''?> required/>
                     </label>
                 </div>
 
                 <div class="area-prioridade">
                     <label>
                         MEDIA
-                        <input id="grade" name="prioridade" type="radio" value="media" required/>
+                        <input id="grade" name="prioridade" type="radio" value="media" <?php echo($objchamado->prioridade == 'media') ? 'checked' : ''?> required/>
                     </label>  
                 </div>
 
                 <div class="area-prioridade">
                     <label>
                         ALTA
-                        <input id="novo" name="prioridade" type="radio" value="alta" required/>
+                        <input id="novo" name="prioridade" type="radio" value="alta" <?php echo($objchamado->prioridade == 'alta') ? 'checked' : ''?> required/>
                     </label>
                 </div>
             </div>
@@ -120,8 +120,9 @@ include_once("../includes/menu.php");
                 <input type="file" class="form-control" id="inputGroupFile02" name="imagem" accept="image/*">
             </div>
 
+
             <div class="btn-field">
-                <button class="btn-submit" type="submit">Cadastrar</button>
+                <button class="btn-submit" type="submit">Editar</button>
                 <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
             </div>
         </form>
