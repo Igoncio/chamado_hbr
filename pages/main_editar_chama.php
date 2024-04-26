@@ -20,12 +20,12 @@ include_once("../includes/menu.php");
             <div class="juntar-input">  
                 
                 <div class="data-field">
-                    <input class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)"/>
+                    <input value="<?php echo $objchamado->abertura?>" class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)"/>
                     <label>Selecione a data e hora de abertura</label>
                 </div>
                 
                 <div class="data-field">    
-                    <input class="input" type="datetime-local" name="fechamento"/>
+                    <input value="<?php echo $objchamado->fechamento?>" class="input" type="datetime-local" name="fechamento"/>
                     <label>Selecione a data e hora de parada</label>
                 </div>
                 
@@ -36,13 +36,15 @@ include_once("../includes/menu.php");
 
                 <div>
                     <select id="tamanho-select-duo" class="select" name="id_user">
-                        <option value="0">Selecione o responsável</option>
+                        <option value="<?php echo $users[$objchamado->id_user-32]->id_user;?>"><?php echo $users[$objchamado->id_user-32]->nome;?></option>
                         <?=$options_user?>
                     </select>
                 </div>
 
                 <select id="tamanho-select-duo"  class="select" name="id_cli">
-                    <option value="0">Selecione o Clinte</option>
+                    <option value="<?php echo $clientes[$objchamado->id_cli-1]->id_cli; ?>">
+                    <?php echo $clientes[$objchamado->id_cli-1]->nome; ?>
+                    </option>
                     <?=$options?>
                 </select>
             </div>

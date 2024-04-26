@@ -15,7 +15,7 @@ include_once("../includes/php/requisicao_chamado.php");
 <body>
 
 
-    <h1 id="titulo_page">Validar Chamados</h1>
+    <h1 id="titulo_page">Requisição de Chamados</h1>
     <section class="area-main">
 
         
