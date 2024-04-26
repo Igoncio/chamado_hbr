@@ -179,7 +179,36 @@ class Chamado
     }
 
     public static function getChama2($id_chamado){
-        return (new Database('chamado'))->select('id_chamado = '.$id_chamado)
-                                      ->fetchObject(self::class);
-      }
+        // Verifica se $id_chamado é um valor válido
+        if (!empty($id_chamado)) {
+            // Obtém o tipo de dados para a comparação no SQL
+            $dataType = is_numeric($id_chamado) ? 'numeric' : 'string';
+            
+            // Prepara a cláusula WHERE com base no tipo de dados
+            $whereClause = $dataType === 'numeric' ? 'id_chamado = ' . $id_chamado : 'id_chamado = "' . $id_chamado . '"';
+            
+            // Executa o select usando a cláusula WHERE preparada
+            return (new Database('chamado'))->select($whereClause)->fetchObject(self::class);
+        } else {
+            return null; // Retorna null se $id_chamado não for válido
+        }
+    }
+
+    public function atualizar(){
+        return (new Database('chamado'))->update('id_chamado = '.$this->id_chamado,[
+                                                'abertura' => $this->abertura,
+                                                'fechamento' => $this->fechamento,
+                                                'id_cli' => $this->id_cli,
+                                                'id_user' => $this->id_user,
+                                                'id_item' => $this->id_item,
+                                                'descricao' => $this->descricao,
+                                                'num_patrimonio' => $this->num_patrimonio,
+                                                'num_serie' => $this->num_serie,
+                                                'prioridade' => $this->prioridade,
+                                                'imagem' => $this->imagem,
+                                                'solicitante' => $this->solicitante,
+                                                'status' => $this->status,
+                                                'tipo'=> $this->tipo
+                                                                  ]);
+    }
 }

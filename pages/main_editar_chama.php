@@ -1,21 +1,21 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-include_once("../includes/php/valida_chama2.php");
+include_once("../includes/php/editar_chama.php");
 include_once("../includes/menu.php");
 // include_once("../includes/php/excluir_user.php");
 ?>
 
-<link rel="stylesheet" href="../assets/css/validar_chama2.css">
+
+<link rel="stylesheet" href="../assets/css/editar_chama.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<title>Responder chamado</title>
-<body>
-    
+<title>editar chamado</title>
+<body> 
     <section class="area-main">
         
         <form class="area-form" method="POST" action="" enctype="multipart/form-data">
             
-            <h1 id="titulo_page">Chamado Requisitado</h1>
+            <h1 id="titulo_page">Chamado <?php print_r($objchamado->id_chamado)?></h1>
         
             <div class="juntar-input">  
                 

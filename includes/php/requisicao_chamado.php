@@ -28,8 +28,8 @@ if($user['prioridade']=="baixa" and $user['status']=="nao_visto")
                     Responsável: '.$user['nome_resp'].'<br>
 
                 <div class="aa">
-                    <a href="../pages/main_validar_chama2.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                    <button type="button" class="btn btn-dark">Editar</button>
+                    <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                    <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
                     <button type="button" class="btn btn-danger">Desativar</button>
                 </div>
 
@@ -57,8 +57,8 @@ $user_lista .='
                 Responsável: '.$user['nome_resp'].'<br>
 
             <div class="aa">
-                <a href="../pages/main_validar_chama2.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                <button type="button" class="btn btn-dark">Editar</button>
+                <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
                 <button type="button" class="btn btn-danger">Desativar</button>
             </div>
 
@@ -86,8 +86,8 @@ $user_lista .='
                 Responsável: '.$user['nome_resp'].'<br>
 
             <div class="aa">
-                <a href="../pages/main_validar_chama2.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                <button type="button" class="btn btn-dark">Editar</button>
+                <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
                 <button type="button" class="btn btn-danger">Desativar</button>
             </div>
 
