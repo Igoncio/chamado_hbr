@@ -379,6 +379,17 @@ button {
     opacity: 0.1
 }
 
+.aa{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: -20px;
+}
+
+button{
+    margin-left: 2px;
+}
+
 @media(max-width: 817px){
 
     .area-main {

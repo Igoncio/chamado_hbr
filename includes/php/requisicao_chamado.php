@@ -27,12 +27,12 @@ if($user['prioridade']=="baixa" and $user['status']=="nao_visto")
                     Responsável: '.$user['nome_resp'].'<br>
                     Cliente: '.$user['nome_cliente'].'<br> 
 
-                <div class="aa">
-                    <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                    <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
-                    <button type="button" class="btn btn-danger">Desativar</button>
-                </div>
-
+                    
+                    <div class="aa">
+                        <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <button type="button" class="btn btn-danger">Desativar</button>
+                    </div>
                 </div>
             </div>
     ';
@@ -57,11 +57,11 @@ $user_lista .='
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-            <div class="aa">
-                <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
-                <button type="button" class="btn btn-danger">Desativar</button>
-            </div>
+                <div class="aa">
+                    <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                    <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
+                    <button type="button" class="btn btn-danger">Desativar</button>
+                </div>
 
             </div>
         </div>
@@ -87,11 +87,11 @@ $user_lista .='
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-            <div class="aa">
-                <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
-                <button type="button" class="btn btn-danger">Desativar</button>
-            </div>
+                <div class="aa">
+                    <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                    <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
+                    <button type="button" class="btn btn-danger">Desativar</button>
+                </div>
 
             </div>
         </div>
