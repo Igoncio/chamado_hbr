@@ -51,7 +51,9 @@ include_once("../includes/menu.php");
            
            <div class="area-item">
                 <select  id="item" class="select" name="id_item">
-                    <option value="0">Selecione o item</option>
+                    <option value="<?php echo $itens[$objchamado->id_item-17]->id_item;?>">
+                    <?php echo $itens[$objchamado->id_item-17]->nome;;?>
+                    </option>
                     <?=$options_item?>
                 </select>
                 <i id="mais-item" class="bi bi-plus-circle"></i>
@@ -85,7 +87,9 @@ include_once("../includes/menu.php");
                 
 
             <div class="input-field">
-                <textarea placeholder="<?php print_r($objchamado->descricao);?>" id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                <textarea id="desc" class="input" name="descricao" maxlength="250">
+                <?php print_r($objchamado->descricao);?>
+                </textarea>
                 <label class="label" for="desc">Descrição (limite: 250 caracteres)</label>
                 <div id="contador-caracteres">0/250 caracteres</div>
             </div>

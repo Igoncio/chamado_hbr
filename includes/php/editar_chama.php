@@ -8,8 +8,17 @@ use App\Entity\Item;
 $clientes = Cliente::getCliente();
 $users = Usuario::getUsuario(); 
 $itens = Item::getItem();
+$objchama2 = Chamado::getChama();
 $objchamado = Chamado::getChama2($_GET['id_chamado']);
 
+
+
+
+
+// echo'<pre>'; print_r($objchamado->id_item); echo '</pre>';
+// echo'<pre>'; print_r($objchamado->tipo); echo '</pre>';
+// exit; 
+// echo'<pre>'; print_r($objchama2); echo '</pre>';
 // Verificar se o ID do item está presente e é um número válido
 
 // Verificar se o ID do chamado está presente e é um número válido
