@@ -4,7 +4,6 @@ use App\Entity\Chamado;
 
 $dados = Chamado::getChama();
 
-
 $user_lista = '';
 foreach($dados as $user){
     
@@ -26,6 +25,7 @@ if($user['prioridade']=="baixa" and $user['status']=="nao_visto")
                     descrição: '.$user['descricao'].'<br><br>
 
                     Responsável: '.$user['nome_resp'].'<br>
+                    Cliente: '.$user['nome_cliente'].'<br> 
 
                 <div class="aa">
                     <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
@@ -55,6 +55,7 @@ $user_lista .='
                 descrição: '.$user['descricao'].'<br><br>
 
                 Responsável: '.$user['nome_resp'].'<br>
+                Cliente: '.$user['nome_cliente'].'<br> 
 
             <div class="aa">
                 <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
@@ -84,6 +85,7 @@ $user_lista .='
                 descrição: '.$user['descricao'].'<br><br>
 
                 Responsável: '.$user['nome_resp'].'<br>
+                Cliente: '.$user['nome_cliente'].'<br> 
 
             <div class="aa">
                 <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>

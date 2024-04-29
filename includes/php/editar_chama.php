@@ -10,12 +10,6 @@ $users = Usuario::getUsuario();
 $itens = Item::getItem();
 $objchamado = Chamado::getChama2($_GET['id_chamado']);
 
-
-
-// print_r($_GET['id_chamado']);
-// echo"<pre>";print_r($objchamado->prioridade);echo"</pre>";
-// echo"<pre>";print_r($users[$objchamado->id_user-32]->nome);echo"</pre>";
-// exit;
 // Verificar se o ID do item está presente e é um número válido
 
 // Verificar se o ID do chamado está presente e é um número válido
@@ -80,9 +74,17 @@ if ($itens) {
     $options_item = '<option value="">Nenhum cliente encontrado</option>';
 }
 
-if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["descricao"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["prioridade"], $_POST["tipo"])) {
+if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["tipo"],  $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["descricao"], $_POST["prioridade"])) {
     // Criar um novo objeto Chamado
     $objchamado = Chamado::getChama2($_GET['id_chamado']);
+    
+    
+    if (!$objchamado) {
+        // Usuário não encontrado
+        echo "Usuário não encontrado.";
+        exit;
+    }
+
 
     // Definir as propriedades do chamado com base nos dados do formulário
     $objchamado->abertura = $_POST["abertura"];
@@ -90,25 +92,28 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
     $objchamado->id_user = $_POST["id_user"];
     $objchamado->id_cli = $_POST["id_cli"];
     $objchamado->id_item = $_POST["id_item"];
-    $objchamado->descricao = $_POST["descricao"];
+    $objchamado->tipo = $_POST['tipo'];
     $objchamado->num_patrimonio = $_POST["num_patrimonio"];
     $objchamado->num_serie = $_POST["num_serie"];
+    $objchamado->descricao = $_POST["descricao"];
     $objchamado->prioridade = $_POST["prioridade"];
-    $objchamado->tipo = $_POST['tipo'];
-
-
+    
+    
     // Atualizar o chamado no banco de dados
     $atualizar_sucesso = $objchamado->atualizar();
-
+    
+    // print_r();
+    // exit;
     // Verificar se a atualização foi bem-sucedida antes de redirecionar
-    print_r($atualizar_sucesso);
-    print_r($objchamado);
-    exit;
+    // print_r($atualizar_sucesso);
+    // print_r($objchamado->id_chamado);
+    // exit;
     if ($atualizar_sucesso) {
         header('Location: main_requisicao_chamado.php');
         exit;
     } else {
         echo "Erro ao atualizar o chamado.";
     }
+
 }
 

@@ -195,18 +195,20 @@ class Chamado
     }
 
     public function atualizar(){
-        return (new Database('chamado'))->update('id_chamado = '.$this->id_chamado,[
-                                                'abertura' => $this->abertura,
-                                                'fechamento' => $this->fechamento,
-                                                'id_cli' => $this->id_cli,
-                                                'id_user' => $this->id_user,
-                                                'id_item' => $this->id_item,
-                                                'descricao' => $this->descricao,
-                                                'num_patrimonio' => $this->num_patrimonio,
-                                                'num_serie' => $this->num_serie,
-                                                'prioridade' => $this->prioridade,
-                                                'status' => $this->status,
-                                                'tipo'=> $this->tipo
-                                                                  ]);
+
+        $id_chamados = "id_chamado = '" . $this->id_chamado . "'";
+        return (new Database('chamado'))->update($id_chamados, [
+            'abertura' => $this->abertura,
+            'fechamento' => $this->fechamento,
+            'id_cli' => $this->id_cli,
+            'id_user' => $this->id_user,
+            'id_item' => $this->id_item,
+            'descricao' => $this->descricao,
+            'num_patrimonio' => $this->num_patrimonio,
+            'num_serie' => $this->num_serie,
+            'prioridade' => $this->prioridade,
+            'tipo' => $this->tipo
+        ]);
+
     }
 }
