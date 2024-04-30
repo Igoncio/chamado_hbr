@@ -194,6 +194,22 @@ class Chamado
         }
     }
 
+    public static function getChama3($id_chamado){
+        // Verifica se $id_chamado é um valor válido
+        if (!empty($id_chamado)) {
+            // Obtém o tipo de dados para a comparação no SQL
+            $dataType = is_numeric($id_chamado) ? 'numeric' : 'string';
+            
+            // Prepara a cláusula WHERE com base no tipo de dados
+            $whereClause = $dataType === 'numeric' ? 'id_chamado = ' . $id_chamado : 'id_chamado = "' . $id_chamado . '"';
+            
+            // Executa o select usando a cláusula WHERE preparada
+            return (new Database('vw_vizualizar_chamado'))->select($whereClause)->fetchObject(self::class);
+        } else {
+            return null; // Retorna null se $id_chamado não for válido
+        }
+    }
+
     public function atualizar(){
 
         $id_chamados = "id_chamado = '" . $this->id_chamado . "'";
