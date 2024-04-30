@@ -41,13 +41,13 @@ session_start();
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Administrativo
+                  Gerenciamento
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Relátorio de chamados</a></li>
-                  <li><a class="dropdown-item" href="../pages/main_ger_user.php">Gerenciar usuarios</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_ger_cli.php">Gerenciar clientes</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_ger_equip.php">Gerenciar equipamentos</a></li>
                   <li><a class="dropdown-item" href="../pages/main_ger_perf.php">Gerenciar perfis</a></li>
-                  <li><a class="dropdown-item" href="../pages/main_ger_equip.php">Gerenciar equipamento</a></li>
+                  <li><a class="dropdown-item" href="../pages/main_ger_user.php">Gerenciar usuarios</a></li>
                 </ul>
               </li>
 
@@ -65,17 +65,7 @@ session_start();
               </li>
 
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    equipamento
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Arco Cirugico</a></li>
-                  <li><a class="dropdown-item" href="#">Ar Condicionado</a></li>
-                  <li><a class="dropdown-item" href="#">Computador</a></li>
-                  <li><a class="dropdown-item" href="#">Impressora</a></li>
-                </ul>
-              </li>
+              
               
             </ul>
           </div>
