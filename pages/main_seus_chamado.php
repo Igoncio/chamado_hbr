@@ -15,13 +15,14 @@ include_once("../includes/php/seus_chamados.php");
 <body>
 
 
+    
     <h1 id="titulo_page">Seus Chamados</h1>
     <section class="area-main">
-
-        
         <?=$user_lista?>
-
     </section>
+        
+    
+
 
 </body>
     
