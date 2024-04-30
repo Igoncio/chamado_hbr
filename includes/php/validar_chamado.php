@@ -52,11 +52,7 @@ if ($dadosID->prioridade == "baixa") {
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br>
-                <form action="">
-
-                    <input class="teste" type="text-area">
-          
-                </form>
+               
                 
             </div>
         </div>
