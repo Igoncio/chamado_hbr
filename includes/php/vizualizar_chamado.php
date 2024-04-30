@@ -23,7 +23,7 @@ foreach($dados as $user){
         <td>'.$user['status'].'</td>
         <td>'.$user['abertura'].'</td>
         <td>'.$user['fechamento'].'</td>
-        
+        <td><a href="../pages/main_vizualizar_chama2.php?id_chamado='.$user['id_chamado'].'""><i id="eye-icon" class="bi bi-eye"></i></a></td>
         
     </tbody>  
     ';

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -25,12 +25,13 @@ include_once("../includes/php/vizualizar_chamado.php");
                         <th>Equipamento</th>
                         <th>Cliente</th>
                         <th>Responsavel</th>
-                        <th>Solicitante</th>
+                        <th>Requisitante</th>
                         <th>Prioridade</th>
                         <th>Tipo</th>
                         <th>Status</th>
                         <th>Abertura</th>
                         <th>Fechamento</th>
+                        <th>Vizualizar</th>
                     </tr>
                   </thead>
                 </table>
@@ -44,4 +45,4 @@ include_once("../includes/php/vizualizar_chamado.php");
     </section>
     
 </body>
-</html>
+</html> -->
