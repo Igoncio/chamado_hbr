@@ -99,7 +99,15 @@ if (isset($_SESSION['id_user'])) {
                     <div class="notibody1">Selecione esta opção para vizualizar os chamados criados por todos usuarios</div>
                 </div>
             </a>
-    
+
+            <a href="main_seus_chamado.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Seus Chamados</div>
+                    <div class="notibody1">Selecione esta opção para ver as atualizações de chamados criados por você</div>
+                </div>
+            </a>
     
             <a href="main_requisicao_chamado.php">
                 <div class="card1">
