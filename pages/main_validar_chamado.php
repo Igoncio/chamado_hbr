@@ -23,12 +23,6 @@ include_once("../includes/php/validar_chamado.php");
     
     </section>
 
-
-    <form action="">
-
-        <input class="teste" type="text-area">
-        <input type="file">
-    </form>
 </body>
     
 </html>

@@ -58,9 +58,11 @@ if ($dadosID->prioridade == "baixa") {
                 
                     <label id="txt-resp" for="">Responder Chamado</label>
                     
+                    <label class="label" for="desc">Descrição</label>
                     <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
-                    <label class="label" for="desc">Descrição(limite: 250 caracteres)</label>
                     <div id="contador-caracteres">0/250 caracteres</div>
+
+                    
 
 
 
