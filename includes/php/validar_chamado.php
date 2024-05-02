@@ -53,9 +53,21 @@ if ($dadosID->prioridade == "baixa") {
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br>
                
+                <form action="" class="area-form">
                 
-            </div>
-        </div>
+                
+                    <label id="txt-resp" for="">Responder Chamado</label>
+                    
+                    <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                    <label class="label" for="desc">Descrição(limite: 250 caracteres)</label>
+                    <div id="contador-caracteres">0/250 caracteres</div>
+
+
+
+                </form>
+                
+                </div>
+                </div>
     ';
 }
 

@@ -20,7 +20,7 @@ include_once("../includes/php/validar_chamado.php");
 
       <?= $user_lista ?>  
       
-
+    
     </section>
 
 

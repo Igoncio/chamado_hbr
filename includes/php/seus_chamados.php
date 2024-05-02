@@ -72,7 +72,7 @@ $user_lista .='
 
                 <div class="aa">
                     <a><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                    href="../pages/main_vizualizar_chama2.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Vizualizar</button></a>
+                    <a href="../pages/main_vizualizar_chama2.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Vizualizar</button></a>
                     <button type="button" class="btn btn-danger">Desativar</button>
                 </div>
 
