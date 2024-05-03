@@ -113,7 +113,7 @@ if (isset($_SESSION['id_user'])) {
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
-                    <div class="notititle1">Rquisições de Chamados</div>
+                    <div class="notititle1">Requisições de Chamados</div>
                     <div class="notibody1">Selecione esta opção para validar os chamados já criados</div>
                 </div>
             </a>

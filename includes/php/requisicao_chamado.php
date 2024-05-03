@@ -5,6 +5,7 @@ use App\Entity\Chamado;
 $dados = Chamado::getChama();
 
 $user_lista = '';
+$user_table = '';
 foreach($dados as $user){
     
 if($user['prioridade']=="baixa" and $user['status']=="nao_visto")
@@ -98,7 +99,39 @@ $user_lista .='
 ';
 
 
+
+
+
+
+if ($user['status'] == "nao_visto") {
+    // Limita a descrição para 140 caracteres
+    $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
+
+    $user_table .= '
+            <tr>
+                <td>' . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . '</td>
+                <td>' . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . '</td>
+                <td>' . (!empty($user['abertura']) ? $user['abertura'] : 'campo vazio') . '</td>
+                <td>' . (!empty($user['nome_equip']) ? $user['nome_equip'] : 'campo vazio') . '</td>
+                <td>' . (!empty($user['tipo']) ? $user['tipo'] : 'campo vazio') . '</td>
+                <td>' . (!empty($user['prioridade']) ? $user['prioridade'] : 'campo vazio') . '</td>
+                <td>' . $descricao . '</td>
+                <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
+                <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
+                <td>
+                    <div class="aa">
+                        <a href="../pages/main_validar_chamado.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <button type="button" class="btn btn-danger">Desativar</button>
+                    </div>
+                </td>
+            </tr>';
 }
+
+
+
+}
+
 
 
 
