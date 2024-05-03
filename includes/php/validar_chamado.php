@@ -51,8 +51,10 @@ if ($dadosID->prioridade == "baixa") {
                 Prioridade: ' . $dadosID->prioridade . '<br><br>
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
-                Cliente: ' . $dadosID->nome_cliente . '<br>
-               
+                Cliente: ' . $dadosID->nome_cliente . '<br><br>
+                <label>Imagem detalhada:</label> <br>
+                <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
+
                 <form action="" class="area-form">
                 
                 
@@ -63,7 +65,11 @@ if ($dadosID->prioridade == "baixa") {
                     <div id="contador-caracteres">0/250 caracteres</div>
 
                     
-
+                    <div class="aa">
+                        <a href=""><button type="button" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <button type="button" class="btn btn-danger">Voltar</button>
+                    </div>
 
 
                 </form>
@@ -88,6 +94,28 @@ if ($dadosID->prioridade == "media") {
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br> 
+
+                <label>Imagem detalhada:</label> <br>
+                <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
+
+                <form action="" class="area-form">
+                
+                
+                    <label id="txt-resp" for="">Responder Chamado</label>
+                    
+                    <label class="label" for="desc">Descrição</label>
+                    <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                    <div id="contador-caracteres">0/250 caracteres</div>
+
+                    
+                    <div class="aa">
+                        <a href=""><button type="button" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <button type="button" class="btn btn-danger">Voltar</button>
+                    </div>
+
+
+                </form>
                 
             </div>
         </div>
@@ -110,6 +138,28 @@ if ($dadosID->prioridade == "alta") {
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br> 
+                
+                <label>Imagem detalhada:</label> <br>
+                <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
+
+                <form action="" class="area-form">
+                
+                
+                    <label id="txt-resp" for="">Responder Chamado</label>
+                    
+                    <label class="label" for="desc">Descrição</label>
+                    <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                    <div id="contador-caracteres">0/250 caracteres</div>
+
+                    
+                    <div class="aa">
+                        <a href=""><button type="button" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <button type="button" class="btn btn-danger">Voltar</button>
+                    </div>
+
+
+                </form>
                 
             </div>
         </div>
