@@ -13,9 +13,11 @@ include_once("../includes/php/requisicao_chamado.php");
 <h1 id="titulo_page">Requisição de Chamados</h1>
 <button id="btn-alternador" onclick="toggleView()">Alternar Visualização</button>
 
+
 <div id="tableView" style="display: none;">
-    <table class="table">
-        <thead>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
             <tr>
                 <th scope="col">Chamado</th>
                 <th scope="col">Requisitante</th>
@@ -28,11 +30,14 @@ include_once("../includes/php/requisicao_chamado.php");
                 <th scope="col">Cliente</th>
                 <th scope="col">Ações</th>
             </tr>
-        </thead>
-        <tbody>
-            <?=$user_table?>
-        </tbody>
-    </table>
+            </thead>
+        </table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+        <?=$user_table?>
+        </table>
+    </div>
 </div>
 
 <div id="cardView">

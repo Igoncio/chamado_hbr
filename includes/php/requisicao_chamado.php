@@ -108,6 +108,8 @@ if ($user['status'] == "nao_visto") {
     $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
 
     $user_table .= '
+
+        <tbody>
             <tr>
                 <td>' . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . '</td>
@@ -125,7 +127,8 @@ if ($user['status'] == "nao_visto") {
                         <button type="button" class="btn btn-danger">Desativar</button>
                     </div>
                 </td>
-            </tr>';
+            </tr>
+        </tbody> ';
 }
 
 
