@@ -108,8 +108,6 @@ if ($user['status'] == "nao_visto") {
     $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
 
     $user_table .= '
-
-        <tbody>
             <tr>
                 <td>' . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . '</td>
@@ -121,14 +119,11 @@ if ($user['status'] == "nao_visto") {
                 <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
                 <td>
-                    <div class="aa">
-                        <a href="../pages/main_validar_chamado.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                        <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                        <button type="button" class="btn btn-danger">Desativar</button>
-                    </div>
+                    <a href="../pages/main_validar_chamado.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+                    <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                    <button type="button" class="btn btn-danger">Desativar</button>
                 </td>
-            </tr>
-        </tbody> ';
+            </tr>';
 }
 
 

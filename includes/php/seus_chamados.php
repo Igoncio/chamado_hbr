@@ -116,27 +116,22 @@ if ($user['status'] == "nao_visto" and $user['solicitante'] == $objUsuario->id_u
     $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
 
     $user_table .= '
-
-        <tbody>
-            <tr>
-                <td>' . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . '</td>
-                <td>' . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . '</td>
-                <td>' . (!empty($user['abertura']) ? $user['abertura'] : 'campo vazio') . '</td>
-                <td>' . (!empty($user['nome_equip']) ? $user['nome_equip'] : 'campo vazio') . '</td>
-                <td>' . (!empty($user['tipo']) ? $user['tipo'] : 'campo vazio') . '</td>
-                <td>' . (!empty($user['prioridade']) ? $user['prioridade'] : 'campo vazio') . '</td>
-                <td>' . $descricao . '</td>
-                <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
-                <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
-                <td>
-                <div class="aa">
-                    <a href="../pages/main_validar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-                    <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
-                    <button type="button" class="btn btn-danger">Desativar</button>
-                </div>
-                </td>
-            </tr>
-        </tbody> ';
+    <tr>
+        <td>' . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . '</td>
+        <td>' . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . '</td>
+        <td>' . (!empty($user['abertura']) ? $user['abertura'] : 'campo vazio') . '</td>
+        <td>' . (!empty($user['nome_equip']) ? $user['nome_equip'] : 'campo vazio') . '</td>
+        <td>' . (!empty($user['tipo']) ? $user['tipo'] : 'campo vazio') . '</td>
+        <td>' . (!empty($user['prioridade']) ? $user['prioridade'] : 'campo vazio') . '</td>
+        <td>' . $descricao . '</td>
+        <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
+        <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
+        <td>
+            <a href="../pages/main_validar_chamado.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
+            <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+            <button type="button" class="btn btn-danger">Desativar</button>
+        </td>
+    </tr>';
 }
 
 
