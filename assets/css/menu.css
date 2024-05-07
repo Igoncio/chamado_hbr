@@ -8,3 +8,32 @@
 #logo_menu{
     width: 45%;
 }
+
+#icon-user{
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+#txt-user{
+    display: flex;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.menu-user{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    margin-right: 30%;
+    /* align-items: baseline; */
+    /* background-color: aqua; */
+}
+
+.container-user{
+    text-align: center;
+    display: flex;
+    border-radius: 5px;
+    /* height: 20px; */
+    /* color: aliceblue; */
+    /* background-color: #e0e0e0; */
+}
