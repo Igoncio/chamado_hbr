@@ -19,7 +19,7 @@ $user_lista = '';
 foreach($dados as $user){
     
     $user_lista .='
-    <tbody>
+    <tr>
         
     <td>'.$user->nome.'</td>
     <td>
@@ -32,7 +32,7 @@ foreach($dados as $user){
     </a>
     </td>
     
-    </tbody>  
+    </tr>  
     ';
 
 

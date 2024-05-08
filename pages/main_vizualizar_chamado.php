@@ -13,34 +13,33 @@ include_once("../includes/php/vizualizar_chamado.php");
 <title>vizualizar chamados</title>
 <body>
     
-
-    <section class="area-main">
-        <h1 id="titulo-page">Vizualizar Chamados</h1>
-        
-        <div class="tbl-header">
-                <table cellpadding="0" cellspacing="0" border="0">
-                  <thead>
+  
+  <section class="area-main">
+    <h1 id="titulo-page">Vizualizar Chamados</h1>
+    
+    <div  id="tableView" style="height: 450px; overflow-y: auto;">
+            <table class="table">
+                <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Equipamento</th>
-                        <th>Cliente</th>
-                        <th>Responsavel</th>
-                        <th>Requisitante</th>
-                        <th>Prioridade</th>
-                        <th>Tipo</th>
-                        <th>Status</th>
-                        <th>Abertura</th>
-                        <th>Fechamento</th>
-                        <th>Vizualizar</th>
+                      <th>ID</th>
+                      <th>Equipamento</th>
+                      <th>Cliente</th>
+                      <th>Responsavel</th>
+                      <th>Requisitante</th>
+                      <th>Prioridade</th>
+                      <th>Tipo</th>
+                      <th>Status</th>
+                      <th>Abertura</th>
+                      <th>Fechamento</th>
+                      <th>Vizualizar</th>
                     </tr>
-                  </thead>
-                </table>
-        </div>
-              <div class="tbl-content">
-                <table cellpadding="0" cellspacing="0" border="0">
+                </thead>
+                <tbody class="table-group-divider">
                   <?= $user_lista ?>
-                </table>
-              </div>
+                </tbody>
+            </table>
+        </div>
+
         
     </section>
     

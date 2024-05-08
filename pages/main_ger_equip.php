@@ -11,31 +11,27 @@ include_once("../includes/php/ger_equip.php");
 <title>gerenciar equipamento</title>
 <body>
     
-
-    <section class="area-main">
-        <h1 id="titulo-page">Gerenciar Equipamento</h1>
-        
-        <div class="tbl-header">
-                <table cellpadding="0" cellspacing="0" border="0">
-                  <thead>
-                    <tr>
+  <section class="area-main">
+    <h1 id="titulo-page">Gerenciar Equipamento</h1>
+    
+    <div  id="tableView" style="height: 450px; overflow-y: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
                         <th>Apelido</th>
-                        <th>Nome</th>
-                        <th>N° Série</th>
-                        <th>Cliente</th>
-                        <th>Perfil</th>
-                        <th>#</th>
-                    </tr>
-                  </thead>
+                            <th>Nome</th>
+                            <th>N° Série</th>
+                            <th>Cliente</th>
+                            <th>Perfil</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                      <?= $user_lista ?>
+                    </tbody>
                 </table>
-              </div>
-              <div class="tbl-content">
-                <table cellpadding="0" cellspacing="0" border="0">
-            
-                    <?=$user_lista;?>
-                </table>
-              </div>
-        
+            </div>
+    
     </section>
     
 </body>

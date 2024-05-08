@@ -14,27 +14,24 @@ include_once("../includes/php/ger_cli.php");
 
 <section class="area-main">
     <h1 id="titulo-page">Gerenciar Cliente</h1>
-    <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-          <thead>
-            <tr>
-                <th>Codigo</th>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>Cidade</th>
-                <th>Rua</th>
-                <th>Numero</th>
-                <th>#</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
-    
-            <?=$user_lista;?>
-        </table>
-      </div>
+    <div  id="tableView" style="height: 450px; overflow-y: auto;">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Codigo</th>
+                      <th>Nome</th>
+                      <th>Telefone</th>
+                      <th>Cidade</th>
+                      <th>Rua</th>
+                      <th>Numero</th>
+                      <th>#</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                  <?= $user_lista ?>
+                </tbody>
+            </table>
+        </div>
 </section>
 
 

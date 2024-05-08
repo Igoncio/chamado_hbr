@@ -19,7 +19,7 @@ $user_lista = '';
 foreach($dados as $user){
     
     $user_lista .='
-    <tbody>
+    <tr>
         
     <td>'.$user['nome'].'</td>
     <td>'.$user['telefone'].'</td>
@@ -35,7 +35,7 @@ foreach($dados as $user){
             <button type="button" class="bi bi-trash"id="lixo" name="excluir"></button>
         </a>
     </td>
-    </tbody> 
+    </tr> 
     ';
 
 

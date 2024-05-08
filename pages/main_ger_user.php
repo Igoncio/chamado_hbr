@@ -11,13 +11,13 @@ include_once("../includes/php/ger_user.php");
 <title>gerenciar usuario</title>
 <body>
     
-    
+
     <section class="area-main">
         <h1 id="titulo-page">Gerenciar Usuario</h1>
         
-        <div class="tbl-header">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <thead>
+        <div  id="tableView" style="height: 450px; overflow-y: auto;">
+        <table class="table">
+            <thead>
                 <tr>
                     <th>Nome</th>
                     <th>Telefone</th>
@@ -26,14 +26,12 @@ include_once("../includes/php/ger_user.php");
                     <th>Perfil</th>
                     <th>#</th>
                 </tr>
-                </thead>
-            </table>
-            </div>
-            <div class="tbl-content">
-            <table cellpadding="0" cellspacing="0" border="0">
-                <?=$user_lista;?>
-            </table>
-        </div>
+            </thead>
+            <tbody class="table-group-divider">
+                <?=$user_lista?>
+            </tbody>
+        </table>
+    </div>
         
         
     </section>

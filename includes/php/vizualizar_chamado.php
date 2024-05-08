@@ -11,7 +11,7 @@ foreach($dados as $user){
 
 
     $user_lista .='
-    <tbody id="linha">
+    <tr>
         
         <td>'.$user['id_chamado'].'</td>
         <td>'.$user['nome_equip'].'</td>
@@ -25,7 +25,7 @@ foreach($dados as $user){
         <td>'.$user['fechamento'].'</td>
         <td><a href="../pages/main_vizualizar_chama2.php?id_chamado='.$user['id_chamado'].'""><i id="eye-icon" class="bi bi-eye"></i></a></td>
         
-    </tbody>  
+    </tr>  
     ';
 
 

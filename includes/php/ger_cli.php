@@ -20,7 +20,7 @@ foreach($dados as $user){
     // exit;
 
     $user_lista .='
-            <tbody>
+            
                 <tr>
                     <td>'.$user->codigo.'</td>
                     <td>'.$user->nome.'</td>
@@ -40,7 +40,7 @@ foreach($dados as $user){
 
                     </td>
                 </tr>
-            </tbody>  
+             
     ';
 
 

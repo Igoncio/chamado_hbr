@@ -30,6 +30,7 @@ a{
 #btn-alternador{
     display: flex;
     justify-content: left;
+    margin-top: 1%;
 }
 .area-main{
     display: flex;  
@@ -41,6 +42,10 @@ a{
     overflow-y: scroll;
     height: 600px;
     /* background-color: #7e61ff; */
+}
+
+#tableView{
+    margin-top: 1%;
 }
 
 .area-main::-webkit-scrollbar {
