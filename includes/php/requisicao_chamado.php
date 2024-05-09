@@ -91,7 +91,7 @@ $user_lista .='
                 Cliente: '.$user['nome_cliente'].'<br> 
 
                 <form class="aa">
-                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnAceitar">Aceitar</button></a>
+                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="submit" class="btn btn-primary" id="btnAceitar">Aceitar</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
                 <button type="button" class="btn btn-danger">Desativar</button>
                 </form>
@@ -122,8 +122,8 @@ if ($user['status'] == "nao_visto") {
                 <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
                 <td>
-                <form>
-                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnAceitar">Aceitar</button></a>
+                <form method="POST">
+                <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                 <button type="button" class="btn btn-danger">Desativar</button>
                 </form>

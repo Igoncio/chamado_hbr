@@ -227,4 +227,15 @@ class Chamado
         ]);
 
     }
+
+    public function AceitarChamado()
+    {
+        $statusinicial = "os";
+        $id_chamados = "id_chamado = '" . $this->id_chamado . "'";
+    
+        return (new Database('chamado'))->update($id_chamados, [
+            'status' => $statusinicial
+        ]);
+    
+    }
 }
