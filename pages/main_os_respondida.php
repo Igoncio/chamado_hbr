@@ -27,6 +27,7 @@ include_once("../includes/php/os_respondida.php");
                     <th scope="col">Descrição</th>
                     <th scope="col">Responsável</th>
                     <th scope="col">Cliente</th>
+                    <th scope="col">Resposta téc.</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>

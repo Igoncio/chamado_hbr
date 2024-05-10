@@ -44,6 +44,11 @@ a{
     /* background-color: #7e61ff; */
 }
 
+#txt-resp{
+    font-size: 18px;
+    color: #000000;
+}
+
 #tableView{
     margin-top: 1%;
 }

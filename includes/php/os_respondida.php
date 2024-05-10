@@ -8,6 +8,7 @@ $user_lista = '';
 $user_table = '';
 foreach($dados as $user){
     
+// echo'<pre>'; print_r($dados); echo'</pre>';
 if($user['prioridade']=="baixa" and $user['status']=="os_respondida")
     $user_lista .='   
     <div class="card1">
@@ -28,8 +29,7 @@ if($user['prioridade']=="baixa" and $user['status']=="os_respondida")
                     Responsável: '.$user['nome_resp'].'<br>
                     Cliente: '.$user['nome_cliente'].'<br> 
 
-                    
-                    <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
+                    <a href="../pages/main_vizualizar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Vizualizar</button></a>
                     <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                     </td>
     
@@ -58,7 +58,8 @@ if($user['prioridade']=="media" and $user['status']=="os_respondida")
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
+
+                <a href="../pages/main_vizualizar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Vizualizar</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                 </td>
                 
@@ -87,7 +88,7 @@ if($user['prioridade']=="alta" and $user['status']=="os_respondida")
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
+                <a href="../pages/main_vizualizar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Vizualizar</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                 </td>
                 
@@ -117,7 +118,7 @@ if ($user['status'] == "os_respondida") {
                 <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
                 <td>
-                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
+                <a href="../pages/main_vizualizar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Vizualizar</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                 </td>
                 </tr>';
