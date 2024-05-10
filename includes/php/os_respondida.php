@@ -8,7 +8,7 @@ $user_lista = '';
 $user_table = '';
 foreach($dados as $user){
     
-if($user['prioridade']=="baixa" and $user['status'] == "os" or $user['prioridade']=="baixa" and $user['status'] == "os_respondida")
+if($user['prioridade']=="baixa" and $user['status']=="os_respondida")
     $user_lista .='   
     <div class="card1">
                 <div class="notiglow1"></div>
@@ -38,7 +38,7 @@ if($user['prioridade']=="baixa" and $user['status'] == "os" or $user['prioridade
                     ';
                     
                     // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-if($user['prioridade']=="media" and $user['status'] == "os" or $user['prioridade']=="media" and $user['status'] == "os_respondida")
+if($user['prioridade']=="media" and $user['status']=="os_respondida")
         $user_lista .='   
             <div class="card3">
             <div class="notiglow3"></div>
@@ -67,7 +67,7 @@ if($user['prioridade']=="media" and $user['status'] == "os" or $user['prioridade
                 ';
                 
                 // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-if($user['prioridade']=="alta" and $user['status'] == "os" or $user['prioridade']=="alta" and $user['status'] == "os_respondida")
+if($user['prioridade']=="alta" and $user['status']=="os_respondida")
         $user_lista .='   
             <div class="card2">
             <div class="notiglow2"></div>
@@ -99,7 +99,9 @@ if($user['prioridade']=="alta" and $user['status'] == "os" or $user['prioridade'
 
 
 
-if ($user['status'] == "os" or $user['status'] =="os_respondida") {
+
+
+if ($user['status'] == "os_respondida") {
     // Limita a descrição para 140 caracteres
     $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
 

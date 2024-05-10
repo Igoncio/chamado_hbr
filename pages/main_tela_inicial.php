@@ -138,6 +138,25 @@ require_once __DIR__ . '/../vendor/autoload.php';
                 </div>
             </a>
 
+            <a href="main_os_naorespondida.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Os não respondidas</div>
+                    <div class="notibody1">Selecione esta opção para vizualizar e responder a todas ordens de seviço</div>
+                </div>
+            </a>
+
+
+            <a href="main_os_respondida.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Os respondidas</div>
+                    <div class="notibody1">Selecione esta opção para vizualizar e responder a todas ordens de seviço</div>
+                </div>
+            </a>
+
 
         </section>
 

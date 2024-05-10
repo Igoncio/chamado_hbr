@@ -84,6 +84,9 @@ if (isset($_SESSION['id_user'])) {
                 <i id="icon-user" class="bi bi-person-fill"></i>
                 <h5 id="txt-user"><?php echo $objUsuario->nome;?></h1>
 
+                <div id="dropdown" class="dropdown-content">
+                    <a href="../">Sair</a>
+                </div>
               </div>
             </ul>
           </div>
