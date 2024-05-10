@@ -42,7 +42,7 @@ if ($dadosID->prioridade == "baixa") {
         <div class="card1">
             <div class="notiglow1"></div>
             <div class="notiborderglow1"></div>
-            <div class="notititle1">Chamado ' . $dadosID->id_chamado . '</div>
+            <div class="notititle1">OS  ' . $dadosID->id_chamado . '</div>
             <div class="notibody1">
                 Requisitante: ' . $dadosID->nome_solicitante . '<br>
                 Abertura: ' . $dadosID->abertura . '<br><br>
@@ -55,18 +55,18 @@ if ($dadosID->prioridade == "baixa") {
                 <label>Imagem detalhada:</label> <br>
                 <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
 
-                <form action="" class="area-form">
+                <form method="POST" action="" class="area-form">
                 
                 
-                    <label id="txt-resp" for="">Responder Chamado</label>
+                    <label id="txt-resp" for="">Responder OS</label>
                     
                     <label class="label" for="desc">Descrição</label>
-                    <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                    <textarea id="desc" class="input" name="resp_desc" maxlength="250"></textarea>
                     <div id="contador-caracteres">0/250 caracteres</div>
 
                     
                     <div class="aa">
-                        <a href=""><button type="button" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
                         <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
@@ -84,7 +84,7 @@ if ($dadosID->prioridade == "media") {
         <div class="card3">
             <div class="notiglow3"></div>
             <div class="notiborderglow3"></div>
-            <div class="notititle3">Chamado ' . $dadosID->id_chamado . '</div>
+            <div class="notititle3">OS ' . $dadosID->id_chamado . '</div>
             <div class="notibody3">
                 Requisitante: ' . $dadosID->nome_solicitante . '<br>
                 Abertura: ' . $dadosID->abertura . '<br><br>
@@ -98,18 +98,18 @@ if ($dadosID->prioridade == "media") {
                 <label>Imagem detalhada:</label> <br>
                 <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
 
-                <form action="" class="area-form">
+                <form method="POST" action="" class="area-form">
                 
                 
-                    <label id="txt-resp" for="">Responder Chamado</label>
+                    <label id="txt-resp" for="">Responder OS</label>
                     
                     <label class="label" for="desc">Descrição</label>
-                    <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                    <textarea id="desc" class="input" name="resp_desc" maxlength="250"></textarea>
                     <div id="contador-caracteres">0/250 caracteres</div>
 
                     
                     <div class="aa">
-                        <a href=""><button type="button" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
                         <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
@@ -128,7 +128,7 @@ if ($dadosID->prioridade == "alta") {
         <div class="card2">
             <div class="notiglow2"></div>
             <div class="notiborderglow2"></div>
-            <div class="notititle2">Chamado ' . $dadosID->id_chamado . '</div>
+            <div class="notititle2">OS ' . $dadosID->id_chamado . '</div>
             <div class="notibody2">
                 Requisitante: ' . $dadosID->nome_solicitante . '<br>
                 Abertura: ' . $dadosID->abertura . '<br><br>
@@ -142,18 +142,18 @@ if ($dadosID->prioridade == "alta") {
                 <label>Imagem detalhada:</label> <br>
                 <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
 
-                <form action="" class="area-form">
+                <form method="POST" action="" class="area-form">
                 
                 
-                    <label id="txt-resp" for="">Responder Chamado</label>
+                    <label id="txt-resp" for="">Responder OS</label>
                     
                     <label class="label" for="desc">Descrição</label>
-                    <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
+                    <textarea id="desc" class="input" name="resp_desc" maxlength="250"></textarea>
                     <div id="contador-caracteres">0/250 caracteres</div>
 
                     
                     <div class="aa">
-                        <a href=""><button type="button" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
                         <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
@@ -164,6 +164,39 @@ if ($dadosID->prioridade == "alta") {
             </div>
         </div>
     ';
+}
+
+if (isset($_POST["resp_desc"])) {
+    // Criar um novo objeto Chamado
+    $objchamado = Chamado::getChama2($_GET['id_chamado']);
+    
+    
+    if (!$objchamado) {
+        // Usuário não encontrado
+        echo "Usuário não encontrado.";
+        exit;
+    }
+
+
+    // Definir as propriedades do chamado com base nos dados do formulário
+    $objchamado->resp_desc = $_POST["resp_desc"];
+    
+    // Atualizar o chamado no banco de dados
+   $atualizar_sucesso = $objchamado->ResponderOs();
+    
+    // print_r();
+    // exit;
+    // Verificar se a atualização foi bem-sucedida antes de redirecionar
+    // print_r($atualizar_sucesso);
+    // print_r($objchamado->id_chamado);
+    // exit;
+    if ($atualizar_sucesso) {
+        echo '<script>window.location.href = "main_todas_os.php";</script>';
+        exit;
+    } else {
+        echo "Erro ao atualizar o chamado.";
+    }
+
 }
 
 ?>

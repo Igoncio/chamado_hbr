@@ -117,6 +117,30 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
         </section>
 
+        <section class="area-chamado">
+
+        <h1 id="txt-area">Ordens de Serviço</h1>
+            <a href="main_todas_os.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Todas Os</div>
+                    <div class="notibody1">Selecione esta opção para vizualizar e responder a todas ordens de seviço</div>
+                </div>
+            </a>
+
+            <a href="main_seus_chamado.php">
+                <div class="card1">
+                    <div class="notiglow1"></div>
+                    <div class="notiborderglow1"></div>
+                    <div class="notititle1">Suas Os</div>
+                    <div class="notibody1">Selecione esta opção para responder as ordens de serviço encaminhadas a você</div>
+                </div>
+            </a>
+
+
+        </section>
+
 
 
         <section class="area-gerenciar">

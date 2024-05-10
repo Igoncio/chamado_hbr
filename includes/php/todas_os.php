@@ -8,7 +8,7 @@ $user_lista = '';
 $user_table = '';
 foreach($dados as $user){
     
-if($user['prioridade']=="baixa" and $user['status']=="nao_visto")
+if($user['prioridade']=="baixa" and $user['status']=="os")
     $user_lista .='   
     <div class="card1">
                 <div class="notiglow1"></div>
@@ -29,15 +29,16 @@ if($user['prioridade']=="baixa" and $user['status']=="nao_visto")
                     Cliente: '.$user['nome_cliente'].'<br> 
 
                     
-                    <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
+                    <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
                     <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                    <button type="button" class="btn btn-danger">Desativar</button>
+                    </td>
+    
                     </div>
                     </div>
                     ';
                     
                     // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-if($user['prioridade']=="media" and $user['status']=="nao_visto")
+if($user['prioridade']=="media" and $user['status']=="os")
         $user_lista .='   
             <div class="card3">
             <div class="notiglow3"></div>
@@ -57,16 +58,16 @@ if($user['prioridade']=="media" and $user['status']=="nao_visto")
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-                <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
+                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                <button type="button" class="btn btn-danger">Desativar</button>
+                </td>
                 
                 </div>
                 </div>
                 ';
                 
                 // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-if($user['prioridade']=="alta" and $user['status']=="nao_visto")
+if($user['prioridade']=="alta" and $user['status']=="os")
         $user_lista .='   
             <div class="card2">
             <div class="notiglow2"></div>
@@ -86,9 +87,9 @@ if($user['prioridade']=="alta" and $user['status']=="nao_visto")
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-                <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
+                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                <button type="button" class="btn btn-danger">Desativar</button>
+                </td>
                 
                 </div>
                 </div>
@@ -100,7 +101,7 @@ if($user['prioridade']=="alta" and $user['status']=="nao_visto")
 
 
 
-if ($user['status'] == "nao_visto") {
+if ($user['status'] == "os") {
     // Limita a descrição para 140 caracteres
     $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
 
@@ -116,9 +117,8 @@ if ($user['status'] == "nao_visto") {
                 <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
                 <td>
-                <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
+                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                <button type="button" class="btn btn-danger">Desativar</button>
                 </td>
                 </tr>';
             }

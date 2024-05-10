@@ -15,7 +15,7 @@ include_once("../includes/php/validar_os.php");
 <body>
 
 
-    <h1 id="titulo_page">Validar Chamado</h1>
+    <h1 id="titulo_page">Responder OS</h1>
     <section class="area-main">
 
       <?= $user_lista ?>  

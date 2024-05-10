@@ -126,10 +126,12 @@ include_once("../includes/menu.php");
 
 
             <div class="btn-field">
-                <button class="btn-submit" type="submit">Editar</button>
-                <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
+                <button class="btn-submit" type="submit" onclick="submitForm(event)" >Editar</button>
+                <a href="" class="btn-cancelar" id="cancelar" onclick="cancelar(event)">Cancelar</a href="">
             </div>
         </form>
     </section>
+
+
 </body>
 </html>

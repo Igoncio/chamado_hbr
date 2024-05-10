@@ -103,6 +103,12 @@ class Chamado
      */
     public $tipo;
 
+        /**
+     * Nome do arquivo de imagem associado ao chamado
+     * @var string
+     */
+    public $resp_desc;
+
     /** 
      * Método responsável por cadastrar um novo chamado no banco de dados 
      * @return boolean
@@ -137,7 +143,7 @@ class Chamado
         'imagem' => $this->imagem,
         'solicitante' => $this->solicitante,
         'status' => $statusinicial,
-        'tipo'=> $this->tipo
+        'tipo'=> $this->tipo,
     ]);
 
     return true;
@@ -238,4 +244,17 @@ class Chamado
         ]);
     
     }
+
+    public function ResponderOs()
+    {
+        $statusinicial = "os_respondida";
+        $id_chamados = "id_chamado = '" . $this->id_chamado . "'";
+    
+        return (new Database('chamado'))->update($id_chamados, [
+            'status' => $statusinicial,
+            'resp_desc' => $this->resp_desc
+        ]);
+    }
+
 }
+        
