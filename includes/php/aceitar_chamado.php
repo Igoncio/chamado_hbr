@@ -17,7 +17,10 @@ $objchamado = Chamado::getChama2($_GET['id_chamado']);
 
         if ($aceitou) {
             // Redireciona para a página principal após aceitar o chamado
-            echo '<script>window.location.href = "../../pages/main_requisicao_chamado.php";</script>';
+            echo '<script>
+            alert("Agora seu chamado virou uma Ordem de Seviço!");
+            window.location.href = "../../pages/main_requisicao_chamado.php";
+            </script>';
             exit;
         } else {
             echo 'Erro ao aceitar o chamado.';

@@ -29,18 +29,16 @@ if($user['prioridade']=="baixa" and $user['status']=="nao_visto")
                     Cliente: '.$user['nome_cliente'].'<br> 
 
                     
-                    <form class="aa">
-                    <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnAceitar">Aceitar</button></a>
-                    <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
+                    <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
+                    <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                     <button type="button" class="btn btn-danger">Desativar</button>
-                    </form>
                     </div>
                     </div>
                     ';
                     
                     // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
                     if($user['prioridade']=="media" and $user['status']=="nao_visto")
-$user_lista .='   
+            $user_lista .='   
             <div class="card3">
             <div class="notiglow3"></div>
             <div class="notiborderglow3"></div>
@@ -59,11 +57,9 @@ $user_lista .='
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-                <form class="aa">
-                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnAceitar">Aceitar</button></a>
-                <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
+                <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
+                <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                 <button type="button" class="btn btn-danger">Desativar</button>
-                </form>
                 
                 </div>
                 </div>
@@ -90,11 +86,9 @@ $user_lista .='
                 Responsável: '.$user['nome_resp'].'<br>
                 Cliente: '.$user['nome_cliente'].'<br> 
 
-                <form class="aa">
-                <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="submit" class="btn btn-primary" id="btnAceitar">Aceitar</button></a>
-                <a href="../pages/main_editar_chama.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-dark">Editar</button></a>
+                <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
+                <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                 <button type="button" class="btn btn-danger">Desativar</button>
-                </form>
                 
                 </div>
                 </div>
@@ -122,11 +116,9 @@ if ($user['status'] == "nao_visto") {
                 <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
                 <td>
-                <form method="POST">
                 <a href="../includes/php/aceitar_chamado.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" name="aceitar" id="btnAceitar">Aceitar</button></a>
                 <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                 <button type="button" class="btn btn-danger">Desativar</button>
-                </form>
                 </td>
                 </tr>';
             }
