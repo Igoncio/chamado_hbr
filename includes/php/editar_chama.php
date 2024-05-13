@@ -6,7 +6,7 @@ use App\Entity\Usuario;
 use App\Entity\Item;
 
 $clientes = Cliente::getCliente();
-$users = Usuario::getUsuario(); 
+$users = Usuario::getUsuario();
 $itens = Item::getItem();
 $objchama2 = Chamado::getChama();
 $objchamado = Chamado::getChama2($_GET['id_chamado']);
@@ -22,7 +22,8 @@ $objchamado = Chamado::getChama2($_GET['id_chamado']);
 // Verificar se o ID do item está presente e é um número válido
 
 // Verificar se o ID do chamado está presente e é um número válido
-function validarIdChamado($id) {
+function validarIdChamado($id)
+{
     // Expressão regular para verificar se o ID está no formato Y-M.numero
     $padrao = '/^\d{4}-\d{2}\.\d{4}$/';
     return preg_match($padrao, $id) === 1;
@@ -83,11 +84,11 @@ if ($itens) {
     $options_item = '<option value="">Nenhum cliente encontrado</option>';
 }
 
-if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["tipo"],  $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["descricao"], $_POST["prioridade"])) {
+if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["id_cli"], $_POST["id_item"], $_POST["tipo"], $_POST["num_patrimonio"], $_POST["num_serie"], $_POST["descricao"], $_POST["prioridade"])) {
     // Criar um novo objeto Chamado
     $objchamado = Chamado::getChama2($_GET['id_chamado']);
-    
-    
+
+
     if (!$objchamado) {
         // Usuário não encontrado
         echo "Usuário não encontrado.";
@@ -106,11 +107,11 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
     $objchamado->num_serie = $_POST["num_serie"];
     $objchamado->descricao = $_POST["descricao"];
     $objchamado->prioridade = $_POST["prioridade"];
-    
-    
+
+
     // Atualizar o chamado no banco de dados
     $atualizar_sucesso = $objchamado->atualizar();
-    
+
     // print_r();
     // exit;
     // Verificar se a atualização foi bem-sucedida antes de redirecionar

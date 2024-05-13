@@ -8,7 +8,7 @@ $objperfil = Perfil::getPerfil2($_GET['id_perf']);
 // exit;
 if (isset($_POST["nome"])) {
 
-    $objperfil = Perfil::getPerfil2($_GET['id_perf']);    
+    $objperfil = Perfil::getPerfil2($_GET['id_perf']);
 
     if (!$objperfil) {
 
@@ -17,9 +17,9 @@ if (isset($_POST["nome"])) {
     }
 
 
-    $objperfil -> nome = $_POST["nome"];
-    
-    $objperfil -> atualizar();
+    $objperfil->nome = $_POST["nome"];
+
+    $objperfil->atualizar();
 
     if ($objperfil) {
         // Usando JavaScript para redirecionamento

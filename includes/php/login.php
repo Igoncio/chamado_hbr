@@ -24,7 +24,7 @@ if (isset($_POST['email'], $_POST['senha'])) {
         exit;
     } else {
         // Mensagem de usuário ou senha inválidos
-        echo'senha ou email invalido';
+        echo 'senha ou email invalido';
         // header("Location: index.php?erro=credenciais_incorretas");
         exit;
     }

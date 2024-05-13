@@ -59,8 +59,8 @@ if (!isset($_GET['id_user']) || !is_numeric($_GET['id_user']) || $_GET['id_user'
     exit;
 }
 
-if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["senha"], $_POST["perfil"], $_POST["cliente"],  $_POST["status"])) {
-    
+if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email"], $_POST["senha"], $_POST["perfil"], $_POST["cliente"], $_POST["status"])) {
+
     $objusuario = Usuario::getUser($_GET['id_user']);
 
     if (!$objusuario) {

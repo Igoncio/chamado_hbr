@@ -10,7 +10,7 @@ if (isset($_POST["codigo"], $_POST["nome"], $_POST["telefone"], $_POST["cnpj"], 
 
     $objcliente = new Cliente();
 
-    
+
     $objcliente->codigo = $_POST["codigo"];
     $objcliente->nome = $_POST["nome"];
     $objcliente->telefone = $_POST["telefone"];
@@ -23,7 +23,7 @@ if (isset($_POST["codigo"], $_POST["nome"], $_POST["telefone"], $_POST["cnpj"], 
     $objcliente->rua = $_POST["rua"];
     $objcliente->bairro = $_POST["bairro"];
     $objcliente->observacao = $_POST["obs"];
-    
+
 
     $objcliente->cadastrar();
 

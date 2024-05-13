@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use App\Entity\Item;
 use App\Entity\Cliente;
@@ -6,7 +6,7 @@ use App\Entity\Setor;
 use App\Entity\Categoria;
 
 $setores = Setor::getSetor();
-$categorias = Categoria::getCategoria();   
+$categorias = Categoria::getCategoria();
 $clientes = Cliente::getCliente();
 $objitens = Item::getEquip2($_GET['id_item']);
 
@@ -70,7 +70,7 @@ if (isset($_POST["nome"], $_POST["modelo"], $_POST["id_categoria"], $_POST["apel
         exit;
     }
 
-  
+
     $objitens->nome = $_POST["nome"];
     $objitens->modelo = $_POST["modelo"];
     $objitens->id_categoria = $_POST["id_categoria"];
@@ -80,7 +80,7 @@ if (isset($_POST["nome"], $_POST["modelo"], $_POST["id_categoria"], $_POST["apel
     $objitens->fabricante = $_POST["fabricante"];
     $objitens->id_cli = $_POST["id_cli"];
     $objitens->id_set = $_POST["id_set"];
-    
+
     $result = $objitens->atualizar();
 
     // Verificar se a atualização foi bem-sucedida

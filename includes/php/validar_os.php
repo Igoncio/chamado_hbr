@@ -1,6 +1,7 @@
 <?php
 
 use App\Entity\Chamado;
+
 // use App\Entity\Item;
 // use App\Entity\Usuario;
 // use App\Entity\Cliente;
@@ -53,7 +54,7 @@ if ($dadosID->prioridade == "baixa") {
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br><br>
                 <label>Imagem detalhada:</label> <br>
-                <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
+                <img class="imagem" src="../imgs/chamado/' . $dadosID->imagem . '" alt=""> 
 
                 <form method="POST" action="" class="area-form">
                 
@@ -67,7 +68,7 @@ if ($dadosID->prioridade == "baixa") {
                     
                     <div class="aa">
                         <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
-                        <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
 
@@ -96,7 +97,7 @@ if ($dadosID->prioridade == "media") {
                 Cliente: ' . $dadosID->nome_cliente . '<br> 
 
                 <label>Imagem detalhada:</label> <br>
-                <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
+                <img class="imagem" src="../imgs/chamado/' . $dadosID->imagem . '" alt=""> 
 
                 <form method="POST" action="" class="area-form">
                 
@@ -110,7 +111,7 @@ if ($dadosID->prioridade == "media") {
                     
                     <div class="aa">
                         <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
-                        <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
 
@@ -140,7 +141,7 @@ if ($dadosID->prioridade == "alta") {
                 Cliente: ' . $dadosID->nome_cliente . '<br> 
                 
                 <label>Imagem detalhada:</label> <br>
-                <img class="imagem" src="../imgs/chamado/'.$dadosID->imagem.'" alt=""> 
+                <img class="imagem" src="../imgs/chamado/' . $dadosID->imagem . '" alt=""> 
 
                 <form method="POST" action="" class="area-form">
                 
@@ -154,7 +155,7 @@ if ($dadosID->prioridade == "alta") {
                     
                     <div class="aa">
                         <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
-                        <a href="../pages/main_editar_chama.php?id_chamado='.$dadosID->id_chamado.'"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
 
@@ -169,8 +170,8 @@ if ($dadosID->prioridade == "alta") {
 if (isset($_POST["resp_desc"])) {
     // Criar um novo objeto Chamado
     $objchamado = Chamado::getChama2($_GET['id_chamado']);
-    
-    
+
+
     if (!$objchamado) {
         // Usuário não encontrado
         echo "Usuário não encontrado.";
@@ -180,10 +181,10 @@ if (isset($_POST["resp_desc"])) {
 
     // Definir as propriedades do chamado com base nos dados do formulário
     $objchamado->resp_desc = $_POST["resp_desc"];
-    
+
     // Atualizar o chamado no banco de dados
-   $atualizar_sucesso = $objchamado->ResponderOs();
-    
+    $atualizar_sucesso = $objchamado->ResponderOs();
+
     // print_r();
     // exit;
     // Verificar se a atualização foi bem-sucedida antes de redirecionar

@@ -42,16 +42,16 @@ if (isset($_POST["nome"], $_POST["sobrenome"], $_POST["telefone"], $_POST["email
 
     $objusuario = new Usuario();
 
-    $objusuario -> nome = $_POST["nome"];
-    $objusuario -> sobrenome = $_POST["sobrenome"];
-    $objusuario -> telefone = $_POST["telefone"];
-    $objusuario -> email = $_POST["email"];
-    $objusuario -> senha = $_POST["senha"];
-    $objusuario -> perfil = $_POST["perfil"];
-    $objusuario -> cliente = $_POST["cliente"];
-    $objusuario -> status = $_POST["status"];
+    $objusuario->nome = $_POST["nome"];
+    $objusuario->sobrenome = $_POST["sobrenome"];
+    $objusuario->telefone = $_POST["telefone"];
+    $objusuario->email = $_POST["email"];
+    $objusuario->senha = $_POST["senha"];
+    $objusuario->perfil = $_POST["perfil"];
+    $objusuario->cliente = $_POST["cliente"];
+    $objusuario->status = $_POST["status"];
 
-    $objusuario -> cadastrar();
+    $objusuario->cadastrar();
 
 }
 

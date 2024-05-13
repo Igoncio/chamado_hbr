@@ -28,7 +28,7 @@ if (isset($_POST["codigo"], $_POST["nome"], $_POST["telefone"], $_POST["cnpj"], 
     $objcliente->rua = $_POST["rua"];
     $objcliente->bairro = $_POST["bairro"];
     $objcliente->observacao = $_POST["obs"];
-    
+
     // Chamar o método de atualização do cliente
     $result = $objcliente->atualizar();
 
