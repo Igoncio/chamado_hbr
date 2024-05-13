@@ -1,4 +1,4 @@
-#titulo_page{
+#titulo_page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,32 +7,33 @@
     /* background-color: #99999d; */
 }
 
-#label-txt{
+#label-txt {
     margin-top: 15px;
 }
 
 
-.juntar-input{
+.juntar-input {
     display: flex;
     justify-content: space-between;
 }
- 
-.juntar-input .input-field{
+
+.juntar-input .input-field {
     display: flex;
     width: 45%;
 }
 
-.juntar-input .label{
+.juntar-input .label {
     display: flex;
-    
+
 }
 
-.juntar-input .input:focus ~ .label, .input:valid ~ .label{
+.juntar-input .input:focus~.label,
+.input:valid~.label {
     display: flex;
-    
+
 }
 
-.area-main{
+.area-main {
     display: flex;
     margin-left: auto;
     margin-top: 10px;
@@ -41,11 +42,12 @@
     flex-wrap: wrap;
 }
 
-.area-form{
+.area-form {
     margin-top: 1%;
     background-color: #ffffff;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -59,7 +61,7 @@
     position: relative;
     width: 100%;
 }
-  
+
 .input {
     margin-top: 15px;
     width: 100%;
@@ -85,8 +87,8 @@
     z-index: 2;
 }
 
-.input-field .input:focus ~ .label,
-.input-field .input:valid ~ .label {
+.input-field .input:focus~.label,
+.input-field .input:valid~.label {
     top: 5px;
     left: 5px;
     font-size: 12px;
@@ -96,28 +98,31 @@
     padding-right: 5px;
 }
 
-.select-field{
+.select-field {
     display: flex;
     flex-direction: column;
 }
 
-.select{
+.select {
     font-size: 16px;
-    border: none; /* Remove todas as bordas */
-    border-bottom: 1px solid #979797; /* Adiciona apenas a borda inferior */
-    border-radius: 0; /* Remove o arredondamento dos cantos */
+    border: none;
+    /* Remove todas as bordas */
+    border-bottom: 1px solid #979797;
+    /* Adiciona apenas a borda inferior */
+    border-radius: 0;
+    /* Remove o arredondamento dos cantos */
     outline: none;
 }
 
 
-.btn-field{
+.btn-field {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: inherit;
 }
 
-.btn-submit{
+.btn-submit {
     width: 90px;
     height: 40px;
     position: relative;
@@ -130,14 +135,14 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     transition: 0.3s ease;
     margin-right: 10%;
-  }
-  
+}
+
 .btn-submit:hover {
     background-color: #2d79f3;
     color: #ffffff;
 }
 
-.btn-cancelar{
+.btn-cancelar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,9 +157,9 @@
     overflow: hidden;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-    transition: 0.3s ease; 
-  }
-  
+    transition: 0.3s ease;
+}
+
 .btn-cancelar:hover {
     background-color: #e20c0c;
     color: #ffffff;

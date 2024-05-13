@@ -77,13 +77,11 @@ include_once ("../includes/php/cad_chama.php");
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input class="input" type="text" name="num_patrimonio" />
-                    <label class="label" for="input">n° de patrimonio</label>
+                    <input class="input" type="text" name="num_patrimonio" placeholder="n° de patrimonio" />
                 </div>
 
                 <div class="input-field">
-                    <input class="input" type="text" name="num_serie" />
-                    <label class="label" for="input">n° de série</label>
+                    <input class="input" type="text" name="num_serie" placeholder="n° de serie" />
                 </div>
             </div>
 

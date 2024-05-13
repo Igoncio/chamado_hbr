@@ -19,24 +19,20 @@ include_once ("../includes/php/cad_cli.php");
             <h1 id="titulo_page">Cadastrar Cliente</h1>
 
             <div class="input-field">
-                <input class="input" name="codigo" type="text" />
-                <label class="label" for="input">Codigo</label>
+                <input class="input" name="codigo" type="text" placeholder="Codigo"/>
             </div>
 
             <div class="input-field">
-                <input class="input" name="nome" type="text" />
-                <label class="label" for="input">Digite o nome</label>
+                <input class="input" name="nome" type="text" placeholder="Nome"/>
             </div>
 
             <div class="juntar-input">
                 <div class="input-field">
-                    <input class="input" name="cnpj" type="text" />
-                    <label class="label" for="input">Digite o cnpj</label>
+                    <input class="input" name="cnpj" type="text" placeholder="Cnpj"/>
                 </div>
 
                 <div class="input-field">
-                    <input class="input" name="telefone" type="text" />
-                    <label class="label" for="input">Digite o telefone</label>
+                    <input class="input" name="telefone" type="text" placeholder="Telefone"/>
                 </div>
             </div>
 
@@ -51,29 +47,25 @@ include_once ("../includes/php/cad_cli.php");
                     <option>Paraguay</option>
                 </select>
 
+            </div>
                 <div class="input-field">
-                    <input class="input" type="text" id="cep" name="cep" placeholder="" />
-                    <label class="label" for="input">CEP</label>
+                    <input class="input" type="text" id="cep" name="cep" placeholder="Cep"/>
                 </div>
 
-            </div>
 
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input class="input" type="text" id="cidade" name="cidade" placeholder="" />
-                    <label class="label" id="cidade" for="input">cidade</label>
+                    <input class="input" type="text" id="cidade" name="cidade" placeholder="Cidade"/>
                 </div>
 
                 <div class="input-field">
-                    <input class="input" type="text" id="estado" name="estado" placeholder="" />
-                    <label class="label" for="input">Estado</label>
+                    <input class="input" type="text" id="estado" name="estado" placeholder="Estado"/>
                 </div>
 
 
                 <div class="input-field">
-                    <input class="input" name="numero" type="text" />
-                    <label class="label" for="input">Numero</label>
+                    <input class="input" name="numero" type="text" placeholder="Numero"/>
                 </div>
 
 
@@ -82,20 +74,17 @@ include_once ("../includes/php/cad_cli.php");
 
             <div class="juntar-input">
                 <div class="input-field">
-                    <input class="input" type="text" id="rua" name="rua" placeholder="" />
-                    <label class="label" for="input">Rua</label>
+                    <input class="input" type="text" id="rua" name="rua" placeholder="Rua"/>
                 </div>
 
                 <div class="input-field">
-                    <input class="input" type="text" id="bairro" name="bairro" placeholder="" />
-                    <label class="label" for="input">Bairro</label>
+                    <input class="input" type="text" id="bairro" name="bairro" placeholder="Bairro"/>
                 </div>
 
             </div>
 
             <div class="input-field">
-                <input class="input" type="text" name="obs" />
-                <label class="label" for="input">observação</label>
+                <input class="input" type="text" name="obs" placeholder="obsevação"/>
             </div>
 
 

@@ -22,8 +22,7 @@ include_once ("../includes/php/cad_perf.php");
                 <div class="juntar-input">
 
                     <div class="input-field">
-                        <input class="input" type="text" name="nome" />
-                        <label class="label" for="input">Digite o nome do perfil</label>
+                        <input class="input" type="text" name="nome" placeholder="Nome do Perfil" />
                     </div>
 
                 </div>

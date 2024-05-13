@@ -20,13 +20,11 @@ include_once ("../includes/php/cad_item.php");
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input required="" class="input" type="text" name="nome" />
-                    <label class="label" for="input">Digite o nome</label>
+                    <input required="" class="input" type="text" name="nome" placeholder="Nome"/>
                 </div>
 
                 <div class="input-field">
-                    <input class="input" type="text" name="modelo" />
-                    <label class="label" for="input">Digite o modelo</label>
+                    <input class="input" type="text" name="modelo" placeholder="Modelo"/>
                 </div>
 
             </div>
@@ -38,20 +36,17 @@ include_once ("../includes/php/cad_item.php");
 
 
             <div class="input-field">
-                <input class="input" type="text" name="apelido" />
-                <label class="label" for="input">Digite o apelido (como o equipamento ira aparecer no chamado)</label>
+                <input class="input" type="text" name="apelido" placeholder="Apelido (como o equipamento vai aparecer no chamado)"/>
             </div>
 
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input class="input" type="text" name="num_patrimonio" />
-                    <label class="label" for="input">n° de patrimonio</label>
+                    <input class="input" type="text" name="num_patrimonio" placeholder="n° de patrimonio"/>
                 </div>
 
                 <div class="input-field">
-                    <input class="input" type="text" name="num_serie" />
-                    <label class="label" for="input">n° de série</label>
+                    <input class="input" type="text" name="num_serie" placeholder="n° de série"/>
                 </div>
             </div>
 
@@ -59,25 +54,22 @@ include_once ("../includes/php/cad_item.php");
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input class="input" type="text" name="fabricante" />
-                    <label class="label" for="input">Fabricante</label>
+                    <input class="input" type="text" name="fabricante" placeholder="Fabricante"/>
                 </div>
             </div>
 
 
-            <div class="select-field">
                 <select class="select" name="id_cli">
                     <option value="0">Selecione o Clinte</option>
                     <?= $options ?>
                 </select>
 
+            
 
                 <select class="select" name="id_set">
                     <option value="0">Selecione o Setor</option>
                     <?= $options_setor ?>
                 </select>
-
-            </div>
 
             <div class="btn-field">
 
