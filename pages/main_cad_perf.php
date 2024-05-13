@@ -31,38 +31,38 @@ include_once ("../includes/php/cad_perf.php");
 
                 <h1 id="txt-cad">Chamados:</h1>
 
-               
-                    <label class="container-check">
-                        <input type="checkbox" name="cadastrar_chamado" value="1">
-                        <div for="">Cadastrar Chamado</div>
-                    </label>
 
-                    <label class="container-check">
-                        <input type="checkbox" name="todas_os" value="1">
-                        <div for="">Todos Chamados</div>
-                    </label>
+                <label class="container-check">
+                    <input type="checkbox" name="cadastrar_chamado" value="1">
+                    <div for="">Cadastrar Chamado</div>
+                </label>
 
-                    <label class="container-check">
-                        <input type="checkbox" name="requisicao_chamado" value="1">
-                        <div for="">Requisições de Chamados</div>
-                    </label>
+                <label class="container-check">
+                    <input type="checkbox" name="vizualizar_chamado" value="1">
+                    <div for="">Todos Chamados</div>
+                </label>
+
+                <label class="container-check">
+                    <input type="checkbox" name="requisicao_chamado" value="1">
+                    <div for="">Requisições de Chamados</div>
+                </label>
 
 
-                    <label class="container-check">
-                        <input type="checkbox" name="relatorio_chamados" value="1">
-                        <div for="">Relatório de Chamado</div>
-                    </label>
+                <label class="container-check">
+                    <input type="checkbox" name="relatorio_chamado" value="1">
+                    <div for="">Relatório de Chamado</div>
+                </label>
 
-                    <label class="container-check">
-                        <input type="checkbox" name="aceitar_recusar_chamado" value="1">
-                        <div for="">Aceitar/recusar Chamado</div>
-                    </label>
+                <label class="container-check">
+                    <input type="checkbox" name="aceitar_recusar_chamado" value="1">
+                    <div for="">Aceitar/recusar Chamado</div>
+                </label>
 
-                    <label class="container-check">
-                        <input type="checkbox" name="editar_chamado" value="1">
-                        <div for="">Editar Chamado</div>
-                    </label>
-                
+                <label class="container-check">
+                    <input type="checkbox" name="editar_chamado" value="1">
+                    <div for="">Editar Chamado</div>
+                </label>
+
 
             </section>
 
@@ -71,28 +71,34 @@ include_once ("../includes/php/cad_perf.php");
                 <h1 id="txt-cad">OS:</h1>
 
 
-                
 
-                    <label class="container-check">
-                        <input type="checkbox" name="relatorio_os" value="1">
-                        <div for="">Relatório de OS</div>
-                    </label>
 
-                    <label class="container-check">
-                        <input type="checkbox" name="responder_os" value="1">
-                        <div for="">Responder OS</div>
-                    </label>
+                <label class="container-check">
+                    <input type="checkbox" name="relatorio_os" value="1">
+                    <div for="">Relatório de OS</div>
+                </label>
 
-                    <label class="container-check">
-                        <input type="checkbox" name="aceitar_recusar_os" value="1">
-                        <div for="">Aceitar/recusar OS</div>
-                    </label>
+                <label class="container-check">
+                    <input type="checkbox" name="responder_os" value="1">
+                    <div for="">Responder OS</div>
+                </label>
 
-                    <label class="container-check">
-                        <input type="checkbox" name="editar_os" value="1">
-                        <div for="">Editar OS</div>
-                    </label>
-                
+                <label class="container-check">
+                    <input type="checkbox" name="aceitar_recusar_os" value="1">
+                    <div for="">Aceitar/recusar OS</div>
+                </label>
+
+                <label class="container-check">
+                    <input type="checkbox" name="editar_os" value="1">
+                    <div for="">Editar OS</div>
+                </label>
+
+
+                <label class="container-check">
+                    <input type="checkbox" name="todas_os" value="1">
+                    <div for="">Todas OS</div>
+                </label>
+
 
             </section>
 
@@ -100,27 +106,33 @@ include_once ("../includes/php/cad_perf.php");
 
                 <h1 id="txt-cad">Cadastros:</h1>
 
-                
-                    <label class="container-check">
-                        <input type="checkbox" name="cadastrar_usuario" value="1">
-                        <div for="">Cadastrar Usuário</div>
-                    </label>
-        
-                    <label class="container-check">
-                        <input type="checkbox" name="cadastrar_perfil" value="1">
-                        <div for="">Cadastrar Perfil</div>
-                    </label>
-           
-                    <label class="container-check">
-                        <input type="checkbox" name="cadastrar_item" value="1">
-                        <div for="">Cadastrar Item</div>
-                    </label>
-             
-                    <label class="container-check">
-                        <input type="checkbox" name="cadastrar_cliente" value="1">
-                        <div for="">Cadastrar cliente</div>
-                    </label>
-              
+
+                <label class="container-check">
+                    <input type="checkbox" name="cadastrar_usuario" value="1">
+                    <div for="">Cadastrar Usuário</div>
+                </label>
+
+                <label class="container-check">
+                    <input type="checkbox" name="cadastrar_perfil" value="1">
+                    <div for="">Cadastrar Perfil</div>
+                </label>
+
+                <label class="container-check">
+                    <input type="checkbox" name="cadastrar_item" value="1">
+                    <div for="">Cadastrar Item</div>
+                </label>
+
+                <label class="container-check">
+                    <input type="checkbox" name="cadastrar_cliente" value="1">
+                    <div for="">Cadastrar cliente</div>
+                </label>
+
+
+                <label class="container-check">
+                    <input type="checkbox" name="cadastrar_equipamento" value="1">
+                    <div for="">Cadastrar equipamento</div>
+                </label>
+
 
 
             </section>
@@ -130,29 +142,29 @@ include_once ("../includes/php/cad_perf.php");
 
                 <h1 id="txt-cad">Administrativo:</h1>
 
-                
-                    <label class="container-check">
-                        <input type="checkbox" name="gerenciar_usuario" value="1">
-                        <div for="">Gerenciar Usuário</div>
-                    </label>
-           
-                    <label class="container-check">
-                        <input type="checkbox" name="gerenciar_perfil" value="1">
-                        <div for="">Gerenciar Perfil</div>
-                    </label>
-          
-                    <label class="container-check">
-                        <input type="checkbox" name="gerenciar_item" value="1">
-                        <div for="">Gerenciar Item</div>
-                    </label>
-             
 
-               
-                    <label class="container-check">
-                        <input type="checkbox" name="gerenciar_cliente" value="1">
-                        <div for="">Gerenciar Cliente</div>
-                    </label>
-               
+                <label class="container-check">
+                    <input type="checkbox" name="gerenciar_usuario" value="1">
+                    <div for="">Gerenciar Usuário</div>
+                </label>
+
+                <label class="container-check">
+                    <input type="checkbox" name="gerenciar_perfil" value="1">
+                    <div for="">Gerenciar Perfil</div>
+                </label>
+
+                <label class="container-check">
+                    <input type="checkbox" name="gerenciar_equipamento" value="1">
+                    <div for="">Gerenciar equipamento</div>
+                </label>
+
+
+
+                <label class="container-check">
+                    <input type="checkbox" name="gerenciar_cliente" value="1">
+                    <div for="">Gerenciar Cliente</div>
+                </label>
+
 
             </section>
 

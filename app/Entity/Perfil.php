@@ -150,7 +150,6 @@ class Perfil
       'cadastrar_equipamento' => $this->cadastrar_equipamento,
       'cadastrar_chamado' => $this->cadastrar_chamado,
       'vizualizar_chamado' => $this->vizualizar_chamado,
-      'relatorio_chamados' => $this->relatorio_chamados,
       'todas_os' => $this->todas_os,
       'gerenciar_perfil' => $this->gerenciar_perfil,
       'gerenciar_usuario' => $this->gerenciar_usuario,
