@@ -6,152 +6,157 @@ use \App\Db\Database;
 use \PDO;
 
 
-class Cliente{
+class Cliente
+{
 
-    /** 
-     *Indentificador Unico do cliente 
-     *@var integer
-    */
-    public $id_cli;  
-    
-    /** 
-     *Nome do cliente 
-     *@var string
-    */
-    public $nome;  
+  /** 
+   *Indentificador Unico do cliente 
+   *@var integer
+   */
+  public $id_cli;
 
-    /** 
-    *Codigo do cliente 
-    *@var string
-    */
-    public $codigo; 
+  /** 
+   *Nome do cliente 
+   *@var string
+   */
+  public $nome;
 
-    /** 
-    *Cnpj do cliente 
-    *@var string
-    */
-    public $cnpj;
-    
-    /** 
-    *Telefone do cliente 
-    *@var string
-    */
-    public $telefone;
-    
-    /** 
-    *País do cliente 
-    *@var string
-    */
-    public $pais; 
-        
-    /** 
-    *Cep do cliente 
-    *@var string
-    */
-    public $cep;
-        
-    /** 
-    *Cidade do cliente 
-    *@var string
-    */
-    public $cidade;
-        
-    /** 
-    *Estado do cliente 
-    *@var string
-    */
-    public $estado;
-        
-    /** 
-    *Numero do cliente 
-    *@var string
-    */
-    public $numero;
-        
-    /** 
-    *Rua do cliente 
-    *@var string
-    */
-    public $rua;
-        
-    /** 
-    *Bairro do cliente 
-    *@var string
-    */
-    public $bairro;
-    
-        
-    /** 
-    *observação do cliente 
-    *@var string
-    */
-    public $observacao; 
+  /** 
+   *Codigo do cliente 
+   *@var string
+   */
+  public $codigo;
+
+  /** 
+   *Cnpj do cliente 
+   *@var string
+   */
+  public $cnpj;
+
+  /** 
+   *Telefone do cliente 
+   *@var string
+   */
+  public $telefone;
+
+  /** 
+   *País do cliente 
+   *@var string
+   */
+  public $pais;
+
+  /** 
+   *Cep do cliente 
+   *@var string
+   */
+  public $cep;
+
+  /** 
+   *Cidade do cliente 
+   *@var string
+   */
+  public $cidade;
+
+  /** 
+   *Estado do cliente 
+   *@var string
+   */
+  public $estado;
+
+  /** 
+   *Numero do cliente 
+   *@var string
+   */
+  public $numero;
+
+  /** 
+   *Rua do cliente 
+   *@var string
+   */
+  public $rua;
+
+  /** 
+   *Bairro do cliente 
+   *@var string
+   */
+  public $bairro;
 
 
-    /** 
-     *Método responsavel por cadastrar uma nova categoria no banco 
-     *@return boolean
-    */
-    public function cadastrar(){
-
-            $objDatabase = new Database('cliente');
-            $this->id = $objDatabase->insert([
-                            'codigo' => $this->codigo,
-                            'nome' => $this->nome,
-                            'telefone' => $this->telefone,
-                            'cnpj' => $this->cnpj,
-                            'pais' => $this->pais,
-                            'cep' => $this->cep,
-                            'cidade' => $this->cidade,
-                            'estado' => $this->estado,
-                            'numero' => $this->numero,
-                            'rua' => $this->rua,
-                            'bairro' => $this->bairro,
-                            'observacao' => $this->observacao,
-            ]);
-           
-            return true;
-
-    }
+  /** 
+   *observação do cliente 
+   *@var string
+   */
+  public $observacao;
 
 
+  /** 
+   *Método responsavel por cadastrar uma nova categoria no banco 
+   *@return boolean
+   */
+  public function cadastrar()
+  {
 
-    /** 
-     *Método responsavel por obter informações dos clientes pelo banco banco 
-     *@param string $where
-     *@param string $order
-     *@param string $limit
-     *@return array
-    */
-    public static function getCliente($where = null, $order = null, $limit = null){
-        return (new Database('cliente'))->select($where,$order,$limit)
-                                      ->fetchAll(PDO::FETCH_CLASS,self::class);
-      }
+    $objDatabase = new Database('cliente');
+    $this->id = $objDatabase->insert([
+      'codigo' => $this->codigo,
+      'nome' => $this->nome,
+      'telefone' => $this->telefone,
+      'cnpj' => $this->cnpj,
+      'pais' => $this->pais,
+      'cep' => $this->cep,
+      'cidade' => $this->cidade,
+      'estado' => $this->estado,
+      'numero' => $this->numero,
+      'rua' => $this->rua,
+      'bairro' => $this->bairro,
+      'observacao' => $this->observacao,
+    ]);
 
-    public static function getCliente2($id_cli){
-        return (new Database('cliente'))->select('id_cli = '.$id_cli)
-                                      ->fetchObject(self::class);
-      }
+    return true;
 
-    public function atualizar(){
-        return (new Database('cliente'))->update('id_cli = '.$this->id_cli,[
-                                            'codigo' => $this->codigo,
-                                            'nome' => $this->nome,
-                                            'telefone' => $this->telefone,
-                                            'cnpj' => $this->cnpj,
-                                            'pais' => $this->pais,
-                                            'cep' => $this->cep,
-                                            'cidade' => $this->cidade,
-                                            'estado' => $this->estado,
-                                            'numero' => $this->numero,
-                                            'rua' => $this->rua,
-                                            'bairro' => $this->bairro,
-                                            'observacao' => $this->observacao,
-                                                                  ]);
-      }
+  }
 
-    // public function excluir(){
-    //     return (new Database('item'))->delete('id_item = '.$this->id_item);
-    //   }
+
+
+  /** 
+   *Método responsavel por obter informações dos clientes pelo banco banco 
+   *@param string $where
+   *@param string $order
+   *@param string $limit
+   *@return array
+   */
+  public static function getCliente($where = null, $order = null, $limit = null)
+  {
+    return (new Database('cliente'))->select($where, $order, $limit)
+      ->fetchAll(PDO::FETCH_CLASS, self::class);
+  }
+
+  public static function getCliente2($id_cli)
+  {
+    return (new Database('cliente'))->select('id_cli = ' . $id_cli)
+      ->fetchObject(self::class);
+  }
+
+  public function atualizar()
+  {
+    return (new Database('cliente'))->update('id_cli = ' . $this->id_cli, [
+      'codigo' => $this->codigo,
+      'nome' => $this->nome,
+      'telefone' => $this->telefone,
+      'cnpj' => $this->cnpj,
+      'pais' => $this->pais,
+      'cep' => $this->cep,
+      'cidade' => $this->cidade,
+      'estado' => $this->estado,
+      'numero' => $this->numero,
+      'rua' => $this->rua,
+      'bairro' => $this->bairro,
+      'observacao' => $this->observacao,
+    ]);
+  }
+
+  // public function excluir(){
+  //     return (new Database('item'))->delete('id_item = '.$this->id_item);
+  //   }
 
 }
