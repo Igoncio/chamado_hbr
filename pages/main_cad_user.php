@@ -20,31 +20,26 @@ include_once ("../includes/php/cad_user.php");
             <div class="juntar-input">
 
                 <div class="input-field">
-                    <input class="input" type="text" name="nome" />
-                    <label class="label" for="input">Digite o nome</label>
+                    <input class="input" type="text" name="nome" placeholder="nome"/>
                 </div>
 
                 <div class="input-field">
-                    <input class="input" type="text" name="sobrenome" />
-                    <label class="label" for="input">Digite o sobrenome</label>
+                    <input class="input" type="text" name="sobrenome" placeholder="sobrenome"/>
                 </div>
 
             </div>
 
             <div class="input-field">
-                <input class="input" type="text" name="telefone" />
-                <label class="label" for="input">Digite o telefone</label>
+                <input class="input" type="text" name="telefone" placeholder="telefone"/>
             </div>
 
             <div class="input-field">
-                <input class="input" type="text" name="email" />
-                <label class="label" for="input">Digite o email</label>
+                <input class="input" type="text" name="email" placeholder="email"/>
             </div>
 
 
             <div class="input-field">
-                <input class="input" type="password" name="senha" />
-                <label class="label" for="input">Digite a senha</label>
+                <input class="input" type="password" name="senha" placeholder="Senha"/>
             </div>
 
 
@@ -59,7 +54,8 @@ include_once ("../includes/php/cad_user.php");
                 <option value="0">Selecione o Local</option>
                 <?= $options ?>
             </select>
-
+            
+            <h5 id="txt-status">Status:</h5>
             <label>
                 Ativo
                 <input checked name="status" type="radio" value="ativo" required />
