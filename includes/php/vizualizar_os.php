@@ -51,7 +51,7 @@ if ($dadosID->prioridade == "baixa") {
                 Prioridade: ' . $dadosID->prioridade . '<br><br>
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
-                Cliente: ' . $dadosID->nome_cliente . '<br>
+                Cliente: ' . $dadosID->nome_cliente . '<br><br>
                 Resposta Técnica: ' . $dadosID->resposta . '<br>  
                 
             </div>
@@ -73,7 +73,7 @@ if ($dadosID->prioridade == "media") {
                 Prioridade: ' . $dadosID->prioridade . '<br><br>
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
-                Cliente: ' . $dadosID->nome_cliente . '<br> 
+                Cliente: ' . $dadosID->nome_cliente . '<br> <br>
                 Resposta Técnica: ' . $dadosID->resposta . '<br>
 
             </div>
@@ -96,7 +96,7 @@ if ($dadosID->prioridade == "alta") {
                 Prioridade: ' . $dadosID->prioridade . '<br><br>
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
-                Cliente: ' . $dadosID->nome_cliente . '<br> 
+                Cliente: ' . $dadosID->nome_cliente . '<br> <br>
                 Resposta Técnica: ' . $dadosID->resposta . '<br>
                 
             </div>
