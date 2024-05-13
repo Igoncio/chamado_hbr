@@ -41,19 +41,58 @@ include_once ("../includes/php/cad_perf.php");
 
                         <label class="container-check">
                             <input type="checkbox">
-                            <div for="">Vizualizar Chamado</div>
+                            <div for="">Todos Chamados</div>
                         </label>
-                    </div>
 
-                    <div class="juntar-check">
                         <label class="container-check">
                             <input type="checkbox">
-                            <div for="">Validar Chamado</div>
+                            <div for="">Requisições de Chamados</div>
                         </label>
+
 
                         <label class="container-check">
                             <input type="checkbox">
                             <div for="">Relatório de Chamado</div>
+                        </label>
+
+                        <label class="container-check">
+                            <input type="checkbox">
+                            <div for="">Aceitar/recusar Chamado</div>
+                        </label>
+
+                        <label class="container-check">
+                            <input type="checkbox">
+                            <div for="">Editar Chamado</div>
+                        </label>
+                    </div>
+
+                </section>
+
+                <section class="perm-chama">
+
+                    <h1 id="txt-cad">OS:</h1>
+
+
+                    <div class="juntar-check">
+
+                        <label class="container-check">
+                            <input type="checkbox">
+                            <div for="">Relatório de OS</div>
+                        </label>
+
+                        <label class="container-check">
+                            <input type="checkbox">
+                            <div for="">Responder OS</div>
+                        </label>
+
+                        <label class="container-check">
+                            <input type="checkbox">
+                            <div for="">Aceitar/recusar OS</div>
+                        </label>
+
+                        <label class="container-check">
+                            <input type="checkbox">
+                            <div for="">Editar OS</div>
                         </label>
                     </div>
 
