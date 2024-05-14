@@ -103,6 +103,7 @@ class Usuario
     }
 
 
+
     public static function getGer()
     {
         $banco = new Database("vw_ger_user");
@@ -115,6 +116,15 @@ class Usuario
         return (new Database('usuario'))->select('id_user = ' . $id_user)
             ->fetchObject(self::class);
     }
+
+
+    public static function getPermissao($id_user)
+    {
+        return (new Database('vw_permissoes'))->select('id_user = ' . $id_user)
+            ->fetchObject(self::class);
+    }
+
+
 
     public function atualizar()
     {
