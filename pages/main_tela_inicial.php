@@ -4,6 +4,18 @@ include_once ("../includes/menu.php");
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+include_once ("../includes/php/tela_inicial.php");
+
+use App\Entity\Usuario;
+use App\Entity\Perfil;
+
+// $dados = $objUsuario->getUser($_SESSION['id_user']);
+
+
+// print_r($dados);
+// print_r($perfil);
+// exit;
+
 
 ?>
 <link rel="stylesheet" href="../assets/css/tela_inicial.css">
