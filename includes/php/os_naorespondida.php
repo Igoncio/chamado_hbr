@@ -57,7 +57,7 @@ foreach ($dados as $user) {
                             </a>';
         }
         
-        if ($edit_os) {
+        if($edit_os){
         $user_lista .= '<a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
                     </div>
                 </div>';
@@ -65,7 +65,7 @@ foreach ($dados as $user) {
     }
 
     // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-    if ($user['prioridade'] == "media" and $user['status'] == "os")
+    if ($user['prioridade'] == "media" and $user['status'] == "os"){
         $user_lista .= '   
             <div class="card3">
                 <div class="notiglow3"></div>
@@ -83,18 +83,24 @@ foreach ($dados as $user) {
                 descrição: ' . $user['descricao'] . '<br><br>
 
                 Responsável: ' . $user['nome_resp'] . '<br>
-                Cliente: ' . $user['nome_cliente'] . '<br> 
+                Cliente: ' . $user['nome_cliente'] . '<br>';
 
-                <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
-                <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                </td>
+                if ($resp_os) {
+                    $user_lista .= '<a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '">
+                                        <button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button>
+                                    </a>';
+                }
                 
-                </div>
-            </div>
-                ';
+                if($edit_os){
+                $user_lista .= '<a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                            </div>
+                        </div>';
+                }
+            }
+                
 
     // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-    if ($user['prioridade'] == "alta" and $user['status'] == "os")
+    if ($user['prioridade'] == "alta" and $user['status'] == "os"){
         $user_lista .= '   
             <div class="card2">
                 <div class="notiglow2"></div>
@@ -112,15 +118,20 @@ foreach ($dados as $user) {
                 descrição: ' . $user['descricao'] . '<br><br>
 
                 Responsável: ' . $user['nome_resp'] . '<br>
-                Cliente: ' . $user['nome_cliente'] . '<br> 
+                Cliente: ' . $user['nome_cliente'] . '<br>';
 
-                <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
-                <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                </td>
-                    
-                </div>
-            </div>
-                ';
+                if ($resp_os) {
+                    $user_lista .= '<a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '">
+                                        <button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button>
+                                    </a>';
+                }
+                
+                if($edit_os){
+                $user_lista .= '<a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                            </div>
+                        </div>';
+                }
+            }
 
     // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
 
@@ -131,7 +142,7 @@ foreach ($dados as $user) {
     if ($user['status'] == "os") {
         // Limita a descrição para 140 caracteres
         $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
-
+    
         $user_table .= '
             <tr>
                 <td>' . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . '</td>
@@ -143,18 +154,18 @@ foreach ($dados as $user) {
                 <td>' . $descricao . '</td>
                 <td>' . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . '</td>
                 <td>' . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . '</td>
-                <td>
-                <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
-                <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                </td>
+                <td>';
+    
+        if ($resp_os) {
+            $user_table .= '<a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>';
+        }
+    
+        if ($edit_os) {
+            $user_table .= '<a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>';
+        }
+    
+        $user_table .= '</td>
             </tr>';
     }
-
-    // <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
-
-
-}
-
-
-
-
+    
+    }
