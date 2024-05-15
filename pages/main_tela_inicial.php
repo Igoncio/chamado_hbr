@@ -33,8 +33,6 @@ $resp_os = $dados->resp_os == '1';
 $edit_os = $dados->edit_os == '1';
 $relatorio_os = $dados->relatorio_os == '1';
 
-$permissao_cad = $cad_cli || $cad_perf || $cad_chama || $cad_equip || $cad_user;
-$permissao_chama = $vizu_chama || $req_chama || $aceitar_recusar_chama || $edit_chama;
 ?>
 <link rel="stylesheet" href="../assets/css/tela_inicial.css">
 <title>tela inicial</title>
@@ -45,9 +43,12 @@ $permissao_chama = $vizu_chama || $req_chama || $aceitar_recusar_chama || $edit_
 
     
     <section class="area-main">
-        <section class="area-cad">
-            <h1 id="txt-area">Cadastros</h1>
-            <?php
+    <?php
+        if ($cad_chama == 1 || $cad_cli == 1 || $cad_equip == 1 ||  $cad_perf == 1 || $cad_user == 1) {
+        ?>
+            <section class="area-cad">
+                <h1 id="txt-area">Cadastros</h1>
+                <?php
                 echo $cad_cli ? '<a href="main_cad_cli.php">
                     <div class="card1">
                         <div class="notiglow1"></div>
@@ -92,8 +93,11 @@ $permissao_chama = $vizu_chama || $req_chama || $aceitar_recusar_chama || $edit_
                         <div class="notibody1">Selecione esta opção para cadastrar um chamado</div>
                     </div>
                 </a>' : '';
-            ?>
-        </section>
+                ?>
+            </section>
+        <?php
+        }
+        ?>
 
 
 
@@ -224,7 +228,9 @@ $permissao_chama = $vizu_chama || $req_chama || $aceitar_recusar_chama || $edit_
 
 
         <section class="area-gerenciar">
-
+        <?php 
+        if($ger_user == 1 || $ger_perf == 1 || $ger_equip == 1 || $ger_cli == 1){
+        ?>
             <h1 id="txt-area">Gerenciamento</h1>
 
             <?php
@@ -279,9 +285,10 @@ $permissao_chama = $vizu_chama || $req_chama || $aceitar_recusar_chama || $edit_
             </a>'
             :'';
             ?>
-
         </section>
-
+        <?php
+        }
+        ?>
     </section>
 
 </body>

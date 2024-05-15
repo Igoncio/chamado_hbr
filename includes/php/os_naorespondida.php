@@ -3,12 +3,35 @@
 use App\Entity\Chamado;
 
 $dados = Chamado::getChama();
+$dados_perm = $objUsuario->getPermissao($_SESSION['id_user']);
+
+// print_r($dados_perm);
+// die;
+
+$cad_cli = $dados_perm->cad_cli == '1';
+$cad_perf = $dados_perm->cad_perf == '1';
+$cad_chama = $dados_perm->cad_chama == '1';
+$cad_equip = $dados_perm->cad_equip == '1';
+$cad_user = $dados_perm->cad_user == '1';
+$vizu_chama = $dados_perm->vizu_chama == '1';
+$todas_os = $dados_perm->todas_os == '1';
+$ger_perf = $dados_perm->ger_perf == '1';
+$ger_user = $dados_perm->ger_user == '1';
+$ger_equip = $dados_perm->ger_equip == '1';
+$ger_cli = $dados_perm->ger_cli == '1';
+$req_chama = $dados_perm->req_chama == '1';
+$aceitar_recusar_chama = $dados_perm->aceitar_recusar_chama == '1';
+$edit_chama = $dados_perm->edit_chama == '1';
+$relatorio_chama = $dados_perm->relatorio_chama == '1';
+$resp_os = $dados_perm->resp_os == '1';
+$edit_os = $dados_perm->edit_os == '1';
+$relatorio_os = $dados_perm->relatorio_os == '1';
 
 $user_lista = '';
 $user_table = '';
 foreach ($dados as $user) {
 
-    if ($user['prioridade'] == "baixa" and $user['status'] == "os")
+    if ($user['prioridade'] == "baixa" && $user['status'] == "os") {
         $user_lista .= '   
             <div class="card1">
                 <div class="notiglow1"></div>
@@ -18,24 +41,28 @@ foreach ($dados as $user) {
                     Requisitante: ' . $user['nome_solicitante'] . '<br>
                     Abertura: ' . $user['abertura'] . '<br><br>
                     Equipamento(s): ' . $user['nome_equip'] . '<br>
-                
-                    Tipo: ' . $user['tipo'] . '<br>
-
-                    Prioridade: ' . $user['prioridade'] . '<br><br>
-
-                    descrição: ' . $user['descricao'] . '<br><br>
-
-                    Responsável: ' . $user['nome_resp'] . '<br>
-                    Cliente: ' . $user['nome_cliente'] . '<br> 
-
                     
-                    <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
-                    <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                    </td>
+                    Tipo: ' . $user['tipo'] . '<br>
+                    Prioridade: ' . $user['prioridade'] . '<br><br>
     
-                </div>
-            </div>
-                    ';
+                    Descrição: ' . $user['descricao'] . '<br><br>
+    
+                    Responsável: ' . $user['nome_resp'] . '<br>
+                    Cliente: ' . $user['nome_cliente'] . '<br>';
+    
+        // Verifica se a variável $resp_os é verdadeira (ou seja, igual a 1)
+        if ($resp_os) {
+            $user_lista .= '<a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '">
+                                <button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button>
+                            </a>';
+        }
+        
+        if ($edit_os) {
+        $user_lista .= '<a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                    </div>
+                </div>';
+        }
+    }
 
     // <a href="../pages/main_validar_os.php?id_chamado='.$user['id_chamado'].'"><button type="button" class="btn btn-primary" id="btnValidar">Validar</button></a>
     if ($user['prioridade'] == "media" and $user['status'] == "os")
