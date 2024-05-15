@@ -7,6 +7,7 @@ include_once ("../includes/php/cad_perf.php");
 
 ?>
 <link rel="stylesheet" href="../assets/css/cad_perf.css">
+<script src="../assets/js/cad_perf.js" defer></script>
 <title>Cadastrar Perfil</title>
 
 <body>
@@ -28,6 +29,22 @@ include_once ("../includes/php/cad_perf.php");
 
             <h1 id="txt-perm">Permissões</h1>
             <section class="perm-chama">
+            
+            <div>
+                <input type="radio" id="opcaoTodas" name="opcao" value="todas">
+                <label for="opcaoTodas">Selecionar todas</label><br>
+
+                <input type="radio" id="perfilComum" name="opcao" value="comum">
+                <label for="perfilComum">Perfil Comum</label><br>
+
+                <input type="radio" id="perfilTec" name="opcao" value="admin">
+                <label for="perfilAdmin">Perfil Técnico</label><br>
+
+                <input type="radio" id="perfilCli" name="opcao" value="admin">
+                <label for="perfilAdmin">Perfil Cliente</label><br>
+            </div>
+
+
 
                 <h1 id="txt-cad">Chamados:</h1>
 
