@@ -66,9 +66,12 @@ if ($dadosID->prioridade == "baixa") {
                     <div id="contador-caracteres">0/250 caracteres</div>
 
                     
+                    <input type="hidden" name="acao" value="responder"> <!-- ou "finalizar" -->
+
                     <div class="aa">
-                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
-                        <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <button type="submit" class="btn btn-primary" name="submit" value="finalizar">Finalizar</button>
+                        <button type="submit" class="btn btn-primary" name="submit" value="responder">Salvar</button>
+                        <a href="../pages/main_editar_chama.php?id_chamado=<?php echo $dadosID->id_chamado; ?>"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
 
@@ -110,7 +113,7 @@ if ($dadosID->prioridade == "media") {
 
                     
                     <div class="aa">
-                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Salvar</button></a>
                         <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
@@ -154,7 +157,7 @@ if ($dadosID->prioridade == "alta") {
 
                     
                     <div class="aa">
-                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Confirmar</button></a>
+                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Salvar</button></a>
                         <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
@@ -167,37 +170,49 @@ if ($dadosID->prioridade == "alta") {
     ';
 }
 
-if (isset($_POST["resp_desc"])) {
-    // Criar um novo objeto Chamado
-    $objchamado = Chamado::getChama2($_GET['id_chamado']);
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
+    $acao = $_POST["submit"];
 
-
-    if (!$objchamado) {
-        // Usuário não encontrado
-        echo "Usuário não encontrado.";
-        exit;
-    }
-
-
-    // Definir as propriedades do chamado com base nos dados do formulário
-    $objchamado->resp_desc = $_POST["resp_desc"];
-
-    // Atualizar o chamado no banco de dados
-    $atualizar_sucesso = $objchamado->ResponderOs();
-
-    // print_r();
-    // exit;
-    // Verificar se a atualização foi bem-sucedida antes de redirecionar
-    // print_r($atualizar_sucesso);
-    // print_r($objchamado->id_chamado);
-    // exit;
-    if ($atualizar_sucesso) {
-        echo '<script>window.location.href = "main_todas_os.php";</script>';
-        exit;
+    if ($acao === "finalizar") {
+        // Lógica para finalizar a OS
+        if (isset($_POST["resp_desc"])) {
+            // Processo de finalização da OS
+            $objchamado = Chamado::getChama2($_GET['id_chamado']);
+            if (!$objchamado) {
+                echo "Chamado não encontrado.";
+                exit;
+            }
+            $objchamado->resp_desc = $_POST["resp_desc"];
+            $atualizar_sucesso = $objchamado->FinalizarOs();
+            if ($atualizar_sucesso) {
+                echo '<script>window.location.href = "main_todas_os.php";</script>';
+                exit;
+            } else {
+                echo "Erro ao finalizar o chamado.";
+            }
+        }
+    } elseif ($acao === "responder") {
+        // Lógica para responder à OS
+        if (isset($_POST["resp_desc"])) {
+            // Processo de resposta à OS
+            $objchamado = Chamado::getChama2($_GET['id_chamado']);
+            if (!$objchamado) {
+                echo "Chamado não encontrado.";
+                exit;
+            }
+            $objchamado->resp_desc = $_POST["resp_desc"];
+            $atualizar_sucesso = $objchamado->ResponderOs();
+            if ($atualizar_sucesso) {
+                echo '<script>window.location.href = "main_todas_os.php";</script>';
+                exit;
+            } else {
+                echo "Erro ao responder o chamado.";
+            }
+        }
     } else {
-        echo "Erro ao atualizar o chamado.";
+        echo "Ação inválida.";
     }
-
 }
+
 
 ?>

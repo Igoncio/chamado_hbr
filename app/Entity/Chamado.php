@@ -260,5 +260,16 @@ class Chamado
         ]);
     }
 
+    public function FinalizarOs()
+    {
+        $statusinicial = "os_finalizada";
+        $id_chamados = "id_chamado = '" . $this->id_chamado . "'";
+
+        return (new Database('chamado'))->update($id_chamados, [
+            'status' => $statusinicial,
+            'resp_desc' => $this->resp_desc
+        ]);
+    }
+
 }
 

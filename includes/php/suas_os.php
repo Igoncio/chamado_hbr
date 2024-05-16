@@ -23,88 +23,88 @@ foreach ($dados as $user) {
 
     if ($user['prioridade'] == "baixa" and $user['status'] == "os" and $user['solicitante'] == $objUsuario->id_user)
         $user_lista .= '   
-    <div class="card1">
-                <div class="notiglow1"></div>
-                <div class="notiborderglow1"></div>
-                <div class="notititle1">Chamado ' . $user['id_chamado'] . '</div>
-                <div class="notibody1">
-                    Requisitante: ' . $user['nome_solicitante'] . '<br>
-                    Abertura: ' . $user['abertura'] . '<br><br>
-                    Equipamento(s): ' . $user['nome_equip'] . '<br>
+            <div class="card1">
+            <div class="notiglow1"></div>
+            <div class="notiborderglow1"></div>
+            <div class="notititle1">Chamado ' . $user['id_chamado'] . '</div>
+            <div class="notibody1">
+                Requisitante: ' . $user['nome_solicitante'] . '<br>
+                Abertura: ' . $user['abertura'] . '<br><br>
+                Equipamento(s): ' . $user['nome_equip'] . '<br>
+            
+                Tipo: ' . $user['tipo'] . '<br>
+
+                Prioridade: ' . $user['prioridade'] . '<br><br>
+
+                descrição: ' . $user['descricao'] . '<br><br>
+
+                Responsável: ' . $user['nome_resp'] . '<br>
+                Cliente: ' . $user['nome_cliente'] . '<br> 
+
                 
-                    Tipo: ' . $user['tipo'] . '<br>
+                <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
+                <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                </td>
 
-                    Prioridade: ' . $user['prioridade'] . '<br><br>
-
-                    descrição: ' . $user['descricao'] . '<br><br>
-
-                    Responsável: ' . $user['nome_resp'] . '<br>
-                    Cliente: ' . $user['nome_cliente'] . '<br> 
-
-                    
-                    <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
-                    <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                    </td>
-    
-                    </div>
-                    </div>
-                    ';
+                </div>
+                </div>
+                ';
 
     if ($user['prioridade'] == "media" and $user['status'] == "os" and $user['solicitante'] == $objUsuario->id_user)
         $user_lista .= '   
-<div class="card3">
-<div class="notiglow3"></div>
-<div class="notiborderglow3"></div>
-<div class="notititle3">Chamado ' . $user['id_chamado'] . '</div>
-<div class="notibody3">
-    Requisitante: ' . $user['nome_solicitante'] . '<br>
-    Abertura: ' . $user['abertura'] . '<br><br>
-    Equipamento(s): ' . $user['nome_equip'] . '<br>
+        <div class="card3">
+        <div class="notiglow3"></div>
+        <div class="notiborderglow3"></div>
+        <div class="notititle3">Chamado ' . $user['id_chamado'] . '</div>
+        <div class="notibody3">
+            Requisitante: ' . $user['nome_solicitante'] . '<br>
+            Abertura: ' . $user['abertura'] . '<br><br>
+            Equipamento(s): ' . $user['nome_equip'] . '<br>
 
-    Tipo: ' . $user['tipo'] . '<br>
+            Tipo: ' . $user['tipo'] . '<br>
 
-    Prioridade: ' . $user['prioridade'] . '<br><br>
+            Prioridade: ' . $user['prioridade'] . '<br><br>
 
-    descrição: ' . $user['descricao'] . '<br><br>
+            descrição: ' . $user['descricao'] . '<br><br>
 
-    Responsável: ' . $user['nome_resp'] . '<br>
-    Cliente: ' . $user['nome_cliente'] . '<br> 
+            Responsável: ' . $user['nome_resp'] . '<br>
+            Cliente: ' . $user['nome_cliente'] . '<br> 
 
-    <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
-    <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-    </td>
-    
-    </div>
-    </div>
-    ';
+            <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
+            <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+            </td>
+            
+            </div>
+            </div>
+            ';
 
     if ($user['prioridade'] == "alta" and $user['status'] == "os" and $user['solicitante'] == $objUsuario->id_user)
         $user_lista .= '   
-<div class="card2">
-<div class="notiglow2"></div>
-<div class="notiborderglow2"></div>
-<div class="notititle2">Chamado ' . $user['id_chamado'] . '</div>
-<div class="notibody2">
-    Requisitante: ' . $user['nome_solicitante'] . '<br>
-    Abertura: ' . $user['abertura'] . '<br><br>
-    Equipamento(s): ' . $user['nome_equip'] . '<br>
+        <div class="card2">
+        <div class="notiglow2"></div>
+        <div class="notiborderglow2"></div>
+        <div class="notititle2">Chamado ' . $user['id_chamado'] . '</div>
+        <div class="notibody2">
+            Requisitante: ' . $user['nome_solicitante'] . '<br>
+            Abertura: ' . $user['abertura'] . '<br><br>
+            Equipamento(s): ' . $user['nome_equip'] . '<br>
 
-    Tipo: ' . $user['tipo'] . '<br>
+            Tipo: ' . $user['tipo'] . '<br>
 
-    Prioridade: ' . $user['prioridade'] . '<br><br>
+            Prioridade: ' . $user['prioridade'] . '<br><br>
 
-    descrição: ' . $user['descricao'] . '<br><br>
+            descrição: ' . $user['descricao'] . '<br><br>
 
-    Responsável: ' . $user['nome_resp'] . '<br>
-    Cliente: ' . $user['nome_cliente'] . '<br> 
+            Responsável: ' . $user['nome_resp'] . '<br>
+            Cliente: ' . $user['nome_cliente'] . '<br> 
 
-    <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
-    <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
-    </td>
-    
-    </div>
-    </div>
-    ';
+            <a href="../pages/main_validar_os.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-primary" name="responder" id="btnAceitar">Responder</button></a>
+            <a href="../pages/main_editar_chama.php?id_chamado=' . $user['id_chamado'] . '"><button type="button" class="btn btn-dark">Editar</button></a>
+            </td>
+            
+            </div>
+            </div>
+            ';
 
     if ($user['status'] == "os" and $user['solicitante'] == $objUsuario->id_user) {
         // Limita a descrição para 140 caracteres
