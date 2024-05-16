@@ -5,12 +5,36 @@ require_once __DIR__ . '/../vendor/autoload.php';
 include_once ("../includes/menu.php");
 include_once ("../includes/php/cad_chama.php");
 
+$dados = $objUsuario->getPermissao($_SESSION['id_user']);
+
+// print_r($dados->cad_cli);
+// die;
+
+$cad_cli = $dados->cad_cli == '1';
+$cad_perf = $dados->cad_perf == '1';
+$cad_chama = $dados->cad_chama == '1';
+$cad_equip = $dados->cad_equip == '1';
+$cad_user = $dados->cad_user == '1';
+$vizu_chama = $dados->vizu_chama == '1';
+$todas_os = $dados->todas_os == '1';
+$ger_perf = $dados->ger_perf == '1';
+$ger_user = $dados->ger_user == '1';
+$ger_equip = $dados->ger_equip == '1';
+$ger_cli = $dados->ger_cli == '1';
+$req_chama = $dados->req_chama == '1';
+$aceitar_recusar_chama = $dados->aceitar_recusar_chama == '1';
+$edit_chama = $dados->edit_chama == '1';
+$relatorio_chama = $dados->relatorio_chama == '1';
+$resp_os = $dados->resp_os == '1';
+$edit_os = $dados->edit_os == '1';
+$relatorio_os = $dados->relatorio_os == '1';
 // print_r($clienteSelecionado);
 ?>
 
 
 <link rel="stylesheet" href="../assets/css/cad_chama.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js">
 <script src="../assets/js/cad_chama.js" defer></script>
 
 <title>cadastrar chamado</title>
@@ -25,10 +49,14 @@ include_once ("../includes/php/cad_chama.php");
 
             <div class="juntar-input">
 
-                <div class="data-field">
+            <div class="data-field">
+                <?php if ($edit_chama) : ?>
                     <input class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)" />
-                    <label>Selecione a data e hora de abertura</label>
-                </div>
+                <?php else : ?>
+                    <input class="input" type="datetime-local" name="abertura" value="<?php echo date('Y-m-d\TH:i'); ?>" disabled />
+                <?php endif; ?>
+                <label>Selecione a data e hora de abertura</label>
+            </div>
 
                 <div class="data-field">
                     <input class="input" type="datetime-local" name="fechamento" />
@@ -61,6 +89,7 @@ include_once ("../includes/php/cad_chama.php");
                 <i id="mais-item" class="bi bi-plus-circle"></i>
                 <i id="menos-item" class="bi bi-dash-circle"></i>
             </div>
+
 
             <select id="item" class="select" name="tipo">
                 <option value="0">Selecione o tipo</option>
