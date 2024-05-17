@@ -36,6 +36,7 @@ $relatorio_os = $dados->relatorio_os == '1';
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js">
 <script src="../assets/js/cad_chama.js" defer></script>
+<script src="js/jquery.min.js"></script>
 
 <title>cadastrar chamado</title>
 
@@ -75,21 +76,14 @@ $relatorio_os = $dados->relatorio_os == '1';
                     </select>
                 </div>
 
-                <select id="tamanho-select-duo" class="select" name="id_cli">
-                    <option value="0">Selecione o Clinte</option>
+                <select id="cliente-select" class="select" name="id_cli">
+                    <option value="0">Selecione o Cliente</option>
                     <?= $options ?>
                 </select>
-            </div>
 
-            <div class="area-item">
-                <select id="item" class="select" name="id_item">
-                    <option value="0">Selecione o item</option>
-                    <?= $options_item ?>
+                <select id="item-select" class="select" name="id_item">
+                 
                 </select>
-                <i id="mais-item" class="bi bi-plus-circle"></i>
-                <i id="menos-item" class="bi bi-dash-circle"></i>
-            </div>
-
 
             <select id="item" class="select" name="tipo">
                 <option value="0">Selecione o tipo</option>
@@ -169,7 +163,30 @@ $relatorio_os = $dados->relatorio_os == '1';
 
     </section>
 
+    <script>
+        $(document).ready(function(){
+            $('#cliente-select').on('change', function(){
+                var id_cli = $(this).val();
+                if(id_cli){
+                    $.ajax({
+                        type:'POST',
+                        url:'../includes/php/filtrar_item.php',
+                        data:'id_cliente='+id_cli,
+                        success:function(html){
+                           $('#item-select').html(html);
 
+                        }
+                    });
+                }
+                else{
+                    $('#item_select').html('<option value="">Selecione o Item</option>');
+
+                }
+            });
+        });
+
+
+    </script>
 
 </body>
 

@@ -64,6 +64,12 @@ class Item
      */
     public $id_cli;
 
+        /** 
+     *Indentificador Unico de item 
+     *@var integer
+     */
+    public $id_cliente;
+
 
     /** 
      *Indentificador Unico de item 
@@ -143,4 +149,11 @@ class Item
         return (new Database('item'))->delete('id_item = ' . $this->id_item);
     }
 
+    public static function getItensByCliente($id_cliente)
+    {
+        $db = new Database('vw_ger_item');
+        return $db->select('id_cli = ' . $id_cliente, null, null, 'id_item, apelido')->fetchAll(PDO::FETCH_OBJ);
+    }
+    
+    
 }
