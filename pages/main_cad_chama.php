@@ -66,7 +66,7 @@ $result = $db->query($query);
                 <label>Selecione a data e hora de abertura</label>
             </div>
 
-                <div class="data-field">
+                <div class="data-field" >
                     <input class="input" type="datetime-local" name="fechamento" />
                     <label>Selecione a data e hora de parada</label>
                 </div>
@@ -74,7 +74,7 @@ $result = $db->query($query);
             </div>
 
 
-            <div class="select-field">
+          
 
                 <div>
                     <select id="tamanho-select-duo" class="select" name="id_user">
@@ -82,7 +82,7 @@ $result = $db->query($query);
                         <?= $options_user ?>
                     </select>
                 </div>
-
+            
                 <select id="cliente" class="select" name="id_cli">
                     <option value="0">Selecione o Cliente</option>
                     <?php
@@ -97,7 +97,7 @@ $result = $db->query($query);
                 </select>
 
                 <select id="equipamento" class="select" name="id_item">
-                 
+                    <option value="0">Selecione o equipamento</option>
                 </select>
 
             <select id="item" class="select" name="tipo">

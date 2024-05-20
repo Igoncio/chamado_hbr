@@ -22,7 +22,7 @@
 }
 
 #tamanho-select-duo {
-    width: 250px;
+    width: 100%;
 }
 
 #select-setor {
@@ -80,6 +80,7 @@
     margin-top: 10px;
     justify-content: center;
     width: 100%;
+    /* background-color: #2d79f3; */
     flex-wrap: wrap;
 }
 
