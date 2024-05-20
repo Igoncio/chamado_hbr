@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 include_once ("../includes/menu.php");
+include_once ("../app/Db/connPoo.php");
 include_once ("../includes/php/cad_chama.php");
 
 $dados = $objUsuario->getPermissao($_SESSION['id_user']);
@@ -29,6 +30,12 @@ $resp_os = $dados->resp_os == '1';
 $edit_os = $dados->edit_os == '1';
 $relatorio_os = $dados->relatorio_os == '1';
 // print_r($clienteSelecionado);
+
+
+$query = "SELECT * FROM cliente";
+$result = $db->query($query);
+
+
 ?>
 
 
@@ -76,12 +83,20 @@ $relatorio_os = $dados->relatorio_os == '1';
                     </select>
                 </div>
 
-                <select id="cliente-select" class="select" name="id_cli">
+                <select id="cliente" class="select" name="id_cli">
                     <option value="0">Selecione o Cliente</option>
-                    <?= $options ?>
+                    <?php
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+                                echo '<option value="' . $row['id_cli'] . '">'.$row['nome'].'</option>';
+                            }
+                        }else{
+                            echo '<option> Cliente indisponivel </option>';
+                        }                 
+                        ?>
                 </select>
 
-                <select id="item-select" class="select" name="id_item">
+                <select id="equipamento" class="select" name="id_item">
                  
                 </select>
 
@@ -163,30 +178,29 @@ $relatorio_os = $dados->relatorio_os == '1';
 
     </section>
 
-    <script>
-        $(document).ready(function(){
-            $('#cliente-select').on('change', function(){
-                var id_cli = $(this).val();
-                if(id_cli){
-                    $.ajax({
-                        type:'POST',
-                        url:'../includes/php/filtrar_item.php',
-                        data:'id_cliente='+id_cli,
-                        success:function(html){
-                           $('#item-select').html(html);
-
-                        }
-                    });
-                }
-                else{
-                    $('#item_select').html('<option value="">Selecione o Item</option>');
-
-                }
-            });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#cliente').on('change', function(){
+            var id_cli = $(this).val();
+            if(id_cli){
+                $.ajax({
+                    type: 'POST',
+                    url: '../includes/php/filtrar.php',
+                    data:'id_cli='+id_cli,
+                    success: function(html){
+                        $('#equipamento').html(html);
+                    }
+                });
+            } else {
+                $('#equipamento').html('<option value="">Selecione o Item</option>');
+            }
         });
-
-
-    </script>
+    });
+    
+    
+    
+</script>
 
 </body>
 
