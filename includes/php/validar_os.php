@@ -112,11 +112,17 @@ if ($dadosID->prioridade == "media") {
                     <div id="contador-caracteres">0/250 caracteres</div>
 
                     
+                    <input type="hidden" name="acao" value="responder"> <!-- ou "finalizar" -->
+
                     <div class="aa">
-                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Salvar</button></a>
-                        <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
+                        <button type="submit" class="btn btn-primary" name="submit" value="finalizar">Finalizar</button>
+                        <button type="submit" class="btn btn-primary" name="submit" value="responder">Salvar</button>
+                        <a href="../pages/main_editar_chama.php?id_chamado=<?php echo $dadosID->id_chamado; ?>"><button type="button" class="btn btn-dark">Editar</button></a>
                         <button type="button" class="btn btn-danger">Voltar</button>
                     </div>
+
+
+                </form>
 
 
                 </form>
@@ -149,21 +155,24 @@ if ($dadosID->prioridade == "alta") {
                 <form method="POST" action="" class="area-form">
                 
                 
-                    <label id="txt-resp" for="">Responder OS</label>
-                    
-                    <label class="label" for="desc">Descrição</label>
-                    <textarea id="desc" class="input" name="resp_desc" maxlength="250"></textarea>
-                    <div id="contador-caracteres">0/250 caracteres</div>
+                <label id="txt-resp" for="">Responder OS</label>
+                
+                <label class="label" for="desc">Descrição</label>
+                <textarea id="desc" class="input" name="resp_desc" maxlength="250"></textarea>
+                <div id="contador-caracteres">0/250 caracteres</div>
 
-                    
-                    <div class="aa">
-                        <a href=""><button type="submit" class="btn btn-primary" id="btnValidar">Salvar</button></a>
-                        <a href="../pages/main_editar_chama.php?id_chamado=' . $dadosID->id_chamado . '"><button type="button" class="btn btn-dark">Editar</button></a>
-                        <button type="button" class="btn btn-danger">Voltar</button>
-                    </div>
+                
+                <input type="hidden" name="acao" value="responder"> <!-- ou "finalizar" -->
+
+                <div class="aa">
+                    <button type="submit" class="btn btn-primary" name="submit" value="finalizar">Finalizar</button>
+                    <button type="submit" class="btn btn-primary" name="submit" value="responder">Salvar</button>
+                    <a href="../pages/main_editar_chama.php?id_chamado=<?php echo $dadosID->id_chamado; ?>"><button type="button" class="btn btn-dark">Editar</button></a>
+                    <button type="button" class="btn btn-danger">Voltar</button>
+                </div>
 
 
-                </form>
+            </form>
                 
             </div>
         </div>
