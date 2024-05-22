@@ -104,6 +104,14 @@
     margin-top: 25px;
 }
 
+.area-perm{
+    display: flex;
+    /* background-color: #2d79f3; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 80px;
+}
+
 
 .btn-field{
     display: flex;
@@ -187,6 +195,7 @@
 }
 
 #txt-cad{
+    margin-top: 10px;
     font-size: 20px;
 }
 
