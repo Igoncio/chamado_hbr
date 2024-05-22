@@ -61,7 +61,7 @@ $result = $db->query($query);
                 <?php if ($edit_chama) : ?>
                     <input class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)" />
                 <?php else : ?>
-                    <input class="input" type="datetime-local" name="abertura" value="<?php echo date('Y-m-d\TH:i'); ?>" disabled />
+                    <input class="input" type="datetime-local" name="abertura" value="<?php echo date('Y-m-d\TH:i'); ?>" disabled/>
                 <?php endif; ?>
                 <label>Selecione a data e hora de abertura</label>
             </div>
@@ -168,7 +168,7 @@ $result = $db->query($query);
                 <div class="btn-field">
 
                     <button class="btn-submit" type="submit">Cadastrar</button>
-                    <a href="" class="btn-cancelar" id="cancelar">Cancelar</a href="">
+                    <a href="main_tela_inicial.php" class="btn-cancelar" id="cancelar">Cancelar</a href="">
 
                 </div>
 

@@ -191,13 +191,12 @@ include_once ("../includes/php/cad_perf.php");
             <div class="btn-field">
 
                 <button class="btn-submit" type="submit">Cadastrar</button>
-                <a href="" class="btn-cancelar" id="cancelar">Cancelar</a>
+                <a href="main_tela_inicial.php" class="btn-cancelar" id="cancelar">Cancelar</a>
 
             </div>
 
 
         </form>
-
 
     </section>
 
