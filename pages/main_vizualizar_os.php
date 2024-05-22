@@ -10,6 +10,7 @@ include_once ("../includes/php/vizualizar_os.php");
 ?>
 
 <link rel="stylesheet" href="../assets/css/vizualizar_chama2.css">
+<link rel="stylesheet" href="../assets/css/imprimir.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <title>vizualizar os</title>
 
@@ -21,8 +22,32 @@ include_once ("../includes/php/vizualizar_os.php");
 
     <?= $user_lista ?>
 
+    
+  </section>
+
+
+  <h1 class="titulo-imprimir">Ordem de Serviço <?php echo $dadosID->id_chamado;?></h1>
+  <section class="area-imprimir">
+    
+    
+    <div class="area-txt-imprimir">
+      <span class="txt-imprimir">Requisitante: <?php echo $dadosID->nome_solicitante;?><br>
+      Abertura: <?php echo $dadosID->abertura;?><br><br>
+      Responsável: <?php echo $dadosID->nome_resp;?><br>
+      Cliente: <?php echo $dadosID->nome_cliente;?><br><br>
+      Equipamento(s): <?php echo $dadosID->nome_equip;?><br>
+      Tipo: <?php echo $dadosID->tipo;?><br>
+      Prioridade: <?php echo $dadosID->prioridade;?><br><br>
+      Descrição: <?php echo $dadosID->descricao;?><br><br>
+      Resposta Técnica: <?php echo $dadosID->resposta;?><br><br>
+      Imagem :<br>
+      <img class="imagem" src="../imgs/chamado/<?php echo ($dadosID->imagem); ?>" alt="Imagem do Chamado">   
+
+      </span>
+    </div>
 
   </section>
+
 
 </body>
 

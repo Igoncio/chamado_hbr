@@ -54,7 +54,7 @@ if ($dadosID->prioridade == "baixa") {
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br><br>
                 Resposta Técnica: ' . $dadosID->resposta . '<br>  
-                
+                <button  onclick="window.print()">Imprimir</button>
             </div>
         </div>
     ';
@@ -76,7 +76,7 @@ if ($dadosID->prioridade == "media") {
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br> <br>
                 Resposta Técnica: ' . $dadosID->resposta . '<br>
-
+                <button  onclick="window.print()">Imprimir</button>
             </div>
         </div>
     ';
@@ -99,7 +99,7 @@ if ($dadosID->prioridade == "alta") {
                 Responsável: ' . $dadosID->nome_resp . '<br>
                 Cliente: ' . $dadosID->nome_cliente . '<br> <br>
                 Resposta Técnica: ' . $dadosID->resposta . '<br>
-                
+                <button  onclick="window.print()">Imprimir</button>
             </div>
         </div>
     ';

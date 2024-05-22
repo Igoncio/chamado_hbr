@@ -1,0 +1,54 @@
+.area-imprimir{
+    display: none;
+}
+
+.titulo-imprimir{
+    display: none;
+}
+
+@media print{
+    .area-imprimir{
+        display: flex;
+    }
+
+    #titulo_page{
+        display: none;
+
+    }
+
+    .imagem{
+        width: 250px;
+        height: 300px;
+    }
+
+    #tableView{
+        display: none;
+    }
+
+    #btn-alternador{
+        display: none;
+    }
+
+    .area-main{
+        display: none;
+    }
+
+
+    .titulo-imprimir{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .area-txt-imprimir{
+        display: flex;
+        margin-top: 10%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cardView{
+        display: none;
+    }
+
+}
