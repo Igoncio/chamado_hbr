@@ -18,13 +18,13 @@ include_once ("../includes/php/suas_os.php");
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="../assets/js/requisicao_chamado.js" defer></script>
 <script src="../assets/js/seus_chamados.js" defer></script>
-<title>Validar Chamado</title>
+<title>suas os</title>
 
 <body>
 
 
 
-    <h1 id="titulo_page">Seus Chamados</h1>
+    <h1 id="titulo_page">Seus Ordens de Seviço</h1>
     <button id="btn-alternador" onclick="toggleView()">Alternar Visualização</button>
 
 

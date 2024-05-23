@@ -16,7 +16,7 @@ include_once ("../includes/php/todas_os.php");
 
 <body>
 
-    <h1 id="titulo_page">Ordens de Seviço</h1>
+    <h1 id="titulo_page">Todas Ordens de Seviço</h1>
     <button id="btn-alternador" onclick="toggleView()">Alternar Visualização</button>
 
     <div id="tableView" style="display: none; height: 450px; overflow-y: auto;">
