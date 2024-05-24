@@ -16,7 +16,7 @@ include_once ("../includes/php/os_finalizada.php");
 
 <body>
 
-    <h1 id="titulo_page">Ordens de Seviço respondidas</h1>
+    <h1 id="titulo_page">Ordens de Seviço finalizadas</h1>
     <button id="btn-alternador" onclick="toggleView()">Alternar Visualização</button>
 
     <div id="tableView" style="display: none; height: 450px; overflow-y: auto;">

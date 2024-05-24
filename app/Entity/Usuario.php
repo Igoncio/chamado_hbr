@@ -142,7 +142,19 @@ class Usuario
 
     public function excluir()
     {
-        return (new Database('usuario'))->delete('id_user = ' . $this->id_user);
+
+        
+        $destivar = "anonimo";
+        $senha = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+{}[]|:;<>,.?/";
+
+        return (new Database('usuario'))->update('id_user = ' . $this->id_user, [
+            'nome' => $destivar,
+            'sobrenome' => $destivar,
+            'telefone' => $destivar,
+            'email' => $destivar,
+            'cpf' => $destivar,
+            'senha' => $senha
+        ]);
     }
 
 
