@@ -63,3 +63,19 @@ a{
 #eye-icon:hover{
   color: #0464d0;
 }
+
+#voltar-btn {
+  width: 90px; 
+  padding: 5px; 
+  box-sizing: border-box; 
+}
+
+.link-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 0 auto;
+  text-decoration: none;
+  display: flex;
+  list-style: none;
+}

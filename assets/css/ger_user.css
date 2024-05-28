@@ -53,3 +53,20 @@ a{
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
 }
+
+#voltar-btn {
+    width: 90px; 
+    padding: 5px; 
+    box-sizing: border-box; 
+  }
+  
+  .link-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 0 auto;
+    text-decoration: none;
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+  }

@@ -39,8 +39,10 @@ include_once ("../includes/php/vizualizar_chamado.php");
         </tbody>
       </table>
     </div>
-
-
+    
+    <a class="link-btn" href="../pages/main_tela_inicial.php">
+      <button  type="button" id="voltar-btn" class="btn btn-outline-primary">Voltar</button>
+    </a>
   </section>
 
 </body>

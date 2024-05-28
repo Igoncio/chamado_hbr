@@ -34,6 +34,9 @@ include_once ("../includes/php/ger_user.php");
             </table>
         </div>
 
+        <a class="link-btn" href="../pages/main_tela_inicial.php">
+            <button  type="button" id="voltar-btn" class="btn btn-outline-primary">Voltar</button>
+        </a>
 
     </section>
 

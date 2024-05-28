@@ -51,6 +51,9 @@ include_once ("../includes/php/os_respondida.php");
         </section>
     </div>
 
+    <a class="link-btn" href="../pages/main_tela_inicial.php">
+      <button  type="button" id="voltar-btn" class="btn btn-outline-primary">Voltar</button>
+    </a>
 
 </body>
 
