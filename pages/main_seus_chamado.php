@@ -18,7 +18,7 @@ include_once ("../includes/php/seus_chamados.php");
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="../assets/js/requisicao_chamado.js" defer></script>
 <script src="../assets/js/seus_chamados.js" defer></script>
-<title>Validar Chamado</title>
+<title>seus chamados</title>
 
 <body>
 

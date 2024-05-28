@@ -10,13 +10,13 @@ include_once ("../includes/php/vizualizar_chamado.php");
 ?>
 <link rel="stylesheet" href="../assets/css/vizualizar_chamado.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<title>vizualizar chamados</title>
+<title>todos chamados</title>
 
 <body>
 
 
   <section class="area-main">
-    <h1 id="titulo-page">Vizualizar Chamados</h1>
+    <h1 id="titulo-page">Todos Chamados</h1>
 
     <div id="tableView" style="height: 450px; overflow-y: auto;">
       <table class="table">
@@ -29,7 +29,6 @@ include_once ("../includes/php/vizualizar_chamado.php");
             <th>Requisitante</th>
             <th>Prioridade</th>
             <th>Tipo</th>
-            <th>Status</th>
             <th>Abertura</th>
             <th>Fechamento</th>
             <th>Vizualizar</th>

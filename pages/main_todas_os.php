@@ -12,7 +12,7 @@ include_once ("../includes/php/todas_os.php");
     crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <script src="../assets/js/requisicao_chamado.js" defer></script>
-<title>Validar Chamado</title>
+<title>todas os</title>
 
 <body>
 
