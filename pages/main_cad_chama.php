@@ -8,9 +8,6 @@ include_once ("../includes/php/cad_chama.php");
 
 $dados = $objUsuario->getPermissao($_SESSION['id_user']);
 
-// print_r($dados->cad_cli);
-// die;
-
 $cad_cli = $dados->cad_cli == '1';
 $cad_perf = $dados->cad_perf == '1';
 $cad_chama = $dados->cad_chama == '1';
@@ -29,15 +26,11 @@ $relatorio_chama = $dados->relatorio_chama == '1';
 $resp_os = $dados->resp_os == '1';
 $edit_os = $dados->edit_os == '1';
 $relatorio_os = $dados->relatorio_os == '1';
-// print_r($clienteSelecionado);
-
 
 $query = "SELECT * FROM cliente";
 $result = $db->query($query);
 
-
 ?>
-
 
 <link rel="stylesheet" href="../assets/css/cad_chama.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -51,54 +44,51 @@ $result = $db->query($query);
 
     <section class="area-main">
 
-        <form class="area-form" method="POST" action="" enctype="multipart/form-data">
+        <form id="meuFormulario" class="area-form" method="POST" action="" enctype="multipart/form-data" onsubmit="habilitarCampo();">
 
             <h1 id="titulo_page">Cadastrar Chamado</h1>
 
             <div class="juntar-input">
 
-            <div class="data-field">
-                <?php if ($edit_chama) : ?>
-                    <input class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)" />
-                <?php else : ?>
-                    <input class="input" type="datetime-local" name="abertura" value="<?php echo date('Y-m-d\TH:i'); ?>" disabled/>
-                <?php endif; ?>
-                <label>Selecione a data e hora de abertura</label>
-            </div>
+                <div class="data-field">
+                    <?php if ($edit_chama) : ?>
+                        <input id="abertura" class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)" />
+                    <?php else : ?>
+                        <input id="abertura" class="input" type="datetime-local" name="abertura" onfocus="automatizarDataHora(this)" disabled/>
+                    <?php endif; ?>
+                    <label>Selecione a data e hora de abertura</label>
+                </div>
 
-                <div class="data-field" >
+                <div class="data-field">
                     <input class="input" type="datetime-local" name="fechamento" />
                     <label>Selecione a data e hora de parada</label>
                 </div>
 
             </div>
 
-
-          
-
-                <div>
-                    <select id="tamanho-select-duo" class="select" name="id_user">
-                        <option value="0">Selecione o responsável</option>
-                        <?= $options_user ?>
-                    </select>
-                </div>
-            
-                <select id="cliente" class="select" name="id_cli">
-                    <option value="0">Selecione o Cliente</option>
-                    <?php
-                        if($result->num_rows > 0){
-                            while($row = $result->fetch_assoc()){
-                                echo '<option value="' . $row['id_cli'] . '">'.$row['nome'].'</option>';
-                            }
-                        }else{
-                            echo '<option> Cliente indisponivel </option>';
-                        }                 
-                        ?>
+            <div>
+                <select id="tamanho-select-duo" class="select" name="id_user">
+                    <option value="0">Selecione o responsável</option>
+                    <?= $options_user ?>
                 </select>
+            </div>
 
-                <select id="equipamento" class="select" name="id_item">
-                    <option value="0">Selecione o equipamento</option>
-                </select>
+            <select id="cliente" class="select" name="id_cli">
+                <option value="0">Selecione o Cliente</option>
+                <?php
+                    if($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()){
+                            echo '<option value="' . $row['id_cli'] . '">'.$row['nome'].'</option>';
+                        }
+                    } else {
+                        echo '<option> Cliente indisponivel </option>';
+                    }                 
+                ?>
+            </select>
+
+            <select id="equipamento" class="select" name="id_item">
+                <option value="0">Selecione o equipamento</option>
+            </select>
 
             <select id="item" class="select" name="tipo">
                 <option value="0">Selecione o tipo</option>
@@ -109,11 +99,10 @@ $result = $db->query($query);
                 <option value="retirada">retirada</option>
                 <option value="recebimento">recebimento</option>
                 <option value="treinamento">treinamento</option>
-                <option value="seguraca_eletrica">seguraça elétrica</option>
+                <option value="seguraca_eletrica">segurança elétrica</option>
             </select>
 
             <div class="juntar-input">
-
                 <div class="input-field">
                     <input class="input" type="text" name="num_patrimonio" placeholder="n° de patrimonio" />
                 </div>
@@ -123,7 +112,6 @@ $result = $db->query($query);
                 </div>
             </div>
 
-
             <div class="input-field">
                 <textarea id="desc" class="input" name="descricao" maxlength="250"></textarea>
                 <label class="label" for="desc">Descrição (limite: 250 caracteres)</label>
@@ -131,7 +119,6 @@ $result = $db->query($query);
             </div>
 
             <div class="juntar-check">
-
                 <h1 id="txt-perm">Prioridade:</h1>
                 <div class="area-prioridade">
                     <label>
@@ -154,27 +141,17 @@ $result = $db->query($query);
                     </label>
                 </div>
 
-
-
-                <h1 id="txt-perm">Selecione um anexo (opicional):</h1>
+                <h1 id="txt-perm">Selecione um anexo (opcional):</h1>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control" id="inputGroupFile02" name="imagem" accept="image/*">
                 </div>
 
-
-
-
-
                 <div class="btn-field">
-
                     <button class="btn-submit" type="submit">Cadastrar</button>
-                    <a href="main_tela_inicial.php" class="btn-cancelar" id="cancelar">Cancelar</a href="">
-
+                    <a href="main_tela_inicial.php" class="btn-cancelar" id="cancelar">Cancelar</a>
                 </div>
 
-
         </form>
-
 
     </section>
 
@@ -197,9 +174,16 @@ $result = $db->query($query);
             }
         });
     });
-    
-    
-    
+
+    function habilitarCampo() {
+        document.getElementById('abertura'  ).disabled = false;
+    }
+
+    function automatizarDataHora(campo) {
+        const now = new Date();
+        const formattedDateTime = now.toISOString().slice(0, 16);
+        campo.value = formattedDateTime;
+    }
 </script>
 
 </body>

@@ -67,8 +67,11 @@ $options_user = '';
 if ($users) {
     // Iterar sobre os resultados
     foreach ($users as $row_check) {
-        // Acessar as propriedades do objeto Cliente diretamente
-        $options_user .= '<option class="ops" value="' . $row_check->id_user . '"> ' . $row_check->nome . ' </option>';
+        // Verificar se o nome do usuário não é "anonimo"
+        if ($row_check->nome !== 'anonimo') {
+            // Acessar as propriedades do objeto Cliente diretamente
+            $options_user .= '<option class="ops" value="' . $row_check->id_user . '"> ' . $row_check->nome . ' </option>';
+        }
     }
 } else {
     // Caso não haja setores encontrados
