@@ -57,92 +57,86 @@ $relatorio_os = $dados->relatorio_os == '1';
 
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../pages/main_tela_inicial.php"><img id="logo_menu" src="../imgs/logo/logo.png"
-          alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+<nav class="navbar  navbar-expand-lg bg-body-tertiary ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../pages/main_tela_inicial.php"><img id="logo_menu" src="../imgs/logo/logo.png"
+        alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
 
 
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Cadastros
-            </a>
-            <ul class="dropdown-menu">
-              <?php echo $cad_cli ?'<li><a class="dropdown-item" href="../pages/main_cad_cli.php">Cadastrar cliente</a></li>' : ''?>
-              <?php echo $cad_perf ? '<li><a class="dropdown-item" href="../pages/main_cad_perf.php">Cadastrar perfis</a></li>' : ''?>
-              <?php echo $cad_user ? '<li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar usuarios</a></li>' : ''?>
-              <?php echo $cad_equip ?'<li><a class="dropdown-item" href="../pages/main_cad_item.php">Cadastrar equipamento</a></li>' : ''?>
-              <li><a class="dropdown-item" href="../pages/main_cad_chama.php">Cadastrar chamado</a></li>
-              </ul>
-              </li>
-              
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Chamados
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../pages/main_cad_chama.php">Cadastrar Chamado</a></li>
-              <?php echo $vizu_chama ?'<li><a class="dropdown-item" href="../pages/main_vizualizar_chamado.php">Todos Chamados</a></li>' : ''?>
-              <li><a class="dropdown-item" href="../pages/main_seus_chamado.php">Seus Chamados</a></li>
-              <?php echo $req_chama ?'<li><a class="dropdown-item" href="../pages/main_requisicao_chamado.php">Requisições de Chamados</a></li>' : ''?>
-              <?php echo $relatorio_chama ?'<li><a class="dropdown-item" href="#">Relatorio de Chamados</a></li>' : ''?>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastros
+          </a>
+          <ul class="dropdown-menu">
+            <?php echo $cad_cli ?'<li><a class="dropdown-item" href="../pages/main_cad_cli.php">Cadastrar cliente</a></li>' : ''?>
+            <?php echo $cad_perf ? '<li><a class="dropdown-item" href="../pages/main_cad_perf.php">Cadastrar perfis</a></li>' : ''?>
+            <?php echo $cad_user ? '<li><a class="dropdown-item" href="../pages/main_cad_user.php">Cadastrar usuarios</a></li>' : ''?>
+            <?php echo $cad_equip ?'<li><a class="dropdown-item" href="../pages/main_cad_item.php">Cadastrar equipamento</a></li>' : ''?>
+            <li><a class="dropdown-item" href="../pages/main_cad_chama.php">Cadastrar chamado</a></li>
             </ul>
-          </li>
+            </li>
+            
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ordens de Serviço
-            </a>
-            <ul class="dropdown-menu">
-              <?php echo $todas_os ?'<li><a class="dropdown-item" href="../pages/main_todas_os.php">Todas Os</a></li>' : ''?>
-              <li><a class="dropdown-item" href="../pages/main_suas_os.php">Suas Os</a></li>
-              <?php echo $resp_os ?'<li><a class="dropdown-item" href="../pages/main_os_naorespondida.php">Os não respondidas</a></li>' : ''?>
-              <?php echo $resp_os ?' <li><a class="dropdown-item" href="../pages/main_os_respondida.php">Os respondidas</a></li>' : ''?>
-              <?php echo $resp_os ?'  <li><a class="dropdown-item" href="../pages/main_os_finalizada.php">Os finalizadas</a></li>' : ''?>
-            </ul>
-          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Chamados
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../pages/main_cad_chama.php">Cadastrar Chamado</a></li>
+            <?php echo $vizu_chama ?'<li><a class="dropdown-item" href="../pages/main_vizualizar_chamado.php">Todos Chamados</a></li>' : ''?>
+            <li><a class="dropdown-item" href="../pages/main_seus_chamado.php">Seus Chamados</a></li>
+            <?php echo $req_chama ?'<li><a class="dropdown-item" href="../pages/main_requisicao_chamado.php">Requisições de Chamados</a></li>' : ''?>
+            <?php echo $relatorio_chama ?'<li><a class="dropdown-item" href="#">Relatorio de Chamados</a></li>' : ''?>
+          </ul>
+        </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Gerenciamento
-            </a>
-            <ul class="dropdown-menu">
-              <?php echo $ger_user ?'<li><a class="dropdown-item" href="../pages/main_ger_user.php">Gerenciar usuarios</a></li>' : ''?>
-              <?php echo $ger_perf ?'<li><a class="dropdown-item" href="../pages/main_ger_perf.php">Gerenciar perfis</a></li>' : ''?>
-              <?php echo $ger_equip ?'<li><a class="dropdown-item" href="../pages/main_ger_equip.php">Gerenciar equipamentos</a></li>' : ''?>
-              <?php echo $ger_cli ?'<li><a class="dropdown-item" href="../pages/main_ger_cli.php">Gerenciar clientes</a></li>' : ''?>
-            </ul>
-          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ordens de Serviço
+          </a>
+          <ul class="dropdown-menu">
+            <?php echo $todas_os ?'<li><a class="dropdown-item" href="../pages/main_todas_os.php">Todas Os</a></li>' : ''?>
+            <li><a class="dropdown-item" href="../pages/main_suas_os.php">Suas Os</a></li>
+            <?php echo $resp_os ?'<li><a class="dropdown-item" href="../pages/main_os_naorespondida.php">Os não respondidas</a></li>' : ''?>
+            <?php echo $resp_os ?' <li><a class="dropdown-item" href="../pages/main_os_respondida.php">Os respondidas</a></li>' : ''?>
+            <?php echo $resp_os ?'  <li><a class="dropdown-item" href="../pages/main_os_finalizada.php">Os finalizadas</a></li>' : ''?>
+          </ul>
+        </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gerenciamento
+          </a>
+          <ul class="dropdown-menu">
+            <?php echo $ger_user ?'<li><a class="dropdown-item" href="../pages/main_ger_user.php">Gerenciar usuarios</a></li>' : ''?>
+            <?php echo $ger_perf ?'<li><a class="dropdown-item" href="../pages/main_ger_perf.php">Gerenciar perfis</a></li>' : ''?>
+            <?php echo $ger_equip ?'<li><a class="dropdown-item" href="../pages/main_ger_equip.php">Gerenciar equipamentos</a></li>' : ''?>
+            <?php echo $ger_cli ?'<li><a class="dropdown-item" href="../pages/main_ger_cli.php">Gerenciar clientes</a></li>' : ''?>
+          </ul>
+        </li>
+      </ul>
 
+      <ul class="menu-user">
+        <div class="container-user">
 
+          <i id="icon-user" class="bi bi-person-fill"></i>
+          <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
 
-
-
-        </ul>
-
-        <ul class="menu-user">
-          <div class="container-user">
-
-            <i id="icon-user" class="bi bi-person-fill"></i>
-            <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
-
-              <div id="dropdown" class="dropdown-content">
-                <a href="../">Sair</a>
-              </div>
-          </div>
-        </ul>
-      </div>
+            <div id="dropdown" class="dropdown-content">
+              <a href="../">Sair</a>
+            </div>
+        </div>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
 
 </body>
