@@ -199,9 +199,11 @@ $relatorio_os = $dados->relatorio_os == '1';
                     </div>
                 </div>
             </a>
+    
 
-            
-            <a href="main_os_naorespondida.php">
+            <?php
+            echo $resp_os ?
+            '<a href="main_os_naorespondida.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
@@ -209,10 +211,13 @@ $relatorio_os = $dados->relatorio_os == '1';
                     <div class="notibody1">Selecione esta opção para vizualizar e responder a todas ordens de seviço
                     </div>
                 </div>
-            </a>
+            </a>'
+            :'';
+            ?>
 
-
-            <a href="main_os_respondida.php">
+            <?php
+            echo $resp_os ?
+            '<a href="main_os_respondida.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
@@ -220,9 +225,14 @@ $relatorio_os = $dados->relatorio_os == '1';
                     <div class="notibody1">Selecione esta opção para vizualizar e responder a todas ordens de seviço
                     </div>
                 </div>
-            </a>
+            </a>'
+            :'';
+            ?>
 
-            <a href="main_os_finalizada.php">
+
+            <?php
+            echo $resp_os ?
+            '<a href="main_os_finalizada.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>
@@ -230,7 +240,9 @@ $relatorio_os = $dados->relatorio_os == '1';
                     <div class="notibody1">Selecione esta opção para vizualizar as ordens de serviço finalizadas
                     </div>
                 </div>
-            </a>
+            </a>'
+            :'';
+            ?>
 
         </section>
 
