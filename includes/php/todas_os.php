@@ -1,11 +1,18 @@
 <?php
 
 use App\Entity\Chamado;
+use App\Entity\Perfil;
+
+
+$dados = $objUsuario->getPermissao($_SESSION['id_user']);
+
+$resp_os = $dados->resp_os == '1';
+$edit_os = $dados->edit_os == '1';
 
 $dados = Chamado::getChama();
 
-$user_lista = '';
-$user_table = '';
+$user_lista = ''; // Inicializa a variável
+$user_table = ''; // Inicializa a variável
 
 foreach ($dados as $user) {
     $card_class = '';
@@ -36,8 +43,8 @@ foreach ($dados as $user) {
     }
 
     // Add cards based on status
-    if ($user['status'] == "os" || $user['status'] == "os_respondida" || $user['status'] == "os_finalizada") {
-        $action_button = $user['status'] == "os" ? 'Responder' : 'Vizualizar';
+    if ($user['status'] == "os" || $user['status'] == "os_respondida") {
+        $action_button = $user['status'] == "os" ? 'Responder' : 'Visualizar';
         $action_url = $user['status'] == "os" ? 'main_validar_os.php' : 'main_vizualizar_os.php';
 
         $user_lista .= "
@@ -53,11 +60,45 @@ foreach ($dados as $user) {
                     Prioridade: {$user['prioridade']}<br><br>
                     Descrição: {$user['descricao']}<br><br>
                     Responsável: {$user['nome_resp']}<br>
-                    Cliente: {$user['nome_cliente']}<br>
-                    <a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">$action_button</button></a>
-                    <a href=\"../pages/main_editar_chama.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-dark\">Editar</button></a>
-                </div>
-            </div>";
+                    Cliente: {$user['nome_cliente']}<br>";
+                    
+        if ($resp_os) {
+            $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Responder</button></a>";
+        }
+
+        if ($edit_os) {
+            $user_lista .= "<a href=\"../pages/main_editar_chama.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-dark\">Editar</button></a>";
+        }
+
+        $user_lista .= "</div></div>";
+    }
+
+    if ($user['status'] == "os_finalizada") {
+        $action_button = $user['status'] == "os" ? 'Responder' : 'Visualizar';
+        $action_url = $user['status'] == "os" ? 'main_validar_os.php' : 'main_vizualizar_os.php';
+
+        $user_lista .= "
+            <div class=\"$card_class\">
+                <div class=\"$glow_class\"></div>
+                <div class=\"$border_glow_class\"></div>
+                <div class=\"$title_class\">Chamado {$user['id_chamado']}</div>
+                <div class=\"$body_class\">
+                    Requisitante: {$user['nome_solicitante']}<br>
+                    Abertura: {$user['abertura']}<br><br>
+                    Equipamento(s): {$user['nome_equip']}<br>
+                    Tipo: {$user['tipo']}<br>
+                    Prioridade: {$user['prioridade']}<br><br>
+                    Descrição: {$user['descricao']}<br><br>
+                    Responsável: {$user['nome_resp']}<br>
+                    Cliente: {$user['nome_cliente']}<br>";
+                    
+        
+            $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
+        
+
+        
+
+        $user_lista .= "</div></div>";
     }
 
     // Add rows to table
@@ -75,11 +116,17 @@ foreach ($dados as $user) {
                 <td>$descricao</td>
                 <td>" . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . "</td>
                 <td>" . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . "</td>
-                <td>
-                    <a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">$action_button</button></a>
-                    <a href=\"../pages/main_editar_chama.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-dark\">Editar</button></a>
-                </td>
-            </tr>";
+                <td>";
+
+        if ($resp_os) {
+            $user_table .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Responder</button></a>";
+        }
+
+        if ($edit_os) {
+            $user_table .= "<a href=\"../pages/main_editar_chama.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-dark\">Editar</button></a>";
+        }
+
+        $user_table .= "</td></tr>";
     }
 
     if ($user['status'] == "os_finalizada") {
@@ -96,12 +143,13 @@ foreach ($dados as $user) {
                 <td>$descricao</td>
                 <td>" . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . "</td>
                 <td>" . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . "</td>
-                <td>
-                    <a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">$action_button</button></a>
-                    <a href=\"../pages/main_editar_chama.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-dark\">Editar</button></a>
-                </td>
-            </tr>";
+                <td>";
+
+            $user_table .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
+        
+
+
+        $user_table .= "</td></tr>";
     }
 }
-
 ?>
