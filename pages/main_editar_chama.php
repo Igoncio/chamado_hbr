@@ -39,15 +39,15 @@ include_once ("../includes/menu.php");
 
                 <div>
                     <select id="tamanho-select-duo" class="select" name="id_user">
-                        <option value="<?php echo $users[$objchamado->id_user - 32]->id_user; ?>">
-                            <?php echo $users[$objchamado->id_user - 32]->nome; ?></option>
+                        <option value="<?php echo $objchamado->id_user; ?>">
+                            <?php echo $objchamado->nome_resp; ?></option>
                         <?= $options_user ?>
                     </select>
                 </div>
-
+                
                 <select id="tamanho-select-duo" class="select" name="id_cli">
-                    <option value="<?php echo $clientes[$objchamado->id_cli - 1]->id_cli; ?>">
-                        <?php echo $clientes[$objchamado->id_cli - 1]->nome; ?>
+                    <option value="<?php echo$objchamado->id_cli; ?>">
+                        <?php echo $objchamado->nome_cliente; ?>
                     </option>
                     <?= $options ?>
                 </select>
@@ -55,15 +55,16 @@ include_once ("../includes/menu.php");
 
             <div class="area-item">
                 <select id="item" class="select" name="id_item">
-                    <option value="<?php echo $itens[$objchamado->id_item - 17]->id_item; ?>">
-                        <?php echo $itens[$objchamado->id_item - 17]->nome;
+                    <option value="<?php echo $objchamado->id_item; ?>">
+                        <?php echo $objchamado->nome_equip;
                         ; ?>
                     </option>
                     <?= $options_item ?>
                 </select>
-                <i id="mais-item" class="bi bi-plus-circle"></i>
-                <i id="menos-item" class="bi bi-dash-circle"></i>
             </div>
+
+            
+
 
             <select id="item" class="select" name="tipo">
                 <option value="<?php $objchamado->tipo ?>"><?php print_r($objchamado->tipo); ?></option>

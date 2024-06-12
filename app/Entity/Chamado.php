@@ -196,7 +196,7 @@ class Chamado
             $whereClause = $dataType === 'numeric' ? 'id_chamado = ' . $id_chamado : 'id_chamado = "' . $id_chamado . '"';
 
             // Executa o select usando a cláusula WHERE preparada
-            return (new Database('chamado'))->select($whereClause)->fetchObject(self::class);
+            return (new Database('vw_vizualizar_chamado'))->select($whereClause)->fetchObject(self::class);
         } else {
             return null; // Retorna null se $id_chamado não for válido
         }
