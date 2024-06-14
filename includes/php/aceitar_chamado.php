@@ -4,42 +4,45 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use App\Entity\Chamado;
 use App\Entity\Notificacao;
+use App\Entity\Usuario;
 
 
-$objchamado = Chamado::getChama2($_GET['id_chamado']);
+session_start();
 
 
-// $objchamado = Chamado::getChama2($_GET['id_chamado']);
-// Verifica se o formulário foi submetido para aceitar o chamado
-// Obtém o objeto do chamado com base no ID enviado no formulário
-$objchamado = Chamado::getChama2($_GET['id_chamado']);
+if (isset($_SESSION['id_user'])) {
 
-// Verifica se o objeto é válido
-if ($objchamado instanceof Chamado) {
-    // Chama a função AceitarChamado() para atualizar o status
-    $aceitou = $objchamado->AceitarChamado();
+    $objUsuario = Usuario::getUser($_SESSION['id_user']);
 
-    if ($aceitou) {
-        // Obtém o valor de 'id_chamado' da URL
-        $id_chamado = $_GET['id_chamado'];
+    $objchamado = Chamado::getChama2($_GET['id_chamado']);
 
-        // Montando a string de notificação
-        $mensagemNotificacao = 'O Chamado ' . $id_chamado . ' virou uma Ordem de Serviço (os)';
+    if ($objchamado instanceof Chamado) {
+        
+        $aceitou = $objchamado->AceitarChamado();
 
-        // Criando uma nova notificação
-        $notificacao = new Notificacao();
-        $resultado = $notificacao->cadastrar($mensagemNotificacao);
+        if ($aceitou) {
+            $id_chamado = $_GET['id_chamado'];
+            $mensagemNotificacao = 'O Chamado ' . $id_chamado . ' virou uma Ordem de Serviço (os)';
 
-    } 
-    if ($resultado) {
-        // Redireciona para a tela inicial
-        header('Location: ../../pages/main_tela_inicial.php');
-        exit; // Garante que o script pare de executar após o
-    }
-    else {
-        echo 'Erro ao aceitar o chamado.';
+            // Obtém o ID do usuário
+            $userId = $_SESSION['id_user'];
+
+            // Criando uma nova notificação
+            $notificacao = new Notificacao();
+            $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId);
+
+            if ($resultado) {
+                header('Location: ../../pages/main_tela_inicial.php');
+                exit; 
+            } else {
+                echo 'Erro ao cadastrar a notificação.';
+            }
+        } else {
+            echo 'Erro ao aceitar o chamado.';
+        }
+    } else {
+        echo 'Chamado não encontrado.';
     }
 } else {
-    echo 'Chamado não encontrado.';
+    echo 'Usuário não está logado.';
 }
-
