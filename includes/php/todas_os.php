@@ -1,13 +1,17 @@
 <?php
 
 use App\Entity\Chamado;
-use App\Entity\Perfil;
+use App\Entity\Usuario;
 
-
-$dados = $objUsuario->getPermissao($_SESSION['id_user']);
-
-$resp_os = $dados->resp_os == '1';
-$edit_os = $dados->edit_os == '1';
+// Verificar se o usuário está logado
+if (isset($_SESSION['id_user'])) {
+    // Buscar as informações do usuário no banco de dados usando o ID da sessão
+    $objUsuario = Usuario::getUser($_SESSION['id_user']);
+    // Obter permissões do usuário
+    $dados = $objUsuario->getPermissao($_SESSION['id_user']);
+    $resp_os = $dados->resp_os == '1';
+    $edit_os = $dados->edit_os == '1';
+}
 
 $dados = Chamado::getChama();
 
@@ -15,6 +19,9 @@ $user_lista = ''; // Inicializa a variável
 $user_table = ''; // Inicializa a variável
 
 foreach ($dados as $user) {
+    $isResponsible = $user['id_user'] == $objUsuario->id_user;
+    $isSolicitante = $user['solicitante'] == $objUsuario->id_user;
+
     $card_class = '';
     $glow_class = '';
     $border_glow_class = '';
@@ -45,7 +52,7 @@ foreach ($dados as $user) {
     // Add cards based on status
     if ($user['status'] == "os" || $user['status'] == "os_respondida") {
         $action_button = $user['status'] == "os" ? 'Responder' : 'Visualizar';
-        $action_url = $user['status'] == "os" ? 'main_validar_os.php' : 'main_vizualizar_os.php';
+        $action_url = $user['status'] == "os" ? 'main_validar_os.php' : 'main_validar_os.php';
 
         $user_lista .= "
             <div class=\"$card_class\">
@@ -74,8 +81,7 @@ foreach ($dados as $user) {
     }
 
     if ($user['status'] == "os_finalizada") {
-        $action_button = $user['status'] == "os" ? 'Responder' : 'Visualizar';
-        $action_url = $user['status'] == "os" ? 'main_validar_os.php' : 'main_vizualizar_os.php';
+        $action_url = 'main_vizualizar_os.php';
 
         $user_lista .= "
             <div class=\"$card_class\">
@@ -92,12 +98,8 @@ foreach ($dados as $user) {
                     Responsável: {$user['nome_resp']}<br>
                     Cliente: {$user['nome_cliente']}<br>";
                     
+        $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
         
-            $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
-        
-
-        
-
         $user_lista .= "</div></div>";
     }
 
@@ -145,9 +147,7 @@ foreach ($dados as $user) {
                 <td>" . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . "</td>
                 <td>";
 
-            $user_table .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
-        
-
+        $user_table .= "<a href=\"../pages/main_vizualizar_os.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
 
         $user_table .= "</td></tr>";
     }

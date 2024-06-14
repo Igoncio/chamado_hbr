@@ -1,6 +1,8 @@
 <?php
 
 use App\Entity\Chamado;
+use App\Entity\Notificacao;
+use App\Entity\Usuario;
 
 // use App\Entity\Item;
 // use App\Entity\Usuario;
@@ -178,24 +180,40 @@ if ($dadosID->prioridade == "alta") {
         </div>
     ';
 }
-
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
     $acao = $_POST["submit"];
+
+    // Verifica se o chamado existe antes de prosseguir
+    $objchamado = Chamado::getChama2($_GET['id_chamado']);
+    if (!$objchamado) {
+        echo "Chamado não encontrado.";
+        exit;
+    }
 
     if ($acao === "finalizar") {
         // Lógica para finalizar a OS
         if (isset($_POST["resp_desc"])) {
             // Processo de finalização da OS
-            $objchamado = Chamado::getChama2($_GET['id_chamado']);
-            if (!$objchamado) {
-                echo "Chamado não encontrado.";
-                exit;
-            }
             $objchamado->resp_desc = $_POST["resp_desc"];
             $atualizar_sucesso = $objchamado->FinalizarOs();
+
             if ($atualizar_sucesso) {
-                echo '<script>window.location.href = "main_todas_os.php";</script>';
-                exit;
+                $id_chamado = $_GET['id_chamado'];
+                $mensagemNotificacao = 'A OS ' . $id_chamado . ' foi finalizada';
+
+                // Obtém o ID do usuário
+                $userId = $_SESSION['id_user'];
+
+                // Criando uma nova notificação
+                $notificacao = new Notificacao();
+                $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId);
+
+                if ($resultado) {
+                    echo "<script>window.location.href = '../pages/main_tela_inicial.php';</script>";
+                    exit;
+                } else {
+                    echo "Erro ao cadastrar a notificação.";
+                }
             } else {
                 echo "Erro ao finalizar o chamado.";
             }
@@ -204,16 +222,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         // Lógica para responder à OS
         if (isset($_POST["resp_desc"])) {
             // Processo de resposta à OS
-            $objchamado = Chamado::getChama2($_GET['id_chamado']);
-            if (!$objchamado) {
-                echo "Chamado não encontrado.";
-                exit;
-            }
             $objchamado->resp_desc = $_POST["resp_desc"];
             $atualizar_sucesso = $objchamado->ResponderOs();
+
             if ($atualizar_sucesso) {
-                echo '<script>window.location.href = "main_todas_os.php";</script>';
-                exit;
+                $id_chamado = $_GET['id_chamado'];
+                $mensagemNotificacao = 'A OS ' . $id_chamado . ' foi respondida';
+
+                // Obtém o ID do usuário
+                $userId = $_SESSION['id_user'];
+
+                // Criando uma nova notificação
+                $notificacao = new Notificacao();
+                $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId);
+
+                if ($resultado) {
+                    echo "<script>window.location.href = '../pages/main_tela_inicial.php';</script>";
+                    exit;
+                } else {
+                    echo "Erro ao cadastrar a notificação.";
+                }
             } else {
                 echo "Erro ao responder o chamado.";
             }
@@ -222,6 +250,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
         echo "Ação inválida.";
     }
 }
-
-
-?>
