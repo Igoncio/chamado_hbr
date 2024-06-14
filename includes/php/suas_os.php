@@ -81,7 +81,7 @@ foreach ($dados as $user) {
     }
 
     if (($user['status'] == "os_finalizada") && ($isResponsible || $isSolicitante)) {
-        $action_url = 'main_visualizar_os.php';
+        $action_url = 'main_vizualizar_os.php';
 
         $user_lista .= "
             <div class=\"$card_class\">
@@ -98,7 +98,7 @@ foreach ($dados as $user) {
                     Responsável: {$user['nome_resp']}<br>
                     Cliente: {$user['nome_cliente']}<br>";
                     
-        $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Visualizar</button></a>";
+        $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
         
         $user_lista .= "</div></div>";
     }
@@ -147,7 +147,7 @@ foreach ($dados as $user) {
                 <td>" . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . "</td>
                 <td>";
 
-        $user_table .= "<a href=\"../pages/main_visualizar_os.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Visualizar</button></a>";
+        $user_table .= "<a href=\"../pages/main_vizualizar_os.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
 
         $user_table .= "</td></tr>";
     }
