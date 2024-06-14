@@ -206,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 
                 // Criando uma nova notificação
                 $notificacao = new Notificacao();
-                $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId);
+                $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId, $id_chamado);
 
                 if ($resultado) {
                     echo "<script>window.location.href = '../pages/main_tela_inicial.php';</script>";
@@ -234,7 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 
                 // Criando uma nova notificação
                 $notificacao = new Notificacao();
-                $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId);
+                $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId, $id_chamado);
 
                 if ($resultado) {
                     echo "<script>window.location.href = '../pages/main_tela_inicial.php';</script>";

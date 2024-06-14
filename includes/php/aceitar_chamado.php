@@ -29,7 +29,7 @@ if (isset($_SESSION['id_user'])) {
 
             // Criando uma nova notificação
             $notificacao = new Notificacao();
-            $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId);
+            $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId, $id_chamado);
 
             if ($resultado) {
                 header('Location: ../../pages/main_tela_inicial.php');

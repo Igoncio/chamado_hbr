@@ -124,8 +124,8 @@ $relatorio_os = $dados->relatorio_os == '1';
       </ul>
 
       <ul class="menu-user">
+        <i id="icon-not" class="bi bi-bell-fill"></i>
         <div class="container-user">
-
           <i id="icon-user" class="bi bi-person-fill"></i>
           <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
 

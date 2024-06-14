@@ -24,22 +24,31 @@ class Notificacao {
      */
     public $id_user;
 
+    public $visto;
+
+    public $id_chama;
+
     /**
      * Método responsável por cadastrar a notificação no banco de dados
      * @param string $mensagem
      * @param integer $userId
      * @return boolean
      */
-    public function cadastrar($mensagem, $userId) {
+    public function cadastrar($mensagem, $userId, $id_chama) {
         // Atribui a mensagem e o usuário às propriedades do objeto
         $this->notificacao = $mensagem;
         $this->id_user = $userId;
+        $this->id_chama = $id_chama;
+        $visto = 0;
 
         // Cria um novo registro no banco de dados
         $objDatabase = new Database('notificacao');
         $this->id_not = $objDatabase->insert([
+            'id_user' => $this->id_user,
+            'id_chama' =>$this->id_chama,
             'notificacao' => $this->notificacao,
-            'id_user' => $this->id_user
+            'visto' => $visto
+            
         ]);
 
         // Retorna sucesso
