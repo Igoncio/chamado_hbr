@@ -34,8 +34,11 @@
 }
 
 #txt-not{
+    align-items: center;
     display: flex;
     font-size: 17px;
+    height: 70px;
+    /* background-color: aqua; */
 }
 
 #link-not{
@@ -101,6 +104,7 @@
 /* Estilo para o modal */
 .modal {
     display: none;
+    justify-content: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -143,6 +147,6 @@
 }
 
 .area-not{
-    height: 200px;
+    height: 400px;
     overflow: auto;
 }

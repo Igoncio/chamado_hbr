@@ -148,7 +148,7 @@ $relatorio_os = $dados->relatorio_os == '1';
             <button class="close">&times;</button> 
             <h2>Notificações</h2>
             <a href="../pages/main_vizualizar_os.php?id_chamado=<?php echo $notificacao['id_chama']; ?>" id="link-not">
-            <div class="area-not">
+              <div class="area-not">
                   <?php echo $not_lista; ?>
                 </div>
               </a>
