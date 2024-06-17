@@ -54,4 +54,11 @@ class Notificacao {
         // Retorna sucesso
         return true;
     }
+
+    public static function getNot()
+    {
+        $banco = new Database("vw_notificacoes");
+        $dados = $banco->select()->fetchAll();
+        return $dados;
+    }
 }

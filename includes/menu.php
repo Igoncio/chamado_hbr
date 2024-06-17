@@ -2,6 +2,26 @@
 session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 use App\Entity\Usuario;
+use App\Entity\Notificacao;
+
+$objnot = Notificacao::getNot();
+
+$not_lista = '';
+
+foreach ($objnot as $notificacao) {
+
+// print_r($notificacao['id_execultou']);
+// die;
+
+
+  if($notificacao['id_execultou'] == ($_SESSION['id_user'])){
+    $not_lista .= '<h1 id="txt-not"> '. $notificacao['notificacao'] .'';
+  }
+}
+
+// Interrompe o script para ver os resultados até este ponto
+// print_r($not_lista);
+// die;
 
 // Verificar se o usuário está logado
 if (isset($_SESSION['id_user'])) {
@@ -12,9 +32,6 @@ if (isset($_SESSION['id_user'])) {
 use App\Entity\Perfil;
 
 $dados = $objUsuario->getPermissao($_SESSION['id_user']);
-
-// print_r($dados->cad_cli);
-// die;
 
 $cad_cli = $dados->cad_cli == '1';
 $cad_perf = $dados->cad_perf == '1';
@@ -53,6 +70,7 @@ $relatorio_os = $dados->relatorio_os == '1';
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="php/menu_config.php">
 </head>
 
 <body>
@@ -68,8 +86,7 @@ $relatorio_os = $dados->relatorio_os == '1';
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
 
-
-
+      
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Cadastros
@@ -125,7 +142,21 @@ $relatorio_os = $dados->relatorio_os == '1';
 
       <ul class="menu-user">
         <i id="icon-not" class="bi bi-bell-fill"></i>
+        
+        <div id="notificationModal" class="modal">
+          <div class="modal-content">
+            <button class="close">&times;</button> 
+            <h2>Notificações</h2>
+            <a href="../pages/main_vizualizar_os.php?id_chamado=<?php echo $notificacao['id_chama']; ?>" id="link-not">
+            <div class="area-not">
+                  <?php echo $not_lista; ?>
+                </div>
+              </a>
+          </div>
+        </div>
+
         <div class="container-user">
+    
           <i id="icon-user" class="bi bi-person-fill"></i>
           <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
 
@@ -138,7 +169,7 @@ $relatorio_os = $dados->relatorio_os == '1';
   </div>
 </nav>
 
-
+<script src="../assets/js/menu.js"></script>
 </body>
 
 </html>
