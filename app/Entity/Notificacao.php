@@ -61,4 +61,15 @@ class Notificacao {
         $dados = $banco->select(null, 'id_not DESC')->fetchAll();
         return $dados;
     }
+
+    public function vizualizarNot()
+    {
+        $visto = 1;
+
+
+        return (new Database('notificacao'))->update($id_not, [
+            'visto' => $visto
+        ]);
+
+    }
 }
