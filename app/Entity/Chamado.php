@@ -181,7 +181,7 @@ class Chamado
     public static function getChama()
     {
         $banco = new Database("vw_vizualizar_chamado");
-        $dados = $banco->select()->fetchAll();
+        $dados = $banco->select(null, 'id_chamado DESC')->fetchAll();
         return $dados;
     }
 

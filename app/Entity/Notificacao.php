@@ -58,7 +58,7 @@ class Notificacao {
     public static function getNot()
     {
         $banco = new Database("vw_notificacoes");
-        $dados = $banco->select()->fetchAll();
+        $dados = $banco->select(null, 'id_not DESC')->fetchAll();
         return $dados;
     }
 }
