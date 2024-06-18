@@ -7,21 +7,36 @@ use App\Entity\Notificacao;
 $objnot = Notificacao::getNot();
 
 $not_lista = '';
+$tem_notificacao = false; // Variável para verificar se há notificações
 
 foreach ($objnot as $notificacao) {
+  $id_execultou = isset($notificacao['id_execultou']) ? $notificacao['id_execultou'] : null;
+  $solicitante = isset($notificacao['id_solicitante']) ? $notificacao['id_solicitante'] : null;
+  $responsavel = isset($notificacao['id_responsavel']) ? $notificacao['id_responsavel'] : null;
+  $visto = isset($notificacao['visto']) ? $notificacao['visto'] : null;
 
-// print_r($notificacao['id_execultou']);
-// die;
-
-
-  if($notificacao['id_execultou'] == ($_SESSION['id_user'])){
-    $not_lista .= '<h1 id="txt-not"> '. $notificacao['notificacao'] .'';
+  if (
+    ($id_execultou == $_SESSION['id_user'] ||
+     $solicitante == $_SESSION['id_user'] ||
+     $responsavel == $_SESSION['id_user'])
+  ) {
+    $chama_id = isset($notificacao['id_chama']) ? $notificacao['id_chama'] : '';
+    $icon_class = $visto == 1 ? 'bi-eye-slash-fill' : 'bi-eye-fill';
+    $not_lista .= '<div class="content-not"><a href="../pages/main_vizualizar_os.php?id_chamado=' . $chama_id . '" id="link-not">     
+        <h1 id="txt-not"> ' . $notificacao['notificacao'] . ' </a><i class="bi ' . $icon_class . '"></i></h1>
+     </div>';
+    $tem_notificacao = true;
   }
 }
 
+if (!$tem_notificacao) {
+  $not_lista .= '<p>Não existem notificações criadas</p>';
+}
+
+// Exibir a lista de notificações
+// echo $not_lista;
+
 // Interrompe o script para ver os resultados até este ponto
-// print_r($not_lista);
-// die;
 
 // Verificar se o usuário está logado
 if (isset($_SESSION['id_user'])) {
@@ -147,11 +162,9 @@ $relatorio_os = $dados->relatorio_os == '1';
           <div class="modal-content">
             <button class="close">&times;</button> 
             <h2>Notificações</h2>
-            <a href="../pages/main_vizualizar_os.php?id_chamado=<?php echo $notificacao['id_chama']; ?>" id="link-not">
-              <div class="area-not">
+            <div class="area-not">
                   <?php echo $not_lista; ?>
-                </div>
-              </a>
+            </div>
           </div>
         </div>
 
