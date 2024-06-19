@@ -62,10 +62,9 @@ class Notificacao {
         return $dados;
     }
 
-    public function vizualizarNot()
+    public function vizualizarNot($id_not)
     {
         $visto = 1;
-
 
         return (new Database('notificacao'))->update($id_not, [
             'visto' => $visto

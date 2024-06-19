@@ -32,6 +32,7 @@ include_once ("../includes/php/suas_os.php");
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">Status</th>
                     <th scope="col">Chamado</th>
                     <th scope="col">Requisitante</th>
                     <th scope="col">Abertura</th>
