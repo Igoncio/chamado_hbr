@@ -22,7 +22,9 @@ include_once ("../includes/php/vizualizar_os.php");
 
     <?= $user_lista ?>
 
-    
+    <a class="link-btn" href="../pages/main_tela_inicial.php">
+      <button  type="button" id="voltar-btn" class="btn btn-outline-primary">Voltar</button>
+    </a>
   </section>
 
 
@@ -45,6 +47,8 @@ include_once ("../includes/php/vizualizar_os.php");
 
       </span>
     </div>
+
+
 
   </section>
 
