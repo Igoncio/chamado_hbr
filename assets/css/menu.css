@@ -4,12 +4,7 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400; /* Peso padrão para a fonte Roboto */
 }
-/* body{
-    min-height: 100vh;
-    width: 100%;
-    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
-    background-blend-mode: multiply;
-} */
+
 
 #logo_menu{
     width: 45%;
@@ -44,7 +39,6 @@
 }
 
 #link-not{
-    margin-top: 15px;
     text-decoration: none;
 
 }
@@ -172,3 +166,33 @@
     cursor: pointer;
 }
 
+
+@media(max-width: 610px){
+    #txt-not{
+        width: 90%;
+    }
+
+
+
+}
+
+@media(max-width: 546px){
+    #txt-not{
+        font-size: 13px;
+        width: 70%;
+    }
+
+
+
+}
+
+
+@media(max-width: 418px){
+    #txt-not{
+        font-size: 13px;
+        width: 60%;
+    }
+
+
+
+}
