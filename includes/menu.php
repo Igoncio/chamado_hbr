@@ -22,10 +22,17 @@ foreach ($objnot as $notificacao) {
   ) {
     $chama_id = isset($notificacao['id_chama']) ? $notificacao['id_chama'] : '';
     $icon_class = $visto == 1 ? 'bi-eye-slash-fill' : 'bi-eye-fill';
-    $not_lista .= '<div class="content-not"><a href="../pages/main_vizualizar_os.php?id_chamado=' . $chama_id . '" id="link-not">     
-        <h1 id="txt-not"> ' . $notificacao['notificacao'] . ' </a><i class="bi ' . $icon_class . '"></i></h1>
-     </div>';
-    $tem_notificacao = true;
+    $not_lista .= '
+    <div class="content-not">
+        <a href="../pages/main_vizualizar_os.php?id_chamado=' . $chama_id . '" id="link-not">
+            <h1 id="txt-not">' . $notificacao['notificacao'] . '             <a id="link2-not" href="../includes/php/vizualizar_not.php?id_not=' . $notificacao['id_not'] . '">
+            <button id="btn-not" type="button"><i class="bi ' . $icon_class . '"></i></button>
+            </a></h1>
+
+      </a>
+    </div>';
+$tem_notificacao = true;
+
   }
 }
 

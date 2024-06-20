@@ -62,13 +62,13 @@ class Notificacao {
         return $dados;
     }
 
-    public function vizualizarNot($id_not)
-    {
+    public static function vizualizarNot($idNot) {
         $visto = 1;
 
-        return (new Database('notificacao'))->update($id_not, [
+        
+
+        return (new Database('notificacao'))->update('id_not = ' . $idNot, [
             'visto' => $visto
         ]);
-
     }
 }

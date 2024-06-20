@@ -53,6 +53,11 @@
     background-color: #f0f0f0;
 }
 
+#btn-not{
+    background: none;
+    border: none;
+}
+
 .navbar-nav{
     justify-content: center;
     display: flex;
@@ -149,7 +154,8 @@
 .area-not{
     height: 300px;
     overflow-y: scroll;
-   width: 570px;
+    width: 570px;
+    /* background-color: aqua; */
 }
 
 .bi-eye-slash-fill{
