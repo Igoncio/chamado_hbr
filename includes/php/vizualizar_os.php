@@ -44,7 +44,22 @@ if ($dadosID->prioridade == "baixa") {
             <div class="notiglow1"></div>
             <div class="notiborderglow1"></div>
             <div class="notititle1">OS ' . $dadosID->id_chamado . '</div>
-            <div class="notibody1">
+            <div class="notibody1">';
+                
+    if($dadosID->status == "os"){
+        $user_lista .= 'Status: Aguardando Resposta<br>';
+
+    }
+
+    if($dadosID->status == "os_respondida"){
+        $user_lista .= 'Status: Os Respondida<br>';
+    }
+
+    if($dadosID->status == "os_finalizada"){
+        $user_lista .= 'Status: Os Finalizada<br>';
+    }
+
+    $user_lista.='
                 Requisitante: ' . $dadosID->nome_solicitante . '<br>
                 Abertura: ' . $dadosID->abertura . '<br><br>
                 Equipamento(s): ' . $dadosID->nome_equip . '<br>
@@ -56,17 +71,32 @@ if ($dadosID->prioridade == "baixa") {
                 Resposta Técnica: ' . $dadosID->resposta . '<br>  
                 <button  onclick="window.print()">Imprimir</button>
             </div>
-        </div>
-    ';
+        </div>';
+    
 }
 
 if ($dadosID->prioridade == "media") {
     $user_lista .= '
-        <div class="card3">
-            <div class="notiglow3"></div>
-            <div class="notiborderglow3"></div>
-            <div class="notititle3">OS ' . $dadosID->id_chamado . '</div>
-            <div class="notibody3">
+        <div class="card1">
+            <div class="notiglow1"></div>
+            <div class="notiborderglow1"></div>
+            <div class="notititle1">OS ' . $dadosID->id_chamado . '</div>
+            <div class="notibody1">';
+                
+    if($dadosID->status == "os"){
+        $user_lista .= 'Status: Aguardando Resposta<br>';
+
+    }
+
+    if($dadosID->status == "os_respondida"){
+        $user_lista .= 'Status: Os Respondida<br>';
+    }
+
+    if($dadosID->status == "os_finalizada"){
+        $user_lista .= 'Status: Os Finalizada<br>';
+    }
+    
+    $user_lista.='
                 Requisitante: ' . $dadosID->nome_solicitante . '<br>
                 Abertura: ' . $dadosID->abertura . '<br><br>
                 Equipamento(s): ' . $dadosID->nome_equip . '<br>
@@ -74,35 +104,50 @@ if ($dadosID->prioridade == "media") {
                 Prioridade: ' . $dadosID->prioridade . '<br><br>
                 Descrição: ' . $dadosID->descricao . '<br><br>
                 Responsável: ' . $dadosID->nome_resp . '<br>
-                Cliente: ' . $dadosID->nome_cliente . '<br> <br>
-                Resposta Técnica: ' . $dadosID->resposta . '<br>
+                Cliente: ' . $dadosID->nome_cliente . '<br><br>
+                Resposta Técnica: ' . $dadosID->resposta . '<br>  
                 <button  onclick="window.print()">Imprimir</button>
             </div>
-        </div>
-    ';
+        </div>';
+    
 }
 
 
 if ($dadosID->prioridade == "alta") {
     $user_lista .= '
-        <div class="card2">
-            <div class="notiglow2"></div>
-            <div class="notiborderglow2"></div>
-            <div class="notititle2">OS ' . $dadosID->id_chamado . '</div>
-            <div class="notibody2">
-                Requisitante: ' . $dadosID->nome_solicitante . '<br>
-                Abertura: ' . $dadosID->abertura . '<br><br>
-                Equipamento(s): ' . $dadosID->nome_equip . '<br>
-                Tipo: ' . $dadosID->tipo . '<br>
-                Prioridade: ' . $dadosID->prioridade . '<br><br>
-                Descrição: ' . $dadosID->descricao . '<br><br>
-                Responsável: ' . $dadosID->nome_resp . '<br>
-                Cliente: ' . $dadosID->nome_cliente . '<br> <br>
-                Resposta Técnica: ' . $dadosID->resposta . '<br>
-                <button  onclick="window.print()">Imprimir</button>
-            </div>
+    <div class="card1">
+        <div class="notiglow1"></div>
+        <div class="notiborderglow1"></div>
+        <div class="notititle1">OS ' . $dadosID->id_chamado . '</div>
+        <div class="notibody1">';
+            
+if($dadosID->status == "os"){
+    $user_lista .= 'Status: Aguardando Resposta<br>';
+
+}
+
+if($dadosID->status == "os_respondida"){
+    $user_lista .= 'Status: Os Respondida<br>';
+}
+
+if($dadosID->status == "os_finalizada"){
+    $user_lista .= 'Status: Os Finalizada<br>';
+}
+
+$user_lista.='
+            Requisitante: ' . $dadosID->nome_solicitante . '<br>
+            Abertura: ' . $dadosID->abertura . '<br><br>
+            Equipamento(s): ' . $dadosID->nome_equip . '<br>
+            Tipo: ' . $dadosID->tipo . '<br>
+            Prioridade: ' . $dadosID->prioridade . '<br><br>
+            Descrição: ' . $dadosID->descricao . '<br><br>
+            Responsável: ' . $dadosID->nome_resp . '<br>
+            Cliente: ' . $dadosID->nome_cliente . '<br><br>
+            Resposta Técnica: ' . $dadosID->resposta . '<br>  
+            <button  onclick="window.print()">Imprimir</button>
         </div>
-    ';
+    </div>';
+
 }
 
 ?>

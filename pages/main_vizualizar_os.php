@@ -22,10 +22,10 @@ include_once ("../includes/php/vizualizar_os.php");
 
     <?= $user_lista ?>
 
-    <a class="link-btn" href="../pages/main_tela_inicial.php">
-      <button  type="button" id="voltar-btn" class="btn btn-outline-primary">Voltar</button>
-    </a>
   </section>
+  <a class="link-btn" href="../pages/main_tela_inicial.php">
+    <button  type="button" id="voltar-btn" class="btn btn-outline-primary">Voltar</button>
+  </a>
 
 
   <h1 class="titulo-imprimir">Ordem de Serviço <?php echo $dadosID->id_chamado;?></h1>
@@ -33,7 +33,22 @@ include_once ("../includes/php/vizualizar_os.php");
     
     
     <div class="area-txt-imprimir">
-      <span class="txt-imprimir">Requisitante: <?php echo $dadosID->nome_solicitante;?><br>
+      <span class="txt-imprimir">
+      Status:   
+      <?php if($dadosID->status == "os"){
+        echo 'Aguardando Resposta <br>';
+      }
+
+      if($dadosID->status == "os_respondida"){
+        echo 'Os Respondida <br>';
+      }
+      
+      if($dadosID->status == "os_finalizada"){
+        echo 'Os Finalizada <br>';
+      }
+      
+      ?>  
+      Requisitante: <?php echo $dadosID->nome_solicitante;?><br>
       Abertura: <?php echo $dadosID->abertura;?><br><br>
       Responsável: <?php echo $dadosID->nome_resp;?><br>
       Cliente: <?php echo $dadosID->nome_cliente;?><br><br>
