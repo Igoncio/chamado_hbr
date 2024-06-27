@@ -270,6 +270,6 @@ class Chamado
             'resp_desc' => $this->resp_desc
         ]);
     }
-
 }
+
 

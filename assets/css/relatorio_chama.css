@@ -1,0 +1,44 @@
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    margin: auto;
+}
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.table-container {
+    height: 450px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dataTable th,
+#dataTable td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#dataTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#dataTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#dataTable tbody tr:hover {
+    background-color: #e9e9e9;
+}
