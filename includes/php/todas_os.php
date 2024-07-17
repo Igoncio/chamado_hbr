@@ -19,8 +19,7 @@ $user_lista = ''; // Inicializa a variável
 $user_table = ''; // Inicializa a variável
 
 foreach ($dados as $user) {
-    $isResponsible = $user['id_user'] == $objUsuario->id_user;
-    $isSolicitante = $user['solicitante'] == $objUsuario->id_user;
+
 
     $card_class = '';
     $glow_class = '';
@@ -50,7 +49,7 @@ foreach ($dados as $user) {
     }
 
     // Add cards based on status
-    if ($user['status'] == "os" || $user['status'] == "os_respondida") {
+    if (($user['status'] == "os" )) {
         $action_button = $user['status'] == "os" ? 'Responder' : 'Visualizar';
         $action_url = $user['status'] == "os" ? 'main_validar_os.php' : 'main_validar_os.php';
 
@@ -60,6 +59,7 @@ foreach ($dados as $user) {
                 <div class=\"$border_glow_class\"></div>
                 <div class=\"$title_class\">Chamado {$user['id_chamado']}</div>
                 <div class=\"$body_class\">
+                    status: Aguardando resposta<br>
                     Requisitante: {$user['nome_solicitante']}<br>
                     Abertura: {$user['abertura']}<br><br>
                     Equipamento(s): {$user['nome_equip']}<br>
@@ -67,7 +67,7 @@ foreach ($dados as $user) {
                     Prioridade: {$user['prioridade']}<br><br>
                     Descrição: {$user['descricao']}<br><br>
                     Responsável: {$user['nome_resp']}<br>
-                    Cliente: {$user['nome_cliente']}<br>";
+                    Cliente: {$user['resposta']}<br>";
                     
         if ($resp_os) {
             $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Responder</button></a>";
@@ -80,7 +80,7 @@ foreach ($dados as $user) {
         $user_lista .= "</div></div>";
     }
 
-    if ($user['status'] == "os_finalizada") {
+    if (($user['status'] == "os_finalizada")) {
         $action_url = 'main_vizualizar_os.php';
 
         $user_lista .= "
@@ -89,6 +89,7 @@ foreach ($dados as $user) {
                 <div class=\"$border_glow_class\"></div>
                 <div class=\"$title_class\">Chamado {$user['id_chamado']}</div>
                 <div class=\"$body_class\">
+                    status: Os finalizada<br>
                     Requisitante: {$user['nome_solicitante']}<br>
                     Abertura: {$user['abertura']}<br><br>
                     Equipamento(s): {$user['nome_equip']}<br>
@@ -96,7 +97,33 @@ foreach ($dados as $user) {
                     Prioridade: {$user['prioridade']}<br><br>
                     Descrição: {$user['descricao']}<br><br>
                     Responsável: {$user['nome_resp']}<br>
-                    Cliente: {$user['nome_cliente']}<br>";
+                    Cliente: {$user['nome_cliente']}<br>
+                    Resposta técnica: {$user['resposta']}<br>";
+                    
+        $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
+        
+        $user_lista .= "</div></div>";
+    }
+
+    if (($user['status'] == "os_respondida")) {
+        $action_url = 'main_vizualizar_os.php';
+
+        $user_lista .= "
+            <div class=\"$card_class\">
+                <div class=\"$glow_class\"></div>
+                <div class=\"$border_glow_class\"></div>
+                <div class=\"$title_class\">Chamado {$user['id_chamado']}</div>
+                <div class=\"$body_class\">
+                    status:  Os respondida <br>
+                    Requisitante: {$user['nome_solicitante']}<br>
+                    Abertura: {$user['abertura']}<br><br>
+                    Equipamento(s): {$user['nome_equip']}<br>
+                    Tipo: {$user['tipo']}<br>
+                    Prioridade: {$user['prioridade']}<br><br>
+                    Descrição: {$user['descricao']}<br><br>
+                    Responsável: {$user['nome_resp']}<br>
+                    Cliente: {$user['nome_cliente']}<br>
+                    Resposta técnica: {$user['resposta']}<br>";
                     
         $user_lista .= "<a href=\"../pages/$action_url?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
         
@@ -104,11 +131,12 @@ foreach ($dados as $user) {
     }
 
     // Add rows to table
-    if ($user['status'] == "os" || $user['status'] == "os_respondida") {
+    if (($user['status'] == "os")) {
         $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
 
         $user_table .= "
             <tr>
+                <td>Aguardando resposta</td>
                 <td>" . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . "</td>
                 <td>" . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . "</td>
                 <td>" . (!empty($user['abertura']) ? $user['abertura'] : 'campo vazio') . "</td>
@@ -131,11 +159,34 @@ foreach ($dados as $user) {
         $user_table .= "</td></tr>";
     }
 
-    if ($user['status'] == "os_finalizada") {
+    if (($user['status'] == "os_finalizada") ) {
         $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
 
         $user_table .= "
             <tr>
+                <td>Os finalizada</td>
+                <td>" . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . "</td>
+                <td>" . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . "</td>
+                <td>" . (!empty($user['abertura']) ? $user['abertura'] : 'campo vazio') . "</td>
+                <td>" . (!empty($user['nome_equip']) ? $user['nome_equip'] : 'campo vazio') . "</td>
+                <td>" . (!empty($user['tipo']) ? $user['tipo'] : 'campo vazio') . "</td>
+                <td>" . (!empty($user['prioridade']) ? $user['prioridade'] : 'campo vazio') . "</td>
+                <td>$descricao</td>
+                <td>" . (!empty($user['nome_resp']) ? $user['nome_resp'] : 'campo vazio') . "</td>
+                <td>" . (!empty($user['nome_cliente']) ? $user['nome_cliente'] : 'campo vazio') . "</td>
+                <td>";
+
+        $user_table .= "<a href=\"../pages/main_vizualizar_os.php?id_chamado={$user['id_chamado']}\"><button type=\"button\" class=\"btn btn-primary\" name=\"responder\" id=\"btnAceitar\">Vizualizar</button></a>";
+
+        $user_table .= "</td></tr>";
+    }
+
+    if (($user['status'] == "os_respondida") ) {
+        $descricao = (!empty($user['descricao']) ? (strlen($user['descricao']) > 140 ? substr($user['descricao'], 0, 140) . '...' : $user['descricao']) : 'campo vazio');
+
+        $user_table .= "
+            <tr>
+                <td>Os respondida</td>
                 <td>" . (!empty($user['id_chamado']) ? $user['id_chamado'] : 'campo vazio') . "</td>
                 <td>" . (!empty($user['nome_solicitante']) ? $user['nome_solicitante'] : 'campo vazio') . "</td>
                 <td>" . (!empty($user['abertura']) ? $user['abertura'] : 'campo vazio') . "</td>

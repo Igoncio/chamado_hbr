@@ -12,12 +12,21 @@ width: 6px;
     display: flex;
     outline: none;
     border: none;
+    justify-content: left;
     margin-left: 65%;
     border-radius: 8px;
     background-color: #3d83ff;
     color: #ffffff;
     transition: background-color 0.3s, color 0.3s;
 }
+
+#select-filtro{
+    display: flex;
+    outline: none;
+    border: none;
+    margin-left: 55%;
+}
+
 
 #btn-alternador:hover{
     background-color: #000000;
@@ -27,11 +36,6 @@ a{
     text-decoration: none;
 }
 
-#btn-alternador{
-    display: flex;
-    justify-content: left;
-    margin-top: 1%;
-}
 .area-main{
     display: flex;  
     margin-left: 28%;

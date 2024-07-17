@@ -202,49 +202,6 @@ $relatorio_os = $dados->relatorio_os == '1';
     
 
             <?php
-            echo $resp_os ?
-            '<a href="main_os_naorespondida.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Os não respondidas</div>
-                    <div class="notibody1">Selecione esta opção para vizualizar e responder a todas ordens de seviço
-                    </div>
-                </div>
-            </a>'
-            :'';
-            ?>
-
-            <?php
-            echo $resp_os ?
-            '<a href="main_os_respondida.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Os respondidas</div>
-                    <div class="notibody1">Selecione esta opção para vizualizar e responder a todas ordens de seviço
-                    </div>
-                </div>
-            </a>'
-            :'';
-            ?>
-
-
-            <?php
-            echo $resp_os ?
-            '<a href="main_os_finalizada.php">
-                <div class="card1">
-                    <div class="notiglow1"></div>
-                    <div class="notiborderglow1"></div>
-                    <div class="notititle1">Os finalizada</div>
-                    <div class="notibody1">Selecione esta opção para vizualizar as ordens de serviço finalizadas
-                    </div>
-                </div>
-            </a>'
-            :'';
-            ?>
-
-            <?php
             echo $relatorio_os ?
             '<a href="#">
                 <div class="card1">

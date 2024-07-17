@@ -36,7 +36,7 @@ include_once ("../includes/php/relatorio_chamado.php");
                     label: 'Chamados',
                     data: [recusados, aceitos, total],
                     backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                    hoverOffset: 4
+                    hoverOffset: 1
                 }]
             },
             options: {

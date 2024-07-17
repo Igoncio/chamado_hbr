@@ -17,8 +17,13 @@ include_once ("../includes/php/todas_os.php");
 <body>
 
     <h1 id="titulo_page">Todas Ordens de Seviço</h1>
+    <select name="" id="select-filtro">
+        <option value="">Selecione uma opção</option>
+        <option value="Aguardando Resposta">Aguardando Resposta</option>
+        <option value="Os respondida">Os respondida</option>
+        <option value="Os Finalizada">Os Finalizada</option>
+    </select>
     <button id="btn-alternador" onclick="toggleView()">Alternar Visualização</button>
-
     <div id="tableView" style="display: none; height: 450px; overflow-y: auto;">
         <table class="table">
             <thead>
@@ -53,6 +58,45 @@ include_once ("../includes/php/todas_os.php");
     <a class="link-btn" href="../pages/main_tela_inicial.php">
       <button  type="button" id="voltar-btn" class="btn btn-outline-primary">Voltar</button>
     </a>
+
+
+    <script>
+
+// Filtragem de elementos com base na seleção do filtro
+document.getElementById('select-filtro').addEventListener('change', function() {
+    var filter = this.value.toLowerCase();
+    filterElements(filter);
+});
+
+function filterElements(filter) {
+    var tableRows = document.querySelectorAll('#tableView tbody tr');
+    var cardItems = document.querySelectorAll('#cardView .area-main > *');
+
+    // Função para verificar se um elemento contém o texto correspondente ao filtro
+    function containsText(element, filter) {
+        return element.textContent.toLowerCase().includes(filter);
+    }
+
+    // Função para exibir ou ocultar elementos com base no filtro
+    function toggleVisibility(elements, filter) {
+        elements.forEach(function(element) {
+            if (filter === '') {
+                element.style.display = '';
+            } else {
+                if (containsText(element, filter)) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    // Aplicar o filtro aos elementos da tabela e dos cartões
+    toggleVisibility(tableRows, filter);
+    toggleVisibility(cardItems, filter);
+}
+</script>
 
 </body>
 
