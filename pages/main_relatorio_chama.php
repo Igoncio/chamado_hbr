@@ -17,6 +17,10 @@ include_once ("../includes/php/relatorio_chamado.php");
     <link rel="stylesheet" href="../assets/css/requisicao_chama.css">
 </head>
 <body>
+
+
+
+    <h1 id="txt-titulo">Relatório de Chamado</h1>
     <div class="chart-container">
         <canvas id="pieChart"></canvas>
     </div>

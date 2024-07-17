@@ -99,18 +99,48 @@ $relatorio_os = $dados->relatorio_os == '1';
 
 <body>
 
-<nav class="navbar  navbar-expand-lg bg-body-tertiary ">
+<nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="../pages/main_tela_inicial.php"><img id="logo_menu" src="../imgs/logo/logo.png"
-        alt=""></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Chamado_hbr</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-      
+        <ul class="menu-user">
+
+        <div class="container-user">
+
+        <i id="icon-user" class="bi bi-person-fill"></i>
+        <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
+
+          <div id="dropdown" class="dropdown-content">
+            <a href="../">Sair</a>
+          </div>
+        </div>
+
+        <i id="icon-not" class="bi bi-bell-fill"></i>
+        
+        <div id="notificationModal" class="modal">
+          <div class="modal-content">
+            <button class="close">&times;</button> 
+            <h2>Notificações</h2>
+            <div class="area-not">
+                  <?php echo $not_lista; ?>
+            </div>
+          </div>
+        </div>
+
+      </ul>
+
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Cadastros
@@ -124,7 +154,7 @@ $relatorio_os = $dados->relatorio_os == '1';
             </ul>
             </li>
             
-
+          
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Chamados
@@ -138,7 +168,7 @@ $relatorio_os = $dados->relatorio_os == '1';
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
+           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ordens de Serviço
           </a>
@@ -162,34 +192,16 @@ $relatorio_os = $dados->relatorio_os == '1';
             <?php echo $ger_cli ?'<li><a class="dropdown-item" href="../pages/main_ger_cli.php">Gerenciar clientes</a></li>' : ''?>
           </ul>
         </li>
-      </ul>
 
-      <ul class="menu-user">
-        <i id="icon-not" class="bi bi-bell-fill"></i>
-        
-        <div id="notificationModal" class="modal">
-          <div class="modal-content">
-            <button class="close">&times;</button> 
-            <h2>Notificações</h2>
-            <div class="area-not">
-                  <?php echo $not_lista; ?>
-            </div>
-          </div>
-        </div>
-
-        <div class="container-user">
-
-          <i id="icon-user" class="bi bi-person-fill"></i>
-          <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
-
-            <div id="dropdown" class="dropdown-content">
-              <a href="../">Sair</a>
-            </div>
-        </div>
-      </ul>
+       
+      
+    </ul>
+      
+      </div>
     </div>
   </div>
 </nav>
+
 
 <script src="../assets/js/menu.js"></script>
 </body>

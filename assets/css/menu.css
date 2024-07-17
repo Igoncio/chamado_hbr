@@ -12,19 +12,17 @@
 
 #icon-user{
     font-size: 23px;
-    margin-right: 10px;
 }
 
 #txt-user{
     display: flex;
     font-size: 16px;
-    margin-top: 8px;
+    margin-top: 12%;
 }
 
 #icon-not{
     font-size: 20px;
-    margin-top: 3px;
-    margin-right: 35px;
+    margin-left: 12px;
     cursor: pointer;
 }
 
@@ -52,18 +50,12 @@
     border: none;
 }
 
-.navbar-nav{
-    justify-content: center;
-    display: flex;
-    width: 100%;
-    margin-right: 10%;
 
-}
 
 .menu-user{
     display: flex;
     margin: 0 auto;
-    margin-right: 5%;
+    margin-left: -31px;
     /* align-items: baseline; */
     /* background-color: aqua; */
 }
