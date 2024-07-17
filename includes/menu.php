@@ -6,6 +6,8 @@ use App\Entity\Notificacao;
 
 $objnot = Notificacao::getNot();
 
+
+
 $not_lista = '';
 $tem_notificacao = false; // Variável para verificar se há notificações
 
@@ -176,7 +178,7 @@ $relatorio_os = $dados->relatorio_os == '1';
         </div>
 
         <div class="container-user">
-    
+
           <i id="icon-user" class="bi bi-person-fill"></i>
           <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
 

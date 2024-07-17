@@ -65,10 +65,10 @@ class Notificacao {
     public static function vizualizarNot($idNot) {
         $visto = 1;
 
-        
-
         return (new Database('notificacao'))->update('id_not = ' . $idNot, [
             'visto' => $visto
         ]);
     }
+
+
 }
