@@ -203,7 +203,7 @@ $relatorio_os = $dados->relatorio_os == '1';
 
             <?php
             echo $relatorio_os ?
-            '<a href="#">
+            '<a href="main_relatorio_os.php">
                 <div class="card1">
                     <div class="notiglow1"></div>
                     <div class="notiborderglow1"></div>

@@ -14,7 +14,7 @@ include_once ("../includes/php/suas_os.php");
 
 <body>
 
-    <h1 id="titulo_page">Seus Ordens de Serviço</h1>
+    <h1 id="titulo_page">Suas Ordens de Serviço</h1>
 
     <select name="" id="select-filtro">
         <option value="">Selecione uma opção</option>
