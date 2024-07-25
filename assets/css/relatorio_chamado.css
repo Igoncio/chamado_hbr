@@ -1,0 +1,35 @@
+.area-filtro{
+    margin-top: 20px;
+}
+
+.filtro-content{
+    list-style: none;
+    padding: 10px;
+    
+}
+
+.filtro-content select {
+    border: none; 
+    border-bottom: 1px solid; 
+    list-style: none; 
+}
+
+
+
+.area-result{
+    margin-top: 20px;
+}
+
+.result-content{
+display: flex;
+flex-wrap: wrap;
+}
+
+.result-content li{
+    list-style: none;
+    padding: 10px;
+}
+
+#titulo2{
+    font-size: 25px;
+}
