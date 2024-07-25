@@ -80,28 +80,6 @@ if ($db->connect_error){
     die("Nao funfou: " . $db->connect_error);
 }
 
-$sql_aceitos = "SELECT COUNT(*) as total FROM vw_vizualizar_chamado WHERE status LIKE '%os%'";
-$result_aceitos = $db->query($sql_aceitos);
 
-$aceitos = 0;
-
-if ($result_aceitos->num_rows > 0) {
-    $row = $result_aceitos->fetch_assoc();
-    $aceitos = $row['total'];
-}
-
-$sql_recusados = "SELECT COUNT(*) as total FROM vw_vizualizar_chamado WHERE status NOT LIKE '%os%'";
-$result_recusados = $db->query($sql_recusados);
-
-$recusados = 0;
-
-if ($result_recusados->num_rows > 0) {
-    $row = $result_recusados->fetch_assoc();
-    $recusados = $row['total'];
-}
-
-$total = $aceitos + $recusados;
-
-$db->close();
 ?>
 
