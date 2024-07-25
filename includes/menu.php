@@ -4,9 +4,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\Entity\Usuario;
 use App\Entity\Notificacao;
 
+// Verificar se o usuário está logado
+if (!isset($_SESSION['id_user'])) {
+    header("Location: ../../chamado_hbr");
+    exit;
+}
+
 $objnot = Notificacao::getNot();
-
-
 
 $not_lista = '';
 $tem_notificacao = false; // Variável para verificar se há notificações
@@ -30,11 +34,9 @@ foreach ($objnot as $notificacao) {
             <h1 id="txt-not">' . $notificacao['notificacao'] . '             <a id="link2-not" href="../includes/php/vizualizar_not.php?id_not=' . $notificacao['id_not'] . '">
             <button id="btn-not" type="button"><i class="bi ' . $icon_class . '"></i></button>
             </a></h1>
-
       </a>
     </div>';
-$tem_notificacao = true;
-
+    $tem_notificacao = true;
   }
 }
 
@@ -42,16 +44,8 @@ if (!$tem_notificacao) {
   $not_lista .= '<p>Não existem notificações criadas</p>';
 }
 
-// Exibir a lista de notificações
-// echo $not_lista;
-
-// Interrompe o script para ver os resultados até este ponto
-
-// Verificar se o usuário está logado
-if (isset($_SESSION['id_user'])) {
-  // Aqui você pode buscar as informações do usuário no banco de dados usando o ID da sessão
-  $objUsuario = Usuario::getUser($_SESSION['id_user']);
-}
+// Aqui você pode buscar as informações do usuário no banco de dados usando o ID da sessão
+$objUsuario = Usuario::getUser($_SESSION['id_user']);
 
 use App\Entity\Perfil;
 
@@ -113,30 +107,31 @@ $relatorio_os = $dados->relatorio_os == '1';
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-
-        <ul class="menu-user">
-
-        <div class="container-user">
-
-        <i id="icon-user" class="bi bi-person-fill"></i>
-        <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
-
+          
+          <ul class="menu-user">
+            
+            <div class="container-user">
+              
+              <i id="icon-user" class="bi bi-person-fill"></i>
+              <h5 id="txt-user"><?php echo $objUsuario->nome; ?></h1>
+              <i id="icon-not" class="bi bi-bell-fill"></i>
+              <div id="notificationModal" class="modal">
+                    <div class="modal-content">
+                      <button class="close">&times;</button> 
+                      <h2>Notificações</h2>
+                      <div class="area-not">
+                            <?php echo $not_lista; ?>
+                      </div>
+                    </div>
+                  </div>  
+              
           <div id="dropdown" class="dropdown-content">
             <a href="../">Sair</a>
           </div>
         </div>
 
-        <i id="icon-not" class="bi bi-bell-fill"></i>
         
-        <div id="notificationModal" class="modal">
-          <div class="modal-content">
-            <button class="close">&times;</button> 
-            <h2>Notificações</h2>
-            <div class="area-not">
-                  <?php echo $not_lista; ?>
-            </div>
-          </div>
-        </div>
+
 
       </ul>
 

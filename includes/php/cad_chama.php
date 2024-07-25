@@ -8,7 +8,6 @@ $clientes = Cliente::getCliente();
 $users = Usuario::getUsuario();
 $itens = Item::getItem();
 
-
 if (isset($_SESSION['id_user'])) {
     $idUsuarioLogado = $_SESSION['id_user'];
 }
@@ -31,7 +30,6 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
     $objchama->solicitante = $idUsuarioLogado;
     $objchama->tipo = $_POST['tipo'];
 
-
     if (isset($_FILES["imagem"]) && $_FILES["imagem"]["error"] === UPLOAD_ERR_OK) {
         // Realiza o upload da imagem e salva a referência no objeto
         if ($objchama->uploadImagem($_FILES["imagem"])) {
@@ -39,8 +37,12 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
             $cadastro_sucesso = $objchama->cadastrar();
             // Verifica se o cadastro foi bem-sucedido antes de continuar
             if ($cadastro_sucesso) {
-                // Redireciona para uma página de sucesso ou faz outras operações necessárias
-                echo '<script>window.location.href = "main_cad_chama.php";</script>';
+                // Exibe o modal de confirmação
+                echo '<script>
+                    $(document).ready(function() {
+                        $("#confirmationModal").modal("show");
+                    });
+                </script>';
                 exit;
             } else {
                 echo "Erro ao cadastrar o chamado.";
@@ -53,14 +55,20 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
         $cadastro_sucesso = $objchama->cadastrar();
         // Verifica se o cadastro foi bem-sucedido antes de continuar
         if ($cadastro_sucesso) {
-            // Redireciona para uma página de sucesso ou faz outras operações necessárias
-            echo '<script>window.location.href = "main_cad_chama.php";</script>';
+            // Exibe o modal de confirmação
+            echo '<script>
+                $(document).ready(function() {
+                    $("#confirmationModal").modal("show");
+                });
+            </script>';
             exit;
         } else {
             echo "Erro ao cadastrar o chamado.";
         }
     }
 }
+
+// Resto do código permanece o mesmo
 $options_user = '';
 
 // Verificar se a consulta retornou resultados
@@ -91,7 +99,6 @@ if ($clientes) {
     // Caso não haja clientes encontrados
     $options = '<option value="">Nenhum cliente encontrado</option>';
 }
-
 
 $options_item = '';
 

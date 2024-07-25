@@ -120,10 +120,12 @@ foreach ($dados as $user) {
             }
 
             // Adicionar botão Desativar
+            if ($aceitar_recusar_chama) {
             $user_table .= '
                         <button type="button" class="btn btn-danger">Desativar</button>
                     </td>
                 </tr>';
+            }
         }
     }
 }
