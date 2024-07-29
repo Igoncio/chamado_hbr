@@ -32,7 +32,11 @@ if (isset($_SESSION['id_user'])) {
             $resultado = $notificacao->cadastrar($mensagemNotificacao, $userId, $id_chamado);
 
             if ($resultado) {
-                header('Location: ../../pages/main_tela_inicial.php');
+                echo '<script>
+                alert("Seu Chamado virou uma Os");
+                window.location.href = "../../pages/main_tela_inicial.php"; // Substitua pela URL para onde deseja redirecionar
+                </script>';
+    
                 exit; 
             } else {
                 echo 'Erro ao cadastrar a notificação.';

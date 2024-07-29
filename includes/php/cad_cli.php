@@ -27,4 +27,12 @@ if (isset($_POST["codigo"], $_POST["nome"], $_POST["telefone"], $_POST["cnpj"], 
 
     $objcliente->cadastrar();
 
+
+    if ($objcliente) {
+        // Exibe o modal de confirmação
+        echo '<script>
+        alert("Cliente cadastrado");
+        window.location.href = "../pages/main_tela_inicial.php"; // Substitua pela URL para onde deseja redirecionar
+        </script>';}
+
 }

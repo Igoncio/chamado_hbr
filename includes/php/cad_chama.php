@@ -57,11 +57,10 @@ if (isset($_POST["abertura"], $_POST["fechamento"], $_POST["id_user"], $_POST["i
         if ($cadastro_sucesso) {
             // Exibe o modal de confirmação
             echo '<script>
-                $(document).ready(function() {
-                    $("#confirmationModal").modal("show");
-                });
+            alert("Chamado Cadastrado");
+            window.location.href = "../pages/main_tela_inicial.php"; // Substitua pela URL para onde deseja redirecionar
             </script>';
-            exit;
+
         } else {
             echo "Erro ao cadastrar o chamado.";
         }
