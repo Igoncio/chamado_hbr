@@ -1,35 +1,106 @@
-.area-filtro{
-    margin-top: 20px;
+h1, h2, h5 {
+    color: #333;
 }
 
-.filtro-content{
+/* Estilos para a Área de Filtro */
+.area-filtro {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#titulo2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.filtro-content {
     list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.select {
     padding: 10px;
-    
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
 }
 
-.filtro-content select {
-    border: none; 
-    border-bottom: 1px solid; 
-    list-style: none; 
+/* Estilos para a Tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-
-
-.area-result{
-    margin-top: 20px;
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-.result-content{
-display: flex;
-flex-wrap: wrap;
+.table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
 }
 
-.result-content li{
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para a Área de Resultados */
+.area-result {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-content {
     list-style: none;
-    padding: 10px;
+    padding: 0;
+    margin: 0;
 }
 
-#titulo2{
-    font-size: 25px;
+.result-content li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para os Botões */
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#save-pdf {
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Estilos de Impressão */
+@media print {
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_paginate,
+    .dataTables_info {
+        display: none;
+    }
 }

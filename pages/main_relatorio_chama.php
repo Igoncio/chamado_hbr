@@ -20,11 +20,9 @@ $resultChamado = $db->query($queryChamado);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../assets/css/requisicao_chama.css">
     <link rel="stylesheet" href="../assets/css/relatorio_chamado.css">
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/imprimir_relatorio.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
 </head>
 
 <body>
@@ -52,32 +50,7 @@ $resultChamado = $db->query($queryChamado);
         </ul>
     </div>
 
-    <div class="area-result">
-        <h2 id="titulo2">Resultados:</h2>
-
-        <ul class="result-content">
-            <li>
-                <h5>Total de Chamados: <span id="total-chamados"></span></h5>
-            </li>
-            <li>
-                <h5>Chamados aceitos: <span id="aceitos"></span></h5>
-            </li>
-            <li>
-                <h5>Chamados recusados: <span id="recusados"></span></h5>
-            </li>
-            <li>
-                <h5>Prioridade baixa: <span id="prioridade-baixa"></span></h5>
-            </li>
-            <li>
-                <h5>Prioridade média: <span id="prioridade-media"></span></h5>
-            </li>
-            <li>
-                <h5>Prioridade alta: <span id="prioridade-alta"></span></h5>
-            </li>
-        </ul>
-    </div>
-
-    <div id="tableView" style="height: 450px; overflow-y: auto;">
+    <div id="tableView">
         <table class="table">
             <thead>
                 <tr>
@@ -105,7 +78,6 @@ $resultChamado = $db->query($queryChamado);
                         <td><?= htmlspecialchars($row['nome_cliente']) ?></td>
                         <td>
                             <?php
-                            // Substitui o status conforme necessário
                             $status = htmlspecialchars($row['status']);
                             if ($status === 'os_respondida') {
                                 echo 'Aceito';
@@ -116,7 +88,7 @@ $resultChamado = $db->query($queryChamado);
                             } elseif ($status === 'nao_visto') {
                                 echo 'Aguardando Resposta';
                             } else {
-                                echo $status; // Exibe o status original se não corresponder a nenhum dos casos
+                                echo $status; 
                             }
                             ?>
                         </td>
@@ -126,10 +98,48 @@ $resultChamado = $db->query($queryChamado);
         </table>
     </div>
 
+    <div class="area-result">
+
+        <ul class="result-content">
+            <li>
+                <h5 id="txt-result">Total de Chamados: <span id="total-chamados"></span></h5>
+            </li>
+            <li>
+                <h5 id="txt-result">Chamados aceitos: <span id="aceitos"></span></h5>
+            </li>
+            <li>
+                <h5 id="txt-result">Chamados recusados: <span id="recusados"></span></h5>
+            </li>
+            <li>
+                <h5 id="txt-result">Prioridade baixa: <span id="prioridade-baixa"></span></h5>
+            </li>
+            <li>
+                <h5 id="txt-result">Prioridade média: <span id="prioridade-media"></span></h5>
+            </li>
+            <li>
+                <h5 id="txt-result">Prioridade alta: <span id="prioridade-alta"></span></h5>
+            </li>
+        </ul>
+    </div>
+
+    <button id="save-pdf">Salvar como PDF</button>
+    <button  onclick="window.print()">Imprimir</button>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
-       $(document).ready(function () {
-    // Função para atualizar a lista de equipamentos com base no cliente selecionado
+$(document).ready(function () {
+    var table = $('.table').DataTable({
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true,
+        pageLength: 10,
+        lengthChange: true,
+        lengthMenu: [10, 25, 50, 100]
+    });
+
     function updateEquipamentos(id_cli) {
         $.ajax({
             type: 'POST',
@@ -137,24 +147,21 @@ $resultChamado = $db->query($queryChamado);
             data: { id_cli: id_cli },
             success: function (html) {
                 $('#equipamento').html(html);
-                $('#equipamento').val('0'); // Reseta o filtro de equipamento para "Todos Equipamentos"
-                filterTable();  // Aplica o filtro após atualizar os equipamentos
+                $('#equipamento').val('0'); 
+                filterTable();  
             }
         });
     }
 
-    // Atualiza os equipamentos quando o cliente é selecionado
     $('#cliente').on('change', function () {
         var id_cli = $(this).val();
-        updateEquipamentos(id_cli); // Atualiza equipamentos e reseta filtro
+        updateEquipamentos(id_cli); 
     });
 
-    // Atualiza a tabela quando o equipamento é selecionado
     $('#equipamento').on('change', function () {
         filterTable();
     });
 
-    // Função para filtrar a tabela com base no cliente e equipamento selecionados
     function filterTable() {
         var selectedClient = $('#cliente').val();
         var selectedEquipamento = $('#equipamento').val();
@@ -163,25 +170,21 @@ $resultChamado = $db->query($queryChamado);
             var rowClient = $(this).data('id-cli');
             var rowEquipamento = $(this).data('id-item');
 
-            // Verifica se o cliente e o equipamento correspondem aos filtros selecionados
             var matchesClient = (selectedClient === "0" || rowClient == selectedClient);
             var matchesEquipamento = (selectedEquipamento === "0" || rowEquipamento == selectedEquipamento);
 
-            // Exibe ou oculta a linha com base nos filtros
             $(this).toggle(matchesClient && matchesEquipamento);
         });
 
-        updateTotals();  // Atualiza os totais após aplicar o filtro
+        updateTotals();  
     }
 
-    // Atualiza os totais com base nas linhas visíveis
     function updateTotals() {
         var total = $('#table-body tr:visible').length;
-        
         var aceitos = $('#table-body tr:visible').filter(function() {
             return $(this).find('td').eq(8).text().trim() === 'Aceito';
         }).length;
-        
+
         var recusados = $('#table-body tr:visible').filter(function() {
             return $(this).find('td').eq(8).text().trim() === 'Recusado';
         }).length;
@@ -206,12 +209,38 @@ $resultChamado = $db->query($queryChamado);
         $('#prioridade-alta').text(prioridadeAlta);
     }
 
-    // Inicializa a tabela com todos os dados visíveis
     filterTable();
+
+    $('#save-pdf').on('click', function () {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.text("Relatório de Chamados", 14, 16);
+        doc.autoTable({
+            html: '.table',
+            startY: 20,
+            theme: 'grid'
+        });
+
+        doc.save('relatorio_chamado.pdf');
+    });
+
+    // Desativa a paginação ao imprimir
+    window.onbeforeprint = function() {
+        table.page.len(-1).draw();
+    };
+
+    // Restaura a paginação após a impressão
+    window.onafterprint = function() {
+        table.page.len(10).draw();
+    };
+
+    $('button[onclick="window.print()"]').on('click', function() {
+        window.print();
+    });
 });
 
     </script>
-
 </body>
 
 </html>
