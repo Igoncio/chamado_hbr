@@ -1,8 +1,8 @@
 <?php
+include_once ("../app/Db/connPoo.php");
 include_once ("../includes/menu.php");
 require_once __DIR__ . '/../vendor/autoload.php';
-include_once ("../includes/php/relatorio_chamado.php");
-include_once ("../app/Db/connPoo.php");
+include_once ("../includes/php/relatorio_os.php");
 
 $query = "SELECT * FROM cliente";
 $result = $db->query($query);
@@ -10,6 +10,17 @@ $result = $db->query($query);
 // Obtém os dados da tabela para gerar a tabela HTML
 $queryChamado = "SELECT * FROM vw_vizualizar_chamado";
 $resultChamado = $db->query($queryChamado);
+
+$total_chamados_query = "SELECT COUNT(*) AS total_linhas FROM vw_vizualizar_chamado;";
+$total_chama = $db->query($total_chamados_query);
+
+if ($total_chama) {
+    $row = $total_chama->fetch_assoc();
+    $total_linhas = $row['total_linhas'];
+} else {
+    echo "Erro ao executar a consulta.";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +36,9 @@ $resultChamado = $db->query($queryChamado);
 </head>
 
 <body>
+
+    
+    
 
     <h1 id="txt-titulo">Relatório de OS</h1>
     <div class="area-filtro">
@@ -98,25 +112,25 @@ $resultChamado = $db->query($queryChamado);
     <div class="area-result">
         <ul class="result-content">
             <li>
-                <h5 id="txt-result">Total de OS: <span id="total-os"></span></h5>
+                <h5 id="txt-result">Total de OS: <?php echo $total_linhas;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">OS Finalizadas: <span id="finalizadas"></span></h5>
+                <h5 id="txt-result">OS Finalizadas: <?php echo $total_linhas_finalizadas;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">OS Respondida: <span id="respondida"></span></h5>
+                <h5 id="txt-result">OS Respondida: <?php echo  $total_linhas_respondida;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">OS Aguardando Resposta: <span id="aguardando"></span></h5>
+                <h5 id="txt-result">OS Aguardando Resposta: <?php echo $total_linhas_aguardando?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Prioridade Baixa: <span id="prioridade-baixa"></span></h5>
+                <h5 id="txt-result">Prioridade Baixa:<?php echo $total_linhas_baixa;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Prioridade Média: <span id="prioridade-media"></span></h5>
+                <h5 id="txt-result">Prioridade Média: <?php echo $total_linhas_media?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Prioridade Alta: <span id="prioridade-alta"></span></h5>
+                <h5 id="txt-result">Prioridade Alta: <?php echo $total_linhas_alta;?></h5>
             </li>
         </ul>
     </div>
@@ -134,9 +148,9 @@ $(document).ready(function () {
         searching: true,
         ordering: true,
         info: true,
-        pageLength: 10,
+        pageLength: 25,
         lengthChange: true,
-        lengthMenu: [10, 25, 50, 100]
+        lengthMenu: [25, 50, 100]
     });
 
     function updateEquipamentos(id_cli) {
@@ -176,42 +190,6 @@ $(document).ready(function () {
         });
 
         updateTotals();  
-    }
-
-    function updateTotals() {
-        var total = $('#table-body tr:visible').length;
-        var finalizadas = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(8).text().trim() === 'Finalizada';
-        }).length;
-
-        var respondida = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(8).text().trim() === 'Respondida';
-        }).length;
-
-        var aguardando = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(8).text().trim() === 'Aguardando Resposta';
-        }).length;
-
-        var prioridadeBaixa = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(5).text().trim().toLowerCase() === 'baixa';
-        }).length;
-
-        var prioridadeMedia = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(5).text().trim().toLowerCase() === 'média' ||
-                   $(this).find('td').eq(5).text().trim().toLowerCase() === 'media';
-        }).length;
-
-        var prioridadeAlta = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(5).text().trim().toLowerCase() === 'alta';
-        }).length;
-
-        $('#total-os').text(total);
-        $('#finalizadas').text(finalizadas);
-        $('#respondida').text(respondida);
-        $('#aguardando').text(aguardando);
-        $('#prioridade-baixa').text(prioridadeBaixa);
-        $('#prioridade-media').text(prioridadeMedia);
-        $('#prioridade-alta').text(prioridadeAlta);
     }
 
     filterTable();

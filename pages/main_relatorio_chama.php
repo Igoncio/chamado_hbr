@@ -1,8 +1,8 @@
 <?php
+include_once ("../app/Db/connPoo.php");
 include_once ("../includes/menu.php");
 require_once __DIR__ . '/../vendor/autoload.php';
-include_once ("../includes/php/relatorio_chamado.php");
-include_once ("../app/Db/connPoo.php");
+include_once ("../includes/php/relatorio_os.php");
 
 $query = "SELECT * FROM cliente";
 $result = $db->query($query);
@@ -10,24 +10,37 @@ $result = $db->query($query);
 // Obtém os dados da tabela para gerar a tabela HTML
 $queryChamado = "SELECT * FROM vw_vizualizar_chamado";
 $resultChamado = $db->query($queryChamado);
+
+$total_chamados_query = "SELECT COUNT(*) AS total_linhas FROM vw_vizualizar_chamado;";
+$total_chama = $db->query($total_chamados_query);
+
+if ($total_chama) {
+    $row = $total_chama->fetch_assoc();
+    $total_linhas = $row['total_linhas'];
+} else {
+    echo "Erro ao executar a consulta.";
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Relatório de Chamados</title>
+    <title>Relatório de OS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../assets/css/requisicao_chama.css">
     <link rel="stylesheet" href="../assets/css/relatorio_chamado.css">
     <link rel="stylesheet" href="../assets/css/imprimir_relatorio.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-
 </head>
 
 <body>
 
-    <h1 id="txt-titulo">Relatório de Chamado</h1>
+    
+    
+
+    <h1 id="txt-titulo">Relatório de OS</h1>
     <div class="area-filtro">
         <h2 id="titulo2">Filtrar</h2>
         <ul class="filtro-content">
@@ -80,12 +93,10 @@ $resultChamado = $db->query($queryChamado);
                             <?php
                             $status = htmlspecialchars($row['status']);
                             if ($status === 'os_respondida') {
-                                echo 'Aceito';
+                                echo 'Respondida';
                             } elseif ($status === 'os_finalizada') {
-                                echo 'Aceito';
+                                echo 'Finalizada';
                             } elseif ($status === 'os') {
-                                echo 'Aceito';
-                            } elseif ($status === 'nao_visto') {
                                 echo 'Aguardando Resposta';
                             } else {
                                 echo $status; 
@@ -99,31 +110,33 @@ $resultChamado = $db->query($queryChamado);
     </div>
 
     <div class="area-result">
-
         <ul class="result-content">
             <li>
-                <h5 id="txt-result">Total de Chamados: <span id="total-chamados"></span></h5>
+                <h5 id="txt-result">Total de OS: <?php echo $total_linhas;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Chamados aceitos: <span id="aceitos"></span></h5>
+                <h5 id="txt-result">OS Finalizadas: <?php echo $total_linhas_finalizadas;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Chamados recusados: <span id="recusados"></span></h5>
+                <h5 id="txt-result">OS Respondida: <?php echo  $total_linhas_respondida;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Prioridade baixa: <span id="prioridade-baixa"></span></h5>
+                <h5 id="txt-result">OS Aguardando Resposta: <?php echo $total_linhas_aguardando?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Prioridade média: <span id="prioridade-media"></span></h5>
+                <h5 id="txt-result">Prioridade Baixa:<?php echo $total_linhas_baixa;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">Prioridade alta: <span id="prioridade-alta"></span></h5>
+                <h5 id="txt-result">Prioridade Média: <?php echo $total_linhas_media?></h5>
+            </li>
+            <li>
+                <h5 id="txt-result">Prioridade Alta: <?php echo $total_linhas_alta;?></h5>
             </li>
         </ul>
     </div>
 
     <button id="save-pdf">Salvar como PDF</button>
-    <button  onclick="window.print()">Imprimir</button>
+    <button onclick="window.print()">Imprimir</button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -135,9 +148,9 @@ $(document).ready(function () {
         searching: true,
         ordering: true,
         info: true,
-        pageLength: 10,
+        pageLength: 25,
         lengthChange: true,
-        lengthMenu: [10, 25, 50, 100]
+        lengthMenu: [25, 50, 100]
     });
 
     function updateEquipamentos(id_cli) {
@@ -179,65 +192,29 @@ $(document).ready(function () {
         updateTotals();  
     }
 
-    function updateTotals() {
-        var total = $('#table-body tr:visible').length;
-        var aceitos = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(8).text().trim() === 'Aceito';
-        }).length;
-
-        var recusados = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(8).text().trim() === 'Recusado';
-        }).length;
-
-        var prioridadeBaixa = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(5).text().trim() === 'baixa';
-        }).length;
-
-        var prioridadeMedia = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(5).text().trim() === 'media';
-        }).length;
-
-        var prioridadeAlta = $('#table-body tr:visible').filter(function() {
-            return $(this).find('td').eq(5).text().trim() === 'alta';
-        }).length;
-
-        $('#total-chamados').text(total);
-        $('#aceitos').text(aceitos);
-        $('#recusados').text(recusados);
-        $('#prioridade-baixa').text(prioridadeBaixa);
-        $('#prioridade-media').text(prioridadeMedia);
-        $('#prioridade-alta').text(prioridadeAlta);
-    }
-
     filterTable();
 
     $('#save-pdf').on('click', function () {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        doc.text("Relatório de Chamados", 14, 16);
+        doc.text("Relatório de OS", 14, 16);
         doc.autoTable({
             html: '.table',
             startY: 20,
             theme: 'grid'
         });
 
-        doc.save('relatorio_chamado.pdf');
+        doc.save('relatorio_os.pdf');
     });
 
-    // Desativa a paginação ao imprimir
     window.onbeforeprint = function() {
         table.page.len(-1).draw();
     };
 
-    // Restaura a paginação após a impressão
     window.onafterprint = function() {
         table.page.len(10).draw();
     };
-
-    $('button[onclick="window.print()"]').on('click', function() {
-        window.print();
-    });
 });
 
     </script>
