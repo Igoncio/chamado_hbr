@@ -135,7 +135,9 @@ if ($total_chama) {
         </ul>
     </div>
 
-    <button id="save-pdf">Salvar como PDF</button>
+    <a href="../includes/php/gerar_pdf_chama.php" target="_blank">
+        <button>Gerar PDF</button>
+    </a>
     <button onclick="window.print()">Imprimir</button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
