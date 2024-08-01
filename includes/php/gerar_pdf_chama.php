@@ -45,7 +45,7 @@ if ($db->connect_error){
     die("Nao funfou: " . $db->connect_error);
 }
 
-$total_chamados_query = "SELECT COUNT(*) AS total_linhas FROM vw_vizualizar_chamado WHERE status = 'os';";
+$total_chamados_query = "SELECT COUNT(*) AS total_linhas FROM vw_vizualizar_chamado;";
 $total_chama = $db->query($total_chamados_query);
 
 if ($total_chama) {
@@ -55,29 +55,17 @@ if ($total_chama) {
     echo "Erro ao executar a consulta.";
 }
 
-$total_chamados_finalizados_query = "SELECT COUNT(*) AS total_finalizados FROM vw_vizualizar_chamado WHERE status = 'os_finalizada';";
-$total_finalizados = $db->query($total_chamados_finalizados_query);
+$total_chamados_aceitos = "SELECT COUNT(*) AS total_finalizados FROM vw_vizualizar_chamado WHERE status LIKE '%os%';";
+$total_aceitos = $db->query($total_chamados_aceitos);
 
-if ($total_finalizados) {
-    $row_finalizados = $total_finalizados->fetch_assoc();
-    $total_linhas_finalizadas = $row_finalizados['total_finalizados'];
+if ($total_aceitos) {
+    $row_aceitos = $total_aceitos->fetch_assoc();
+    $total_linhas_aceitas = $row_aceitos['total_finalizados'];
 } else {
     echo "Erro ao executar a consulta.";
 }
 
-
-$total_chamados_respondido_query = "SELECT COUNT(*) AS total_respondido FROM vw_vizualizar_chamado WHERE status = 'os_respondida';";
-$total_respondido = $db->query($total_chamados_respondido_query);
-
-if ($total_respondido) {
-    $row_respondido = $total_respondido->fetch_assoc();
-    $total_linhas_respondida = $row_respondido['total_respondido'];
-} else {
-    echo "Erro ao executar a consulta.";
-}
-
-
-$total_chamados_aguardando_query = "SELECT COUNT(*) AS total_aguardando FROM vw_vizualizar_chamado WHERE status = 'os';";
+$total_chamados_aguardando_query = "SELECT COUNT(*) AS total_aguardando FROM vw_vizualizar_chamado WHERE status = 'nao_visto';";
 $total_aguardando = $db->query($total_chamados_aguardando_query);
 
 if ($total_aguardando) {
@@ -86,7 +74,6 @@ if ($total_aguardando) {
 } else {
     echo "Erro ao executar a consulta.";
 }
-
 
 $total_baixa_query = "SELECT COUNT(*) AS total_baixa FROM vw_vizualizar_chamado WHERE prioridade = 'baixa';";
 $total_baixa_result = $db->query($total_baixa_query);
@@ -189,8 +176,8 @@ $html = '
 
 <div class="summary">
     <p><strong>Total de Chamados:</strong> ' . $total_linhas . '</p>
-    <p><strong>Total Finalizados:</strong> ' . $total_linhas_finalizadas . '</p>
-    <p><strong>Total Respondidos:</strong> ' . $total_linhas_respondida . '</p>
+    <p><strong>Total Aceitos:</strong> ' . $total_linhas_aceitas . '</p>
+    <p><strong>Total Não Aceitos:</strong> </p>
     <p><strong>Total Aguardando:</strong> ' . $total_linhas_aguardando . '</p>
     <p><strong>Total Baixa Prioridade:</strong> ' . $total_linhas_baixa . '</p>
     <p><strong>Total Média Prioridade:</strong> ' . $total_linhas_media . '</p>

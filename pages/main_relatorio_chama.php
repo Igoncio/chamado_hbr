@@ -2,7 +2,7 @@
 include_once ("../app/Db/connPoo.php");
 include_once ("../includes/menu.php");
 require_once __DIR__ . '/../vendor/autoload.php';
-include_once ("../includes/php/relatorio_os.php");
+include_once ("../includes/php/relatorio_chamado.php");
 
 $query = "SELECT * FROM cliente";
 $result = $db->query($query);
@@ -27,7 +27,7 @@ if ($total_chama) {
 <html>
 
 <head>
-    <title>Relatório de OS</title>
+    <title>Relatório de Chamado</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../assets/css/requisicao_chama.css">
     <link rel="stylesheet" href="../assets/css/relatorio_chamado.css">
@@ -40,7 +40,7 @@ if ($total_chama) {
     
     
 
-    <h1 id="txt-titulo">Relatório de OS</h1>
+    <h1 id="txt-titulo">Relatório de Chamado</h1>
     <div class="area-filtro">
         <h2 id="titulo2">Filtrar</h2>
         <ul class="filtro-content">
@@ -93,13 +93,13 @@ if ($total_chama) {
                             <?php
                             $status = htmlspecialchars($row['status']);
                             if ($status === 'os_respondida') {
-                                echo 'Respondida';
-                            } elseif ($status === 'os_finalizada') {
+                                echo 'Aceito';
+                            } elseif ($status === 'Aceito') {
                                 echo 'Finalizada';
                             } elseif ($status === 'os') {
-                                echo 'Aguardando Resposta';
+                                echo 'Aceito';
                             } else {
-                                echo $status; 
+                                echo 'Aguardando resposta'; 
                             }
                             ?>
                         </td>
@@ -112,13 +112,10 @@ if ($total_chama) {
     <div class="area-result">
         <ul class="result-content">
             <li>
-                <h5 id="txt-result">Total de OS: <?php echo $total_linhas;?></h5>
+                <h5 id="txt-result">Total de Chamados: <?php echo $total_linhas;?></h5>
             </li>
             <li>
-                <h5 id="txt-result">OS Finalizadas: <?php echo $total_linhas_finalizadas;?></h5>
-            </li>
-            <li>
-                <h5 id="txt-result">OS Respondida: <?php echo  $total_linhas_respondida;?></h5>
+                <h5 id="txt-result">Total Aceitas: <?php echo $total_linhas_aceitas;?></h5>
             </li>
             <li>
                 <h5 id="txt-result">OS Aguardando Resposta: <?php echo $total_linhas_aguardando?></h5>
@@ -135,7 +132,7 @@ if ($total_chama) {
         </ul>
     </div>
 
-    <a href="../includes/php/gerar_pdf_chama.php" target="_blank">
+    <a href="../includes/php/gerar_pdf_chama.php?cliente=<?php echo isset($_GET['cliente']) ? $_GET['cliente'] : '0'; ?>&equipamento=<?php echo isset($_GET['equipamento']) ? $_GET['equipamento'] : '0'; ?>" target="_blank">
         <button>Gerar PDF</button>
     </a>
     <button onclick="window.print()">Imprimir</button>
